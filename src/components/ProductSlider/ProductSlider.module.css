@@ -73,17 +73,17 @@
 }
 
 .bottleImg {
-  height: 95%;
+  height: 105%;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(15px 15px 30px rgba(0,0,0,0.15));
   transition: all 0.6s ease;
-  transform: scale(0.9);
+  transform: scale(0.95);
   opacity: 0.75;
 }
 
 :global(.swiper-slide-active) .bottleImg {
-  transform: scale(1);
+  transform: scale(1.15);
   opacity: 1;
 }
 
@@ -208,6 +208,31 @@
 
 @media (max-width: 1024px) {
   .navBtn { display: none; }
-  .activeSlide { flex-direction: column; text-align: center; }
-  .showContent { margin-left: 0; width: auto; max-width: 400px; }
+  
+  .slide {
+    flex-direction: column;
+    padding-top: 20px;
+  }
+  
+  .bottleWrapper {
+    height: 60%;
+  }
+
+  .slideContent {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    transform: translateY(20px);
+  }
+
+  :global(.swiper-slide-active) .slideContent {
+    transform: translateY(0px);
+    margin-left: 0;
+  }
+  
+  .productName { font-size: 22px; }
+  .productDescription { font-size: 10px; }
 }

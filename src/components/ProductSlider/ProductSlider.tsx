@@ -70,8 +70,11 @@ export default function ProductSlider() {
             nextEl: '.custom-next',
           }}
           centeredSlides={true}
-          slidesPerView={3}
-          spaceBetween={0}
+          breakpoints={{
+            0: { slidesPerView: 1.3, spaceBetween: 30 },
+            768: { slidesPerView: 2, spaceBetween: 40 },
+            1024: { slidesPerView: 3, spaceBetween: 0 }
+          }}
           loop={true}
           speed={600}
           onSlideChange={(swiper: SwiperType) => setActiveIndex(swiper.realIndex)}
