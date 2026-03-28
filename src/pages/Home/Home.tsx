@@ -14,6 +14,13 @@ export default function Home() {
           </h1>
         </div>
       </section>
+
+      <section className={styles.sliderIntroSection}>
+        <h2 className={styles.sliderIntroTitle}>DISCOVER YOUR PERFECT BOTTLE</h2>
+        <p className={styles.sliderIntroSubtitle}>
+          Every lifestyle deserves its perfect rhythm of hydration. Explore Vallechiara's collection, bottled at the source, designed for every moment of your day.
+        </p>
+      </section>
       
       {/* Product Slider accurately mapped to layout specifications */}
       <ProductSlider />

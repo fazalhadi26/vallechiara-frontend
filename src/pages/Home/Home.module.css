@@ -79,3 +79,44 @@
     letter-spacing: 1px;
   }
 }
+
+/* Slider Intro Header Typography */
+.sliderIntroSection {
+  padding: 100px 40px 10px 40px; 
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.sliderIntroTitle {
+  font-family: 'Playfair Display', var(--font-serif), serif;
+  color: #005668;
+  font-size: 44px;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+}
+
+.sliderIntroSubtitle {
+  font-family: var(--font-sans);
+  color: #222;
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 1000px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .sliderIntroSection {
+    padding: 60px 30px 0 30px;
+  }
+  .sliderIntroTitle {
+    font-size: 32px;
+  }
+  .sliderIntroSubtitle {
+    font-size: 15px;
+  }
+}
