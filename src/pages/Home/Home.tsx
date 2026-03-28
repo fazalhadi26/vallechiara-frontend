@@ -1,6 +1,8 @@
 import styles from './Home.module.css';
 import ProductSlider from '../../components/ProductSlider/ProductSlider';
 import storyBg from '../../assets/w-1.webp';
+import leafLeft from '../../assets/w-2.png';
+import leafRight from '../../assets/w-3.webp';
 
 export default function Home() {
   return (
@@ -32,12 +34,8 @@ export default function Home() {
           <div className={styles.storyImageColumn}>
             <div className={styles.archImageWrapper}>
               <img src={storyBg} alt="Vallechiara Source" className={styles.archImage} />
-              <svg className={styles.floralLeft} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50 100C40 80 20 60 0 50C30 50 45 30 50 0C55 30 70 50 100 50C80 60 60 80 50 100Z" fill="white"/>
-              </svg>
-              <svg className={styles.floralRight} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M50 100C40 80 20 60 0 50C30 50 45 30 50 0C55 30 70 50 100 50C80 60 60 80 50 100Z" fill="white"/>
-              </svg>
+              <img src={leafLeft} alt="Leaf Decor" className={styles.floralLeft} />
+              <img src={leafRight} alt="Leaf Decor" className={styles.floralRight} />
             </div>
           </div>
 
