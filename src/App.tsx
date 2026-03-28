@@ -6,6 +6,7 @@ import OurStory from './pages/OurStory/OurStory';
 import InsideTheSource from './pages/InsideTheSource/InsideTheSource';
 import WCT from './pages/WCT/WCT';
 import Support from './pages/Support/Support';
+import Subscribe from './pages/Subscribe/Subscribe';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="inside-the-source" element={<InsideTheSource />} />
           <Route path="wct" element={<WCT />} />
           <Route path="support" element={<Support />} />
+          <Route path="subscribe" element={<Subscribe />} />
         </Route>
       </Routes>
     </Router>
