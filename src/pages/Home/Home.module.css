@@ -1,5 +1,6 @@
 .homeContainer {
-  min-height: calc(100vh - 80px); /* 80px header offset */
+  min-height: calc(100vh - 80px);
+  /* 80px header offset */
   margin-top: 80px;
   width: 100%;
 }
@@ -7,7 +8,8 @@
 .hero {
   position: relative;
   width: 100%;
-  height: calc(100vh - 80px); /* Full responsive viewport frame */
+  height: calc(100vh - 80px);
+  /* Full responsive viewport frame */
   background-color: #55878e;
   overflow: hidden;
   display: flex;
@@ -42,7 +44,8 @@
   position: relative;
   z-index: 10;
   text-align: center;
-  margin-top: -20px; /* Slight visual optical center balancing */
+  margin-top: -20px;
+  /* Slight visual optical center balancing */
 }
 
 .title {
@@ -60,8 +63,15 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @media (max-width: 1200px) {
@@ -74,6 +84,7 @@
   .hero {
     height: 60vh;
   }
+
   .title {
     font-size: 38px;
     letter-spacing: 1px;
@@ -82,7 +93,7 @@
 
 /* Slider Intro Header Typography */
 .sliderIntroSection {
-  padding: 100px 40px 10px 40px; 
+  padding: 100px 40px 10px 40px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -113,9 +124,11 @@
   .sliderIntroSection {
     padding: 60px 30px 0 30px;
   }
+
   .sliderIntroTitle {
     font-size: 32px;
   }
+
   .sliderIntroSubtitle {
     font-size: 15px;
   }
@@ -123,18 +136,21 @@
 
 /* Homepage 3rd Section: Story Arch Layout */
 .storySection {
-  background-color: #0b5d66; /* Specific dark teal matching mockup perfectly */
+  background-color: #0b5d66;
+  /* Specific dark teal matching mockup perfectly */
   padding-top: 140px;
-  padding-bottom: 0px; 
+  padding-bottom: 0px;
   width: 100%;
-  overflow: hidden; /* To prevent decorative leaves bleeding out bottom */
+  overflow: hidden;
+  /* To prevent decorative leaves bleeding out bottom */
 }
 
 .storyContainer {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  align-items: flex-end; /* Force anchor to the very bottom mapping user parameter */
+  align-items: flex-end;
+  /* Force anchor to the very bottom mapping user parameter */
   justify-content: space-between;
   gap: 80px;
   padding: 0 40px;
@@ -144,14 +160,16 @@
   flex: 1;
   display: flex;
   justify-content: center;
-  align-items: flex-end; /* Anchor specifically to bottom border */
+  align-items: flex-end;
+  /* Anchor specifically to bottom border */
   position: relative;
 }
 
 .archImageWrapper {
   width: 400px;
   height: 550px;
-  border-radius: 250px 250px 0 0; /* Massive pure smooth half-circle arch */
+  border-radius: 250px 250px 0 0;
+  /* Massive pure smooth half-circle arch */
   position: relative;
   background-color: transparent;
 }
@@ -160,11 +178,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 250px 250px 0 0; 
+  border-radius: 250px 250px 0 0;
 }
 
 /* Specialized simulated floral CSS leaf decorations masking the bottom edges */
-.floralLeft, .floralRight {
+.floralLeft,
+.floralRight {
   position: absolute;
   z-index: 10;
   object-fit: contain;
@@ -190,7 +209,8 @@
   flex-direction: column;
   align-items: flex-start;
   color: #ffffff;
-  padding-bottom: 60px; /* Suspends text slightly giving it optical centering relative to the flush arch */
+  padding-bottom: 60px;
+  /* Suspends text slightly giving it optical centering relative to the flush arch */
 }
 
 .storySubhead {
@@ -226,7 +246,8 @@
   color: #ffffff;
   border: 1.5px solid #ffffff;
   padding: 12px 30px;
-  border-radius: 8px; /* Slightly squarish capsule per mockup */
+  border-radius: 8px;
+  /* Slightly squarish capsule per mockup */
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 800;
@@ -246,12 +267,15 @@
     text-align: center;
     gap: 80px;
   }
+
   .storyTextColumn {
     align-items: center;
   }
+
   .storyTitle {
     font-size: 42px;
   }
+
   .floralLeft {
     display: none;
   }
@@ -263,11 +287,15 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  background-color: #ffffff; /* Changed to pure white */
+  background-color: #ffffff;
+  /* Changed to pure white */
   overflow: hidden;
   margin-top: -1px;
   position: relative;
-  height: 850px; /* Increased massively to allow image to scale up further */
+  height: 100%;
+  /* Changed precisely to 100% height per request */
+  min-height: 650px;
+  /* Optional safety net so layout doesn't crash to zero if content shifts */
 }
 
 .lightnessLeft {
@@ -287,7 +315,7 @@
 }
 
 .bottleMain {
-  width: 420px; 
+  width: 420px;
   top: 50%;
   left: 50%;
   transform: translate(-30%, -50%) rotate(-15deg);
@@ -295,17 +323,17 @@
 }
 
 .bottleTop {
-  width: 300px; 
+  width: 300px;
   top: 20px;
   left: -80px;
-  transform: rotate(35deg); 
+  transform: rotate(35deg);
   z-index: 1;
   opacity: 0.8;
-  filter: blur(1.5px) drop-shadow(10px 15px 25px rgba(0, 0, 0, 0.1)); 
+  filter: blur(1.5px) drop-shadow(10px 15px 25px rgba(0, 0, 0, 0.1));
 }
 
 .bottleBottom {
-  width: 350px; 
+  width: 350px;
   bottom: 0px;
   left: -40px;
   transform: rotate(15deg);
@@ -348,21 +376,24 @@
   position: absolute;
   right: 0;
   top: 0;
-  width: 55%; /* Increased from 45% to allow horizontal scaling space */
+  width: 65%;
+  /* Increased width allowance so it never cuts off the 100% height scaled image */
   height: 100%;
   z-index: 1;
   display: flex;
-  justify-content: flex-end; 
-  align-items: center; 
+  justify-content: flex-end;
+  align-items: flex-end;
+  /* Anchor directly to bottom alongside height 100% */
 }
 
 .lightnessLifestyle {
+  width: auto;
   max-width: 100%;
-  height: auto;
-  min-height: 80%; /* Forces the image to take up massive space consistently */
-  max-height: 100%; 
-  object-fit: contain; 
-  object-position: right center; 
+  height: 100%;
+  /* Force height exactly to parent div container */
+  object-fit: contain;
+  object-position: right bottom;
+  /* Cleanest anchor for 100% height cutout images */
 }
 
 @media (max-width: 1024px) {
@@ -372,26 +403,26 @@
     padding-top: 60px;
     height: auto;
   }
-  
+
   .lightnessLeft {
     flex: none;
-    height: 450px; 
+    height: 450px;
     width: 100%;
-    margin-bottom: -40px; 
+    margin-bottom: -40px;
   }
-  
+
   .bottleMain {
     width: 280px;
-    transform: translate(-50%, -50%) rotate(0deg); 
+    transform: translate(-50%, -50%) rotate(0deg);
   }
-  
+
   .bottleTop {
     width: 190px;
     top: 30px;
     left: 20px;
     transform: rotate(20deg);
   }
-  
+
   .bottleBottom {
     width: 210px;
     bottom: 10px;
@@ -405,20 +436,20 @@
     width: 100%;
     align-items: center;
     padding: 40px 20px;
-    z-index: 10; 
+    z-index: 10;
     position: relative;
   }
-  
+
   .lightnessTitle {
     font-size: 42px;
   }
-  
+
   .lightnessRight {
     position: relative;
     width: 100%;
     height: 400px;
     margin-top: 20px;
-    justify-content: center; /* Center image horizontally on mobile */
+    justify-content: center;
+    /* Center image horizontally on mobile */
   }
 }
-
