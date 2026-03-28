@@ -120,3 +120,135 @@
     font-size: 15px;
   }
 }
+
+/* Homepage 3rd Section: Story Arch Layout */
+.storySection {
+  background-color: #0b5d66; /* Specific dark teal matching mockup perfectly */
+  padding: 140px 0;
+  width: 100%;
+}
+
+.storyContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 80px;
+  padding: 0 40px;
+}
+
+.storyImageColumn {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.archImageWrapper {
+  width: 400px;
+  height: 550px;
+  border-radius: 250px 250px 0 0; /* Massive pure smooth half-circle arch */
+  position: relative;
+  background-color: #111;
+}
+
+.archImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 250px 250px 0 0; 
+}
+
+/* Specialized simulated floral CSS leaf decorations masking the bottom edges */
+.floralLeft, .floralRight {
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  z-index: 10;
+}
+
+.floralLeft {
+  left: -80px;
+  top: 40%;
+  transform: rotate(-15deg);
+}
+
+.floralRight {
+  right: -60px;
+  bottom: -40px;
+  transform: rotate(35deg) scale(1.3);
+}
+
+.storyTextColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #ffffff;
+}
+
+.storySubhead {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.storyTitle {
+  font-family: 'Playfair Display', var(--font-serif), serif;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+}
+
+.storyText {
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.8;
+  font-weight: 500;
+  margin-bottom: 45px;
+  max-width: 480px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.readMoreBtn {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1.5px solid #ffffff;
+  padding: 12px 30px;
+  border-radius: 8px; /* Slightly squarish capsule per mockup */
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 800;
+  transition: all 0.3s;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+.readMoreBtn:hover {
+  background-color: #ffffff;
+  color: #0b5d66;
+}
+
+@media (max-width: 1024px) {
+  .storyContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 80px;
+  }
+  .storyTextColumn {
+    align-items: center;
+  }
+  .storyTitle {
+    font-size: 42px;
+  }
+  .floralLeft {
+    display: none;
+  }
+}
+
