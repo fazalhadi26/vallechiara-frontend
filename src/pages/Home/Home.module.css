@@ -376,8 +376,8 @@
   position: absolute;
   right: 0;
   top: 0;
-  width: 65%;
-  /* Increased width allowance so it never cuts off the 100% height scaled image */
+  width: 90%;
+  /* Maximize width allowance so it never cuts off the 100% height scaled image */
   height: 100%;
   z-index: 1;
   display: flex;
