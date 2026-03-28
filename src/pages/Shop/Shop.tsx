@@ -1,5 +1,10 @@
 import styles from './Shop.module.css';
-import bottleImg from '../../assets/bootle1.png';
+import s1 from '../../assets/s-1.png';
+import s2 from '../../assets/s-2.png';
+import s3 from '../../assets/s-3.png';
+import s4 from '../../assets/s-4.png';
+import s5 from '../../assets/s-5.png';
+import s6 from '../../assets/s-6.png';
 
 const shopData = [
   {
@@ -11,7 +16,7 @@ const shopData = [
         title: "Box of 24 x 0.33L (Natural)",
         price: "AED 65.00",
         subtitle: "Make Hydration a Ritual, Subscribe & Save",
-        image: bottleImg,
+        image: s1,
         isOutOfStock: false
       },
       {
@@ -19,7 +24,7 @@ const shopData = [
         title: "Box of 24 x 0.5L (Natural)",
         price: "AED 75.00",
         subtitle: "Make Hydration a Ritual, Subscribe & Save",
-        image: bottleImg,
+        image: s2,
         isOutOfStock: false
       },
       {
@@ -27,7 +32,7 @@ const shopData = [
         title: "Box of 12 x 1L (Natural)",
         price: "AED 80.00",
         subtitle: "Make Hydration a Ritual, Subscribe & Save",
-        image: bottleImg,
+        image: s3,
         isOutOfStock: true
       }
     ]
@@ -41,7 +46,7 @@ const shopData = [
         title: "Box of 24 x 0.33L (Sparkling)",
         price: "AED 75.00",
         subtitle: "Elevate every sip, subscribe & save",
-        image: bottleImg,
+        image: s4,
         isOutOfStock: true
       },
       {
@@ -49,7 +54,7 @@ const shopData = [
         title: "Box of 24 x 0.5L (Sparkling)",
         price: "AED 85.00",
         subtitle: "Elevate every sip, subscribe & save",
-        image: bottleImg,
+        image: s5,
         isOutOfStock: true
       },
       {
@@ -57,7 +62,7 @@ const shopData = [
         title: "Box of 12 x 1L (Sparkling)",
         price: "AED 90.00",
         subtitle: "Elevate every sip, subscribe & save",
-        image: bottleImg,
+        image: s6,
         isOutOfStock: true
       }
     ]
