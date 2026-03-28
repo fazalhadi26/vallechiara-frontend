@@ -42,108 +42,108 @@ const subscriptionPlans = [
 export default function Subscribe() {
   return (
     <div className={styles.subscribeContainer}>
-      
+
       <h1 className={styles.mainTitle}>STAY HYDRATED, THE VALLECHIARA WAY</h1>
       <p className={styles.mainSubtitle}>
         Experience effortless wellness with our subscription: pure Italian spring water, delivered to your door with exclusive savings and Free delivery.
       </p>
-      
+
       <div className={styles.timelineSection}>
         <h3 className={styles.timelineTitle}>QUICK & EASY</h3>
         <div className={styles.timelineGraphic}>
-          
+
           <div className={styles.timelineLine}></div>
-          
+
           <div className={styles.step}>
-             <div className={styles.stepCircle}>1</div>
-             <div className={styles.stepIcon}>
-               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-             </div>
-             <p>Choose Your Plan</p>
+            <div className={styles.stepCircle}>1</div>
+            <div className={styles.stepIcon}>
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
+            </div>
+            <p>Choose Your Plan</p>
           </div>
-          
+
           <div className={styles.step}>
-             <div className={styles.stepCircle}>2</div>
-             <div className={styles.stepIcon}>
-               {/* 3 simple bottle icons combined */}
-               <svg width="45" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                 <rect x="5" y="7" width="4" height="12" rx="1" ry="1"/><path d="M6 3h2"/><path d="M6 7h2"/><path d="M7 3v4"/>
-                 <rect x="10" y="5" width="4" height="14" rx="1" ry="1"/><path d="M11 1h2"/><path d="M11 5h2"/><path d="M12 1v4"/>
-                 <rect x="15" y="7" width="4" height="12" rx="1" ry="1"/><path d="M16 3h2"/><path d="M16 7h2"/><path d="M17 3v4"/>
-               </svg>
-             </div>
-             <p>Pick Your Water</p>
+            <div className={styles.stepCircle}>2</div>
+            <div className={styles.stepIcon}>
+              {/* 3 simple bottle icons combined */}
+              <svg width="45" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="5" y="7" width="4" height="12" rx="1" ry="1" /><path d="M6 3h2" /><path d="M6 7h2" /><path d="M7 3v4" />
+                <rect x="10" y="5" width="4" height="14" rx="1" ry="1" /><path d="M11 1h2" /><path d="M11 5h2" /><path d="M12 1v4" />
+                <rect x="15" y="7" width="4" height="12" rx="1" ry="1" /><path d="M16 3h2" /><path d="M16 7h2" /><path d="M17 3v4" />
+              </svg>
+            </div>
+            <p>Pick Your Water</p>
           </div>
-          
+
           <div className={styles.step}>
-             <div className={styles.stepCircle}>3</div>
-             <div className={styles.stepIcon}>
-               <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="5" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-             </div>
-             <p>Checkout & Enjoy</p>
+            <div className={styles.stepCircle}>3</div>
+            <div className={styles.stepIcon}>
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="5" width="20" height="14" rx="2" ry="2" /><line x1="2" y1="10" x2="22" y2="10" /></svg>
+            </div>
+            <p>Checkout & Enjoy</p>
           </div>
-          
+
         </div>
       </div>
 
       <div className={styles.cardsGrid}>
-         
-         <div className={styles.calculateCard}>
-            <h3 className={styles.calcTitle}>{calculateCard.title}</h3>
-            <button className={styles.calcBtn}>{calculateCard.btnText}</button>
-            <p className={styles.calcNote}>{calculateCard.note}</p>
-         </div>
 
-         {subscriptionPlans.map(plan => (
-            <div className={styles.planCard} key={plan.id}>
-               
-               <div className={styles.planTop}>
-                  <div className={styles.planHeaderTop}>
-                     <div className={styles.discountBadge}>{plan.discountBadge}</div>
-                     <div className={styles.planTitleGroup}>
-                        <div className={styles.planTitle}>{plan.durationTitle}</div>
-                        <div className={styles.planDesc}>{plan.packageDesc}</div>
-                     </div>
-                  </div>
-                  
-                  <div className={styles.priceContainer}>
-                     <div className={styles.priceLabel}>Starts from</div>
-                     <div className={styles.priceVal}>{plan.price}</div>
-                  </div>
-               </div>
+        <div className={styles.calculateCard}>
+          <h3 className={styles.calcTitle}>{calculateCard.title}</h3>
+          <button className={styles.calcBtn}>{calculateCard.btnText}</button>
+          <p className={styles.calcNote}>{calculateCard.note}</p>
+        </div>
 
-               <div className={styles.planContent}>
-                  
-                  <div className={styles.featureGroup}>
-                     <div className={styles.featureLabel}>Discount:</div>
-                     <div className={styles.featureGreen}>{plan.discountText}</div>
-                  </div>
-                  
-                  <div className={styles.divider}></div>
-                  
-                  <div className={styles.featureGroup}>
-                     <div className={styles.featureLabel}>Delivery Options:</div>
-                     <div className={styles.featureList}>
-                        <span className={styles.featureText}>{plan.deliveryDuration}</span>
-                        {plan.deliveryFeatures.map((feat, i) => (
-                          <span key={i} className={styles.featureText}>{feat}</span>
-                        ))}
-                     </div>
-                  </div>
-                  
-                  <div className={styles.divider}></div>
-                  
-                  <div className={styles.readMore}>Read More</div>
-                  
-                  <button className={styles.selectBtn}>SELECT</button>
+        {subscriptionPlans.map(plan => (
+          <div className={styles.planCard} key={plan.id}>
 
-               </div>
+            <div className={styles.planTop}>
+              <div className={styles.planHeaderTop}>
+                <div className={styles.discountBadge}>{plan.discountBadge}</div>
+                <div className={styles.planTitleGroup}>
+                  <div className={styles.planTitle}>{plan.durationTitle}</div>
+                  <div className={styles.planDesc}>{plan.packageDesc}</div>
+                </div>
+              </div>
+
+              <div className={styles.priceContainer}>
+                <div className={styles.priceLabel}>Starts from</div>
+                <div className={styles.priceVal}>{plan.price}</div>
+              </div>
+            </div>
+
+            <div className={styles.planContent}>
+
+              <div className={styles.featureGroup}>
+                <div className={styles.featureLabel}>Discount:</div>
+                <div className={styles.featureGreen}>{plan.discountText}</div>
+              </div>
+
+              <div className={styles.divider}></div>
+
+              <div className={styles.featureGroup}>
+                <div className={styles.featureLabel}>Delivery Options:</div>
+                <div className={styles.featureList}>
+                  <span className={styles.featureText}>{plan.deliveryDuration}</span>
+                  {plan.deliveryFeatures.map((feat, i) => (
+                    <span key={i} className={styles.featureText}>{feat}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div className={styles.divider}></div>
+
+              <div className={styles.readMore}>Read More</div>
+
+              <button className={styles.selectBtn}>SELECT</button>
 
             </div>
-         ))}
-         
+
+          </div>
+        ))}
+
       </div>
-      
+
     </div>
   )
 }

@@ -12,69 +12,46 @@ import bottleImg from '../../assets/bootle1.png';
 const products = [
   {
     id: 1,
-    name: 'V WATER 330 ML',
-    description: "Embrace nature's pure hydration with our 330 ml bottles — the perfect choice for the workplace, events, or home use. Experience revitalization in every sip, wherever you are.",
+    name: 'Box of 24 x 0.33L (Natural)',
+    description: "Embrace nature's pure hydration with our 330 ML bottles - the perfect choice for the workplace, events, or home use. Experience revitalization in every zip. wherever you are.",
+    price: 'AED 65.00',
     image: bottleImg,
   },
   {
     id: 2,
-    name: 'V WATER 500 ML',
-    description: "Perfect for active lifestyles, our 500 ml bottle offers pure hydration on the go. Sustainably crafted for you to enjoy Vallechiara's pristine water anywhere.",
+    name: 'Box of 24 x 0.5L (Natural)',
+    description: "Perfect for active lifestyles, our 500 ML bottle offers pure hydration on the go. Sustainably crafted for you to enjoy Vallechiara's pristine water anywhere.",
+    price: 'AED 75.00',
     image: bottleImg,
   },
   {
     id: 3,
-    name: 'V WATER 1 LITER',
+    name: 'Box of 12 x 1L (Natural)',
     description: "Bring the purity of Vallechiara to your family table. Our 1 liter bottle ensures everyone stays hydrated beautifully with an elegant presentation.",
-    image: bottleImg,
-  },
-  {
-    id: 4,  // Duplicated to satisfy Swiper's loop mode requirements for 3 slides per view
-    name: 'V WATER 330 ML',
-    description: "Embrace nature's pure hydration with our 330 ml bottles — the perfect choice for the workplace, events, or home use. Experience revitalization in every sip, wherever you are.",
-    image: bottleImg,
-  },
-  {
-    id: 5,
-    name: 'V WATER 500 ML',
-    description: "Perfect for active lifestyles, our 500 ml bottle offers pure hydration on the go. Sustainably crafted for you to enjoy Vallechiara's pristine water anywhere.",
-    image: bottleImg,
-  },
-  {
-    id: 6,
-    name: 'V WATER 1 LITER',
-    description: "Bring the purity of Vallechiara to your family table. Our 1 liter bottle ensures everyone stays hydrated beautifully with an elegant presentation.",
+    price: 'AED 80.00',
     image: bottleImg,
   }
 ];
-
-// Helper to calculate progress modulo original 3 items
-const originalLength = 3;
 
 export default function ProductSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
     <section className={styles.sliderSection}>
-      <div className={styles.header}>
-        <span className={styles.headerText}>FEATURED</span>
-        <span className={styles.dot}></span>
-        <span className={styles.headerText}>PRODUCTS</span>
-      </div>
-
       <div className={styles.sliderContainer}>
+        
+        {/* Navigation Arrows placed outside main central layout */}
+        <button className={`custom-prev ${styles.navBtn} ${styles.prevBtn}`}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </button>
+
         <Swiper
           modules={[Navigation]}
           navigation={{
             prevEl: '.custom-prev',
             nextEl: '.custom-next',
           }}
-          centeredSlides={true}
-          breakpoints={{
-            0: { slidesPerView: 1.3, spaceBetween: 30 },
-            768: { slidesPerView: 2, spaceBetween: 40 },
-            1024: { slidesPerView: 3, spaceBetween: 0 }
-          }}
+          slidesPerView={1}
           loop={true}
           speed={600}
           onSlideChange={(swiper: SwiperType) => setActiveIndex(swiper.realIndex)}
@@ -82,32 +59,50 @@ export default function ProductSlider() {
         >
           {products.map((product) => (
             <SwiperSlide key={product.id} className={styles.swiperSlide}>
-              <div className={styles.slide}>
-                <div className={styles.bottleWrapper}>
+              <div className={styles.slideContentWrapper}>
+                
+                {/* Left side: Image presentation */}
+                <div className={styles.imageColumn}>
                   <img src={product.image} alt={product.name} className={styles.bottleImg} />
+                  <div className={styles.shadowBase} />
                 </div>
 
-                <div className={styles.slideContent}>
+                {/* Right side: Informational Text Data */}
+                <div className={styles.textColumn}>
                   <h2 className={styles.productName}>{product.name}</h2>
                   <p className={styles.productDescription}>{product.description}</p>
-                  <button className={styles.shopBtn}>SHOP NOW</button>
+                  
+                  <div className={styles.priceContainer}>
+                    <span className={styles.priceLabel}>Starts from</span>
+                    <span className={styles.priceValue}>{product.price}</span>
+                  </div>
+
+                  <div className={styles.actionsBlock}>
+                    <button className={styles.subscribeBtn}>SUBSCRIBE</button>
+                    <button className={styles.buyNowBtn}>BUY NOW</button>
+                  </div>
                 </div>
+
               </div>
             </SwiperSlide>
           ))}
-          
-          {/* Custom Navigation strictly inside Swiper to guarantee Navigation Module bindings */}
-          <button className={`custom-prev ${styles.navBtn} ${styles.prevBtn}`}>PREV</button>
-          <button className={`custom-next ${styles.navBtn} ${styles.nextBtn}`}>NEXT</button>
         </Swiper>
+        
+        <button className={`custom-next ${styles.navBtn} ${styles.nextBtn}`}>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </button>
+
       </div>
 
-      {/* Recreating exactly the design's specific progress bar mapped to the 3 unique items explicitly */}
+      {/* Synchronized Exact Progress Bar Mapping */}
       <div className={styles.progressBarWrapper}>
         <div className={styles.progressBarBg}>
           <div 
             className={styles.progressBarFill} 
-            style={{ width: `${(((activeIndex % originalLength) + 1) / originalLength) * 100}%` }}
+            style={{ 
+              width: `${(100 / products.length)}%`, 
+              transform: `translateX(${activeIndex * 100}%)`
+            }}
           ></div>
         </div>
       </div>

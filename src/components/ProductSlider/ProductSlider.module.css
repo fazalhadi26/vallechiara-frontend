@@ -1,205 +1,183 @@
 .sliderSection {
-  background-color: #f1f6f8;
-  padding: 80px 0 60px 0;
+  background-color: #ffffff;
+  padding: 100px 0 80px 0;
   width: 100%;
   position: relative;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 60px;
-}
-
-.headerText {
-  font-family: var(--font-sans);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: var(--text-dark);
-}
-
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background-color: #559ca9;
-}
-
 .sliderContainer {
   position: relative;
   width: 100%;
-  max-width: 1400px;
-  height: 60vh;
-  min-height: 450px;
+  max-width: 1300px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .swiperWrapper {
   width: 100%;
-  height: 100%;
-  padding: 0;
-  overflow: visible !important;
-  /* allow edge sliding visuals */
+  max-width: 950px; 
+  overflow: hidden;
 }
 
-/* We let Swiper set slide width evenly to show exactly 3 slides */
 .swiperSlide {
   display: flex !important;
   justify-content: center;
   align-items: center;
 }
 
-.slide {
-  height: 100%;
-  width: 100%;
-  position: relative;
-  /* text absolute to this */
+.slideContentWrapper {
   display: flex;
+  width: 100%;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
+  gap: 80px;
+  padding: 40px 0;
 }
 
-.bottleWrapper {
-  height: 100%;
+.imageColumn {
+  flex: 1;
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: center;
-  flex-shrink: 0;
+  align-items: center;
+  position: relative;
+  min-height: 400px;
 }
 
 .bottleImg {
-  height: 105%;
+  height: 400px;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(15px 15px 30px rgba(0, 0, 0, 0.15));
-  transition: all 0.6s ease;
-  transform: scale(0.95);
-  opacity: 0.75;
+  z-index: 2;
+  transition: transform 0.6s ease;
 }
 
-:global(.swiper-slide-active) .bottleImg {
-  transform: scale(1.15);
-  opacity: 1;
-}
-
-.slideContent {
+.shadowBase {
   position: absolute;
-  left: calc(50% + 70px);
-  /* Position cleanly to the right of the center bottle */
-  top: 50%;
-  transform: translateY(-50%) translateX(20px);
-  width: 320px;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.6s ease-out;
+  bottom: 0px;
+  width: 120px;
+  height: 16px;
+  background: radial-gradient(ellipse at center, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.textColumn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   text-align: left;
 }
 
-/* Interactively show the text strictly for active! */
-:global(.swiper-slide-active) .slideContent {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0%) translateX(0px);
-}
-
 .productName {
-  font-family: var(--font-sans);
-  font-weight: 400;
-  font-size: 26px;
-  color: var(--text-dark);
+  font-family: 'Playfair Display', var(--font-sans), serif;
+  font-weight: 800;
+  font-size: 38px;
+  color: #005668;
   margin-bottom: 20px;
-  letter-spacing: 1px;
-  white-space: nowrap;
+  line-height: 1.2;
 }
 
 .productDescription {
   font-family: var(--font-sans);
-  font-size: 11px;
-  line-height: 1.8;
-  color: rgba(42, 59, 69, 0.8);
-  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #444;
+  margin-bottom: 35px;
+  max-width: 450px;
 }
 
-.shopBtn {
-  background-color: #0f2b33;
+.priceContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.priceLabel {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 5px;
+}
+
+.priceValue {
+  font-family: var(--font-sans);
+  font-size: 24px;
+  font-weight: 800;
+  color: #111;
+}
+
+.actionsBlock {
+  display: flex;
+  gap: 15px;
+}
+
+.subscribeBtn, .buyNowBtn {
+  background-color: #005668;
   color: #fff;
   border: none;
-  padding: 12px 28px;
-  font-size: 10px;
+  padding: 14px 34px;
+  font-family: var(--font-sans);
+  font-size: 12px;
   font-weight: 700;
-  letter-spacing: 2px;
-  border-radius: 2px;
+  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.2s;
-  white-space: nowrap;
+  transition: all 0.2s;
+  letter-spacing: 0.5px;
 }
 
-.shopBtn:hover {
-  background-color: #3aa8b8;
+.subscribeBtn:hover, .buyNowBtn:hover {
+  background-color: #004554;
 }
 
-/* Exact navigation positions representing PREV / NEXT directly over the side bottles */
+/* Nav Buttons strictly bound to left and right extremities */
 .navBtn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
-  background-color: #273032;
-  color: #fff;
-  border: none;
+  width: 65px;
+  height: 65px;
+  background-color: #ffffff;
+  color: #005668;
+  border: 1.5px solid #005668;
   border-radius: 50%;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1px;
   cursor: pointer;
-  z-index: 50;
-  /* over swiper */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  transition: background-color 0.2s, transform 0.2s;
+  z-index: 10;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.navBtn:disabled {
-  opacity: 0;
-  pointer-events: none;
+  transition: all 0.2s;
 }
 
 .navBtn:hover {
-  background-color: #0f2b33;
-  transform: translateY(-50%) scale(1.05);
+  background-color: #005668;
+  color: #ffffff;
 }
 
 .prevBtn {
-  left: calc(15% - 25px);
-  /* Perfectly aligns over the left-most bottle in a 1400px container */
+  left: 20px;
 }
 
 .nextBtn {
-  right: calc(15% - 25px);
+  right: 20px;
 }
 
+/* Progress indicator block mapped uniquely to template string lines */
 .progressBarWrapper {
   width: 100%;
-  max-width: 600px;
+  max-width: 1200px;
   padding: 0 40px;
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
 .progressBarBg {
   width: 100%;
-  height: 3px;
-  background-color: #fff;
-  border-radius: 2px;
+  height: 2px;
+  background-color: #e0e0e0;
   position: relative;
 }
 
@@ -208,44 +186,45 @@
   top: 0;
   left: 0;
   height: 100%;
-  background-color: #559ca9;
-  transition: width 0.4s ease-out;
+  background-color: #002d36;
+  transition: transform 0.4s ease-out;
 }
 
 @media (max-width: 1024px) {
   .navBtn {
-    display: none;
+    width: 45px;
+    height: 45px;
   }
+  .prevBtn { left: 10px; }
+  .nextBtn { right: 10px; }
+  
+  .slideContentWrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+  .productName { font-size: 32px; }
+}
 
-  .slide {
+@media (max-width: 768px) {
+  .navBtn {
+    display: none; 
+  }
+  .slideContentWrapper {
     flex-direction: column;
-    padding-top: 20px;
-  }
-
-  .bottleWrapper {
-    height: 60%;
-  }
-
-  .slideContent {
-    position: relative;
-    left: auto;
-    top: auto;
-    width: 100%;
-    margin-top: 20px;
     text-align: center;
-    transform: translateY(20px);
+    padding: 0 40px;
+    gap: 20px;
   }
-
-  :global(.swiper-slide-active) .slideContent {
-    transform: translateY(0px);
-    margin-left: 0;
+  .textColumn {
+    align-items: center;
+    text-align: center;
   }
-
-  .productName {
-    font-size: 22px;
+  .actionsBlock {
+    justify-content: center;
+    width: 100%;
   }
-
-  .productDescription {
-    font-size: 10px;
+  .bottleImg {
+    height: 320px;
   }
 }

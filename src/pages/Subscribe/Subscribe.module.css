@@ -32,7 +32,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 1100px;
   margin-bottom: 80px;
 }
 
@@ -54,7 +54,8 @@
 
 .timelineLine {
   position: absolute;
-  top: 15px; /* center of the 30px circles */
+  top: 15px;
+  /* center of the 30px circles */
   left: 15%;
   right: 15%;
   height: 2px;
@@ -68,7 +69,7 @@
   align-items: center;
   position: relative;
   z-index: 2;
-  background: #ffffff;  
+  background: #ffffff;
   padding: 0 30px;
 }
 
@@ -164,7 +165,7 @@
 
 .planCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
 }
 
 .planTop {
@@ -305,11 +306,13 @@
   .cardsGrid {
     grid-template-columns: 1fr;
   }
+
   .timelineGraphic {
     flex-direction: column;
     gap: 40px;
     align-items: center;
   }
+
   .timelineLine {
     display: none;
   }
