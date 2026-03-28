@@ -3,6 +3,10 @@ import ProductSlider from '../../components/ProductSlider/ProductSlider';
 import storyBg from '../../assets/w-1.webp';
 import leafLeft from '../../assets/w-2.png';
 import leafRight from '../../assets/w-3.webp';
+import bootle1 from '../../assets/bootle1.png';
+import bottle02 from '../../assets/bottle-02.webp';
+import bottle03 from '../../assets/bottle-03.png';
+import womanClass from '../../assets/woman-class.png';
 
 export default function Home() {
   return (
@@ -48,6 +52,41 @@ export default function Home() {
             <button className={styles.readMoreBtn}>READ MORE</button>
           </div>
 
+        </div>
+      </section>
+
+      <section className={styles.lightnessSection}>
+        <div className={styles.lightnessLeft}>
+          <img 
+            src={bootle1} 
+            alt="Vallechiara Bottle Main" 
+            className={`${styles.lightnessBottle} ${styles.bottleMain}`} 
+          />
+          <img 
+            src={bottle02} 
+            alt="Vallechiara Bottle Top" 
+            className={`${styles.lightnessBottle} ${styles.bottleTop}`} 
+          />
+          <img 
+            src={bottle03} 
+            alt="Vallechiara Bottle Bottom" 
+            className={`${styles.lightnessBottle} ${styles.bottleBottom}`} 
+          />
+        </div>
+        
+        <div className={styles.lightnessCenter}>
+          <h2 className={styles.lightnessTitle}>LIGHTNESS<br/>PERSONIFIED</h2>
+          <p className={styles.lightnessText}>
+            Born in the untouched Italian Alps, Vallechiara is water at its purest, light on the palate, balanced in every drop, and crafted by nature to refresh body and soul.
+          </p>
+        </div>
+
+        <div className={styles.lightnessRight}>
+          <img 
+            src={womanClass} 
+            alt="Refreshing Lifestyle" 
+            className={styles.lightnessLifestyle} 
+          />
         </div>
       </section>
 
