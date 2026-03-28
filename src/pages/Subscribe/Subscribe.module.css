@@ -9,16 +9,16 @@
 
 .mainTitle {
   font-family: 'Playfair Display', var(--font-sans), serif;
-  font-size: 32px;
+  font-size: 42px;
   font-weight: 800;
   color: #111;
   text-transform: uppercase;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   text-align: center;
 }
 
 .mainSubtitle {
-  font-size: 13px;
+  font-size: 18px;
   color: #111;
   max-width: 800px;
   text-align: center;
@@ -38,7 +38,7 @@
 
 .timelineTitle {
   font-family: 'Playfair Display', var(--font-sans), serif;
-  font-size: 18px;
+  font-size: 26px;
   color: #111;
   text-transform: uppercase;
   margin-bottom: 40px;
@@ -95,7 +95,7 @@
   font-family: 'Playfair Display', var(--font-sans), serif;
   font-weight: 700;
   color: #005668;
-  font-size: 18px;
+  font-size: 22px;
 }
 
 .cardsGrid {
