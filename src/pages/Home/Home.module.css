@@ -1,0 +1,105 @@
+.homeContainer {
+  min-height: calc(100vh - 80px); /* 80px header */
+  margin-top: 80px;
+  width: 100%;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+  background-color: #55878e;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bgLayer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../../assets/mountain_bg.png');
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+}
+
+/* Fallback/Overlay to ensure text readability globally */
+.bgLayer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(16, 52, 60, 0.3) 0%, rgba(3, 23, 26, 0.7) 100%);
+}
+
+.content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  margin-top: -50px;
+}
+
+.title {
+  font-family: var(--font-serif);
+  color: #fff;
+  font-weight: 800; /* Extremely bold */
+  font-size: 6vw; /* dynamic size */
+  line-height: 0.9;
+  letter-spacing: -2px;
+  display: flex;
+  flex-direction: column;
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.bottomLogo {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.bottomLogo:hover {
+  opacity: 1;
+}
+
+.bottleContainer {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: 20;
+  height: 90vh; /* Scaled nicely within viewport */
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+.bottleImage {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  object-position: right bottom;
+  filter: drop-shadow(-15px 15px 40px rgba(0,0,0,0.6));
+  animation: float 6s ease-in-out infinite;
+}
