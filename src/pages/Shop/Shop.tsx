@@ -1,26 +1,120 @@
 import styles from './Shop.module.css';
+import bottleImg from '../../assets/bootle1.png';
+
+const shopData = [
+  {
+    categoryTitle: "Natural Spring water",
+    logoColor: "blue",
+    products: [
+      {
+        id: "n1",
+        title: "Box of 24 x 0.33L (Natural)",
+        price: "AED 65.00",
+        subtitle: "Make Hydration a Ritual, Subscribe & Save",
+        image: bottleImg,
+        isOutOfStock: false
+      },
+      {
+        id: "n2",
+        title: "Box of 24 x 0.5L (Natural)",
+        price: "AED 75.00",
+        subtitle: "Make Hydration a Ritual, Subscribe & Save",
+        image: bottleImg,
+        isOutOfStock: false
+      },
+      {
+        id: "n3",
+        title: "Box of 12 x 1L (Natural)",
+        price: "AED 80.00",
+        subtitle: "Make Hydration a Ritual, Subscribe & Save",
+        image: bottleImg,
+        isOutOfStock: true
+      }
+    ]
+  },
+  {
+    categoryTitle: "Sparkling Spring water",
+    logoColor: "green",
+    products: [
+      {
+        id: "s1",
+        title: "Box of 24 x 0.33L (Sparkling)",
+        price: "AED 75.00",
+        subtitle: "Elevate every sip, subscribe & save",
+        image: bottleImg,
+        isOutOfStock: true
+      },
+      {
+        id: "s2",
+        title: "Box of 24 x 0.5L (Sparkling)",
+        price: "AED 85.00",
+        subtitle: "Elevate every sip, subscribe & save",
+        image: bottleImg,
+        isOutOfStock: true
+      },
+      {
+        id: "s3",
+        title: "Box of 12 x 1L (Sparkling)",
+        price: "AED 90.00",
+        subtitle: "Elevate every sip, subscribe & save",
+        image: bottleImg,
+        isOutOfStock: true
+      }
+    ]
+  }
+];
 
 export default function Shop() {
   return (
     <div className={styles.shopContainer}>
-      <div className={styles.banner}>
-        <h1>Shop Vallechiara</h1>
-        <p>Browse our premium collection of Italian spring water.</p>
-      </div>
-      
-      <div className={styles.productsGrid}>
-        <div className={styles.productPlaceholder}>
-          <h3>V WATER 330 ML</h3>
-          <p>Coming Soon</p>
-        </div>
-        <div className={styles.productPlaceholder}>
-          <h3>V WATER 500 ML</h3>
-          <p>Coming Soon</p>
-        </div>
-        <div className={styles.productPlaceholder}>
-          <h3>V WATER 1 LITER</h3>
-          <p>Coming Soon</p>
-        </div>
+      <div className={styles.shopWrapper}>
+        {shopData.map((category, index) => (
+          <div key={index} className={styles.categoryRow}>
+            
+            {/* Sticky Left Column Category Heading */}
+            <div className={styles.categoryHeader}>
+              <h2 className={`${styles.categoryTitle} ${category.logoColor === "green" ? styles.greenText : styles.blueText}`}>
+                {category.categoryTitle.split(" ").map((word, i) => (
+                  <span key={i} className={styles.titleWord}>{word}</span>
+                ))}
+              </h2>
+              <div className={`${styles.categoryVLogo} ${styles[category.logoColor]}`}>V</div>
+            </div>
+
+            {/* Horizontal 3-Column Array Feed */}
+            <div className={styles.productsGrid}>
+              {category.products.map(product => (
+                <div key={product.id} className={styles.card}>
+                  
+                  <div className={styles.imageWrapper}>
+                    <img src={product.image} alt={product.title} className={styles.bottleImg} />
+                    <div className={styles.shadowBase} />
+                  </div>
+
+                  <div className={styles.contentWrapper}>
+                    
+                    <div className={styles.badgeWrap}>
+                      {product.isOutOfStock && (
+                        <span className={styles.outOfStockBadge}>OUT OF STOCK</span>
+                      )}
+                    </div>
+                    
+                    <h3 className={styles.productTitle}>{product.title}</h3>
+                    <div className={styles.productPrice}>{product.price}</div>
+                    <p className={styles.productSubtitle}>{product.subtitle}</p>
+
+                    <div className={`${styles.actions} ${product.isOutOfStock ? styles.disabledActions : ''}`}>
+                      <button className={styles.buyNowBtn}>BUY NOW</button>
+                      <button className={styles.subscribeBtn}>SUBSCRIBE</button>
+                    </div>
+
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+          </div>
+        ))}
       </div>
     </div>
   );
