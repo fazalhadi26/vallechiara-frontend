@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
@@ -53,8 +53,8 @@ export default function ProductSlider() {
             nextEl: '.custom-next',
           }}
           centeredSlides={true}
-          slidesPerView="auto"
-          spaceBetween={100}
+          slidesPerView={3}
+          spaceBetween={0}
           loop={true}
           speed={600}
           onSlideChange={(swiper: SwiperType) => setActiveIndex(swiper.realIndex)}
@@ -62,19 +62,17 @@ export default function ProductSlider() {
         >
           {products.map((product) => (
             <SwiperSlide key={product.id} className={styles.swiperSlide}>
-              {({ isActive }) => (
-                <div className={`${styles.slide} ${isActive ? styles.activeSlide : styles.inactiveSlide}`}>
-                  <div className={styles.bottleWrapper}>
-                    <img src={product.image} alt={product.name} className={styles.bottleImg} />
-                  </div>
-                  
-                  <div className={`${styles.slideContent} ${isActive ? styles.showContent : ''}`}>
-                    <h2 className={styles.productName}>{product.name}</h2>
-                    <p className={styles.productDescription}>{product.description}</p>
-                    <button className={styles.shopBtn}>SHOP NOW</button>
-                  </div>
+              <div className={styles.slide}>
+                <div className={styles.bottleWrapper}>
+                  <img src={product.image} alt={product.name} className={styles.bottleImg} />
                 </div>
-              )}
+                
+                <div className={styles.slideContent}>
+                  <h2 className={styles.productName}>{product.name}</h2>
+                  <p className={styles.productDescription}>{product.description}</p>
+                  <button className={styles.shopBtn}>SHOP NOW</button>
+                </div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>

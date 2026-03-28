@@ -48,9 +48,8 @@
   overflow: visible !important; /* allow edge sliding visuals */
 }
 
-/* We let Swiper set slide width to auto so active text seamlessly opens up */
+/* We let Swiper set slide width evenly to show exactly 3 slides */
 .swiperSlide {
-  width: auto !important;
   display: flex !important;
   justify-content: center;
   align-items: center;
@@ -58,9 +57,11 @@
 
 .slide {
   height: 100%;
+  width: 100%;
+  position: relative; /* text absolute to this */
   display: flex;
   align-items: center;
-  gap: 0px; /* managed mostly by the content expanding */
+  justify-content: center;
 }
 
 .bottleWrapper {
@@ -68,7 +69,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 40px; /* intrinsic gap to the text */
+  flex-shrink: 0;
 }
 
 .bottleImg {
@@ -77,33 +78,32 @@
   object-fit: contain;
   filter: drop-shadow(15px 15px 30px rgba(0,0,0,0.15));
   transition: all 0.6s ease;
-}
-
-/* Scaling down inactive bottles slightly based on standard Swiper UI feel */
-.inactiveSlide .bottleImg {
   transform: scale(0.9);
   opacity: 0.75;
 }
 
-.activeSlide .bottleImg {
+:global(.swiper-slide-active) .bottleImg {
   transform: scale(1);
   opacity: 1;
 }
 
 .slideContent {
-  width: 0px;
+  position: absolute;
+  left: calc(50% + 70px); /* Position cleanly to the right of the center bottle */
+  top: 50%;
+  transform: translateY(-50%) translateX(20px);
+  width: 320px;
   opacity: 0;
-  overflow: hidden;
-  transition: all 0.6s ease-out;
   pointer-events: none;
+  transition: all 0.6s ease-out;
+  text-align: left;
 }
 
-/* Expand the text area when the wrapper is active! Swiper handles the width shift */
-.showContent {
-  width: 320px;
+/* Interactively show the text strictly for active! */
+:global(.swiper-slide-active) .slideContent {
   opacity: 1;
   pointer-events: auto;
-  margin-left: 10px;
+  transform: translateY(-50%) translateX(0px);
 }
 
 .productName {
