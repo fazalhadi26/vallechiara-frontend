@@ -1,10 +1,11 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import Home from './pages/Home/Home';
-
-const OurStory = () => <div className="page-placeholder"><h2>Our Story</h2></div>;
-const WaterAttributes = () => <div className="page-placeholder"><h2>Water Attributes</h2></div>;
-const Sustainability = () => <div className="page-placeholder"><h2>Sustainability</h2></div>;
+import Shop from './pages/Shop/Shop';
+import OurStory from './pages/OurStory/OurStory';
+import InsideTheSource from './pages/InsideTheSource/InsideTheSource';
+import WCT from './pages/WCT/WCT';
+import Support from './pages/Support/Support';
 
 function App() {
   return (
@@ -12,9 +13,11 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<Home />} />
+          <Route path="shop" element={<Shop />} />
           <Route path="our-story" element={<OurStory />} />
-          <Route path="water-attributes" element={<WaterAttributes />} />
-          <Route path="sustainability" element={<Sustainability />} />
+          <Route path="inside-the-source" element={<InsideTheSource />} />
+          <Route path="wct" element={<WCT />} />
+          <Route path="support" element={<Support />} />
         </Route>
       </Routes>
     </Router>
