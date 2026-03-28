@@ -1,5 +1,6 @@
 import styles from './Home.module.css';
 import bottleImg from '../../assets/bootle1.png';
+import ProductSlider from '../../components/ProductSlider/ProductSlider';
 
 export default function Home() {
   return (
@@ -24,6 +25,9 @@ export default function Home() {
           <img src={bottleImg} alt="Vallechiara Spring Water" className={styles.bottleImage} />
         </div>
       </section>
+      
+      {/* Product Slider matches products.png */}
+      <ProductSlider />
     </div>
   );
 }

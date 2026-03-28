@@ -1,0 +1,213 @@
+.sliderSection {
+  background-color: #f1f6f8;
+  padding: 80px 0 60px 0;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 60px;
+}
+
+.headerText {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text-dark);
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #559ca9;
+}
+
+.sliderContainer {
+  position: relative;
+  width: 100%;
+  max-width: 1400px;
+  height: 60vh;
+  min-height: 450px;
+  display: flex;
+  align-items: center;
+}
+
+.swiperWrapper {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  overflow: visible !important; /* allow edge sliding visuals */
+}
+
+/* We let Swiper set slide width to auto so active text seamlessly opens up */
+.swiperSlide {
+  width: auto !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0px; /* managed mostly by the content expanding */
+}
+
+.bottleWrapper {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px; /* intrinsic gap to the text */
+}
+
+.bottleImg {
+  height: 95%;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(15px 15px 30px rgba(0,0,0,0.15));
+  transition: all 0.6s ease;
+}
+
+/* Scaling down inactive bottles slightly based on standard Swiper UI feel */
+.inactiveSlide .bottleImg {
+  transform: scale(0.9);
+  opacity: 0.75;
+}
+
+.activeSlide .bottleImg {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.slideContent {
+  width: 0px;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.6s ease-out;
+  pointer-events: none;
+}
+
+/* Expand the text area when the wrapper is active! Swiper handles the width shift */
+.showContent {
+  width: 320px;
+  opacity: 1;
+  pointer-events: auto;
+  margin-left: 10px;
+}
+
+.productName {
+  font-family: var(--font-sans);
+  font-weight: 400;
+  font-size: 26px;
+  color: var(--text-dark);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.productDescription {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  line-height: 1.8;
+  color: rgba(42, 59, 69, 0.8);
+  margin-bottom: 30px;
+}
+
+.shopBtn {
+  background-color: #0f2b33;
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.shopBtn:hover {
+  background-color: #3aa8b8;
+}
+
+/* Exact navigation positions representing PREV / NEXT directly over the side bottles */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: #273032;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  z-index: 50; /* over swiper */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: background-color 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navBtn:disabled {
+  opacity: 0; pointer-events: none;
+}
+
+.navBtn:hover {
+  background-color: #0f2b33;
+  transform: translateY(-50%) scale(1.05);
+}
+
+.prevBtn {
+  left: calc(15% - 25px); /* Perfectly aligns over the left-most bottle in a 1400px container */
+}
+
+.nextBtn {
+  right: calc(15% - 25px);
+}
+
+.progressBarWrapper {
+  width: 100%;
+  max-width: 600px;
+  padding: 0 40px;
+  margin-top: 50px;
+}
+
+.progressBarBg {
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+  border-radius: 2px;
+  position: relative;
+}
+
+.progressBarFill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #559ca9;
+  transition: width 0.4s ease-out;
+}
+
+@media (max-width: 1024px) {
+  .navBtn { display: none; }
+  .activeSlide { flex-direction: column; text-align: center; }
+  .showContent { margin-left: 0; width: auto; max-width: 400px; }
+}
