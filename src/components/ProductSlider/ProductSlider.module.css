@@ -45,7 +45,8 @@
   width: 100%;
   height: 100%;
   padding: 0;
-  overflow: visible !important; /* allow edge sliding visuals */
+  overflow: visible !important;
+  /* allow edge sliding visuals */
 }
 
 /* We let Swiper set slide width evenly to show exactly 3 slides */
@@ -58,7 +59,8 @@
 .slide {
   height: 100%;
   width: 100%;
-  position: relative; /* text absolute to this */
+  position: relative;
+  /* text absolute to this */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -76,7 +78,7 @@
   height: 105%;
   width: auto;
   object-fit: contain;
-  filter: drop-shadow(15px 15px 30px rgba(0,0,0,0.15));
+  filter: drop-shadow(15px 15px 30px rgba(0, 0, 0, 0.15));
   transition: all 0.6s ease;
   transform: scale(0.95);
   opacity: 0.75;
@@ -89,7 +91,8 @@
 
 .slideContent {
   position: absolute;
-  left: calc(50% + 70px); /* Position cleanly to the right of the center bottle */
+  left: calc(50% + 70px);
+  /* Position cleanly to the right of the center bottle */
   top: 50%;
   transform: translateY(-50%) translateX(20px);
   width: 320px;
@@ -103,7 +106,7 @@
 :global(.swiper-slide-active) .slideContent {
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(-50%) translateX(0px);
+  transform: translateY(0%) translateX(0px);
 }
 
 .productName {
@@ -157,8 +160,9 @@
   font-weight: 700;
   letter-spacing: 1px;
   cursor: pointer;
-  z-index: 50; /* over swiper */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 50;
+  /* over swiper */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: background-color 0.2s, transform 0.2s;
   display: flex;
   align-items: center;
@@ -166,7 +170,8 @@
 }
 
 .navBtn:disabled {
-  opacity: 0; pointer-events: none;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .navBtn:hover {
@@ -175,7 +180,8 @@
 }
 
 .prevBtn {
-  left: calc(15% - 25px); /* Perfectly aligns over the left-most bottle in a 1400px container */
+  left: calc(15% - 25px);
+  /* Perfectly aligns over the left-most bottle in a 1400px container */
 }
 
 .nextBtn {
@@ -207,13 +213,15 @@
 }
 
 @media (max-width: 1024px) {
-  .navBtn { display: none; }
-  
+  .navBtn {
+    display: none;
+  }
+
   .slide {
     flex-direction: column;
     padding-top: 20px;
   }
-  
+
   .bottleWrapper {
     height: 60%;
   }
@@ -232,7 +240,12 @@
     transform: translateY(0px);
     margin-left: 0;
   }
-  
-  .productName { font-size: 22px; }
-  .productDescription { font-size: 10px; }
+
+  .productName {
+    font-size: 22px;
+  }
+
+  .productDescription {
+    font-size: 10px;
+  }
 }
