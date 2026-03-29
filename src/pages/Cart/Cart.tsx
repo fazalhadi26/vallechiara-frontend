@@ -1,5 +1,8 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useDisclosure } from '@chakra-ui/react';
 import { useCart } from '../../context/CartContext';
+import ConfirmationModal from '../../components/ConfirmationModal/ConfirmationModal';
 import styles from './Cart.module.css';
 
 export default function Cart() {
@@ -13,6 +16,30 @@ export default function Cart() {
     vat, 
     totalToPay 
   } = useCart();
+
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
+
+  const handleDecreaseQuantity = (id: string, currentQty: number) => {
+    if (currentQty === 1) {
+      setSelectedItemId(id);
+      onOpen();
+    } else {
+      updateQuantity(id, -1);
+    }
+  };
+
+  const handleRemoveClick = (id: string) => {
+    setSelectedItemId(id);
+    onOpen();
+  };
+
+  const confirmRemove = () => {
+    if (selectedItemId) {
+      removeFromCart(selectedItemId);
+      setSelectedItemId(null);
+    }
+  };
 
   if (cartItems.length === 0) {
     return (
@@ -43,7 +70,7 @@ export default function Cart() {
               </div>
 
               <div className={styles.quantitySelector}>
-                <button className={styles.qtyBtn} onClick={() => updateQuantity(item.id, -1)}>−</button>
+                <button className={styles.qtyBtn} onClick={() => handleDecreaseQuantity(item.id, item.quantity)}>−</button>
                 <span className={styles.qtyValue}>{item.quantity}</span>
                 <button className={styles.qtyBtn} onClick={() => updateQuantity(item.id, 1)}>+</button>
               </div>
@@ -52,7 +79,7 @@ export default function Cart() {
                 AED {(item.price * item.quantity).toFixed(2)}
               </div>
 
-              <button className={styles.removeBtn} onClick={() => removeFromCart(item.id)} aria-label="Remove item">
+              <button className={styles.removeBtn} onClick={() => handleRemoveClick(item.id)} aria-label="Remove item">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
               </button>
             </div>
@@ -120,9 +147,19 @@ export default function Cart() {
             <span className={styles.finalValue}>AED {totalToPay.toFixed(2)}</span>
           </div>
 
-          <button className={styles.checkoutBtn}>CHECKOUT</button>
-        </div>
+        <button className={styles.checkoutBtn}>CHECKOUT</button>
       </div>
     </div>
-  );
+
+    <ConfirmationModal
+      isOpen={isOpen}
+      onClose={onClose}
+      onConfirm={confirmRemove}
+      title="Remove Item"
+      message="Do you want to remove this item from cart?"
+      confirmLabel="Yes"
+      cancelLabel="Cancel"
+    />
+  </div>
+);
 }
