@@ -220,9 +220,9 @@
   }
 
   .subscribeBtnMobile {
-    border: 1.5px solid #005668;
-    color: #005668;
-    padding: 7px 14px;
+    background-color: #005668;
+    color: #ffffff;
+    padding: 8px 14px;
     font-size: 10px;
     font-weight: 800;
     border-radius: 4px;
@@ -283,6 +283,11 @@
   .buyNowBtn,
   .subscribeBtn {
     width: 100%;
+    background-color: #005668;
+    color: #ffffff;
+    border: none;
+    padding: 16px;
+    height: auto;
     /* Make buttons full width on small screens */
   }
 }
