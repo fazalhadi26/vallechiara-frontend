@@ -214,13 +214,13 @@
     height: 38px;
     background-color: rgba(255, 255, 255, 0.9);
   }
-  .prevBtn { left: 5px; }
-  .nextBtn { right: 5px; }
+  .prevBtn { left: 10px; }
+  .nextBtn { right: 10px; }
 
   .slideContentWrapper {
     flex-direction: column;
     text-align: center;
-    padding: 0 20px;
+    padding: 0 10px;
     gap: 15px;
   }
   .textColumn {
