@@ -280,7 +280,10 @@
     margin-top: 20px;
   }
 
-  .buyNowBtn,
+  .buyNowBtn {
+    display: none;
+  }
+
   .subscribeBtn {
     width: 100%;
     background-color: #005668;
@@ -288,7 +291,7 @@
     border: none;
     padding: 16px;
     height: auto;
-    /* Make buttons full width on small screens */
+    /* Special prominence in mobile menu */
   }
 }
 
