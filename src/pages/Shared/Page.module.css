@@ -21,3 +21,10 @@
   max-width: 600px;
   line-height: 1.6;
 }
+
+/* Mobile Padding Reset (Affects all pages) */
+@media (max-width: 600px) {
+  .pageContainer {
+    padding: 140px 10px 25px 8px !important;
+  }
+}
