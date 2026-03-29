@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
 import styles from './Login.module.css';
 import pageStyles from '../../Shared/Page.module.css';
 
 export default function Login() {
-  // Let's keep initial if they want the two buttons first, or we can use it.
   const [loginMethod, setLoginMethod] = useState<'initial' | 'email' | 'otp'>('initial');
+  const [showPassword, setShowPassword] = useState(false);
 
   return (
     <div className={`${pageStyles.pageContainer} ${styles.loginPageBg}`}>
@@ -49,7 +50,22 @@ export default function Login() {
             
             <div className={styles.inputGroup}>
               <label>Password</label>
-              <input type="password" placeholder="Enter password" className={styles.formInput} required />
+              <div className={styles.passwordWrapper}>
+                <input 
+                  type={showPassword ? "text" : "password"} 
+                  placeholder="Enter password" 
+                  className={styles.formInput} 
+                  required 
+                />
+                <button 
+                  type="button" 
+                  className={styles.eyeBtn}
+                  onClick={() => setShowPassword(!showPassword)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
+                >
+                  {showPassword ? <FiEyeOff size={18} /> : <FiEye size={18} />}
+                </button>
+              </div>
             </div>
 
             <div className={styles.formExtra}>

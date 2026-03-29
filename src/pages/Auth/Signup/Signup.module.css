@@ -168,6 +168,32 @@
   box-shadow: 0 0 0 4px rgba(15, 43, 51, 0.1);
 }
 
+.passwordWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  transition: color 0.2s ease;
+  z-index: 2;
+}
+
+.eyeBtn:hover {
+  color: var(--secondary, #0f2b33);
+}
+
 .selectInput {
   appearance: none;
   cursor: pointer;

@@ -1,9 +1,13 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiChevronDown } from 'react-icons/fi';
+import { FiChevronDown, FiEye, FiEyeOff } from 'react-icons/fi';
 import styles from './Signup.module.css';
 import pageStyles from '../../Shared/Page.module.css';
 
 export default function Signup() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+
   return (
     <div className={`${pageStyles.pageContainer} ${styles.loginPageBg}`}>
       <h1 className={`${pageStyles.pageTitle} ${styles.loginTitle}`}>SIGN UP</h1>
@@ -87,12 +91,42 @@ export default function Signup() {
 
           <div className={styles.inputGroup}>
             <label>Password</label>
-            <input type="password" placeholder="Create a strong password" className={styles.formInput} required />
+            <div className={styles.passwordWrapper}>
+              <input 
+                type={showPassword ? "text" : "password"} 
+                placeholder="Create a strong password" 
+                className={styles.formInput} 
+                required 
+              />
+              <button 
+                type="button" 
+                className={styles.eyeBtn}
+                onClick={() => setShowPassword(!showPassword)}
+                aria-label={showPassword ? "Hide password" : "Show password"}
+              >
+                {showPassword ? <FiEyeOff size={20} /> : <FiEye size={20} />}
+              </button>
+            </div>
           </div>
 
           <div className={styles.inputGroup}>
             <label>Confirm Password</label>
-            <input type="password" placeholder="Confirm your password" className={styles.formInput} required />
+            <div className={styles.passwordWrapper}>
+              <input 
+                type={showConfirmPassword ? "text" : "password"} 
+                placeholder="Confirm your password" 
+                className={styles.formInput} 
+                required 
+              />
+              <button 
+                type="button" 
+                className={styles.eyeBtn}
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                aria-label={showConfirmPassword ? "Hide password" : "Show password"}
+              >
+                {showConfirmPassword ? <FiEyeOff size={20} /> : <FiEye size={20} />}
+              </button>
+            </div>
           </div>
 
           <div className={styles.formExtra}>
