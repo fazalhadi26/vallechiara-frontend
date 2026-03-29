@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import styles from './Header.module.css';
 import { useCart } from '../../context/CartContext';
+import logoImg from '../../assets/logo.svg';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -23,11 +24,9 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
-      {/* ... previous logo ... */}
+      {/* Official Image Logo branding */}
       <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className={styles.logoContainer}>
-        <span className={styles.logoTop}>ITALIAN SPRING WATER</span>
-        <span className={styles.logoMain}>VALLECHIARA</span>
-        <span className={styles.logoBottom}>SINCE 1833</span>
+        <img src={logoImg} alt="Vallechiara Logo" className={styles.logoImage} />
       </Link>
 
       <div className={`${styles.menuContainer} ${isMobileMenuOpen ? styles.mobileOpen : ''}`}>
@@ -65,6 +64,11 @@ export default function Header() {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
           </button>
         </div>
+      </div>
+
+      <div className={styles.mobileNavActions}>
+        <Link to="/shop" onClick={() => setIsMobileMenuOpen(false)} className={styles.buyNowBtnMobile}>Buy Now</Link>
+        <Link to="/subscribe" onClick={() => setIsMobileMenuOpen(false)} className={styles.subscribeBtnMobile}>Subscribe</Link>
       </div>
 
       <button className={styles.hamburger} onClick={toggleMenu} aria-label="Toggle Navigation">
