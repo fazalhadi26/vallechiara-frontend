@@ -213,18 +213,35 @@
   .slideContentWrapper {
     flex-direction: column;
     text-align: center;
-    padding: 0 40px;
-    gap: 20px;
+    padding: 0 20px;
+    gap: 15px;
   }
   .textColumn {
     align-items: center;
     text-align: center;
   }
+  .productName {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  .productDescription {
+    font-size: 13px;
+    margin-bottom: 25px;
+    padding: 0 10px;
+  }
   .actionsBlock {
-    justify-content: center;
+    flex-direction: column;
     width: 100%;
+    gap: 12px;
+  }
+  .subscribeBtn, .buyNowBtn {
+    width: 100%;
+    padding: 16px;
   }
   .bottleImg {
-    height: 320px;
+    height: 280px;
+  }
+  .imageColumn {
+    min-height: 300px;
   }
 }
