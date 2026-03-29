@@ -7,12 +7,14 @@ import InsideTheSource from './pages/InsideTheSource/InsideTheSource';
 import WCT from './pages/WCT/WCT';
 import Support from './pages/Support/Support';
 import Subscribe from './pages/Subscribe/Subscribe';
+import Login from './pages/Login/Login';
 
 function App() {
   return (
     <Router>
       <Routes>
         <Route path="/" element={<MainLayout />}>
+          <Route path="login" element={<Login />} />
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />} />
           <Route path="our-story" element={<OurStory />} />

@@ -1,0 +1,344 @@
+.loginPageBg {
+  background-color: #ffffff !important;
+}
+
+.simpleLoginCard {
+  width: 100%;
+  max-width: 400px;
+  margin-top: 2rem;
+  /* Removed background, border-radius, border, and padding logic per user's earlier removal */
+  background-color: transparent;
+  padding: 1rem 0;
+}
+
+.loginBtn {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  background: #f8fafc;
+  font-family: var(--font-sans), sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--secondary, #0f2b33);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.loginBtn:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.loginBtn:active {
+  transform: translateY(0);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 20px;
+  height: 20px;
+  color: var(--primary, #5e9eae);
+}
+
+.createAccount {
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  color: #64748b;
+}
+
+.createAccount a {
+  color: var(--primary, #5e9eae);
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.createAccount a:hover {
+  color: var(--secondary, #0f2b33);
+  text-decoration: underline;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #e2e8f0;
+}
+
+.divider span {
+  margin: 0 1rem;
+  font-size: 0.85rem;
+  color: #94a3b8;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.socialBtn {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.socialBtn:hover {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.socialBtn img {
+  width: 24px;
+  height: 24px;
+}
+
+/* New Forms CSS */
+.fadeEnter {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.formHeader {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.formHeader h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--secondary, #0f2b33);
+  font-family: var(--font-sans), sans-serif;
+  margin: 0;
+}
+
+.backBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #64748b;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.backBtn:hover {
+  background: #f1f5f9;
+  color: var(--secondary, #0f2b33);
+}
+
+.backBtn svg {
+  width: 24px;
+  height: 24px;
+}
+
+.formDesc {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-top: -0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.inputGroup label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.formInput {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-family: inherit;
+  color: var(--text-dark, #2a3b45);
+  background-color: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.formInput::placeholder {
+  color: #cbd5e1;
+}
+
+.formInput:focus {
+  outline: none;
+  border-color: var(--primary, #5e9eae);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(94, 158, 174, 0.15);
+}
+
+.formExtra {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.rememberChk {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-left: 1.75rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #475569;
+  user-select: none;
+}
+
+.rememberChk input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.chkBox {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 18px;
+  width: 18px;
+  background-color: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.rememberChk:hover input ~ .chkBox {
+  border-color: var(--primary, #5e9eae);
+}
+
+.rememberChk input:checked ~ .chkBox {
+  background-color: var(--primary, #5e9eae);
+  border-color: var(--primary, #5e9eae);
+}
+
+.chkBox:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 6px;
+  top: 2px;
+  width: 4px;
+  height: 9px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.rememberChk input:checked ~ .chkBox:after {
+  display: block;
+}
+
+.forgotPwd {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--primary, #5e9eae);
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.forgotPwd:hover {
+  color: var(--secondary, #0f2b33);
+  text-decoration: underline;
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 1rem;
+  background-color: var(--secondary, #0f2b33);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submitBtn:hover {
+  background-color: var(--primary, #5e9eae);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 15px -3px rgba(15, 43, 51, 0.15);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
+
+.secondarySubmitBtn {
+  width: 100%;
+  padding: 0.875rem;
+  background-color: transparent;
+  color: var(--secondary, #0f2b33);
+  border: 1px solid var(--secondary, #0f2b33);
+  border-radius: 0.75rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.secondarySubmitBtn:hover {
+  background-color: #f8fafc;
+  border-color: var(--primary, #5e9eae);
+  color: var(--primary, #5e9eae);
+}
+
+.mt4 {
+  margin-top: 1.5rem;
+}
