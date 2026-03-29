@@ -4,11 +4,11 @@
 
 .loginTitle {
   font-family: var(--font-serif, 'Playfair Display', serif) !important;
-  font-size: 36px !important;
+  font-size: 26px !important;
   letter-spacing: 2px !important;
   text-transform: uppercase;
   color: var(--secondary, #0f2b33) !important;
-  margin-bottom: 2rem !important;
+  margin-bottom: 0rem !important;
 }
 
 .simpleLoginCard {
@@ -95,13 +95,27 @@
 }
 
 @keyframes fadeInDown {
-  from { opacity: 0; transform: translateY(-10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .formDesc {
@@ -191,11 +205,11 @@
   transition: all 0.2s ease;
 }
 
-.rememberChk:hover input ~ .chkBox {
+.rememberChk:hover input~.chkBox {
   border-color: var(--secondary, #0f2b33);
 }
 
-.rememberChk input:checked ~ .chkBox {
+.rememberChk input:checked~.chkBox {
   background-color: var(--secondary, #0f2b33);
   border-color: var(--secondary, #0f2b33);
 }
@@ -213,7 +227,7 @@
   transform: rotate(45deg);
 }
 
-.rememberChk input:checked ~ .chkBox:after {
+.rememberChk input:checked~.chkBox:after {
   display: block;
 }
 
@@ -345,7 +359,7 @@
   background: #f9fafb;
   border-color: #d1d5db;
   transform: translateY(-2px);
-  box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
 }
 
 .socialBtn:active {

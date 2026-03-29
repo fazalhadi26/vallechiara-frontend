@@ -9,7 +9,7 @@ export default function Login() {
 
   return (
     <div className={`${pageStyles.pageContainer} ${styles.loginPageBg}`}>
-      <h1 className={pageStyles.pageTitle}>SIGN IN</h1>
+      <h1 className={`${pageStyles.pageTitle} ${styles.loginTitle}`}>SIGN IN</h1>
       
       <div className={styles.simpleLoginCard}>
         
