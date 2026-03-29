@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useDisclosure } from '@chakra-ui/react';
+import { useNavigate } from 'react-router-dom';
 import styles from './Shop.module.css';
 import s1 from '../../assets/s-1.png';
 import s2 from '../../assets/s-2.png';
@@ -82,6 +83,7 @@ const shopData = [
 export default function Shop() {
   const { cartItems, addToCart, updateQuantity, removeFromCart } = useCart();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate();
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
   const [hoveredProductId, setHoveredProductId] = useState<string | null>(null);
 
@@ -155,53 +157,59 @@ export default function Shop() {
                       <div className={styles.productPrice}>{product.priceStr}</div>
                       <p className={styles.productSubtitle}>{product.subtitle}</p>
 
-                      <div className={`${styles.actions} ${product.isOutOfStock ? styles.disabledActions : ''}`}>
-                        {!isInCart ? (
-                          <button className={styles.buyNowBtn} onClick={() => handleBuyNow(product)}>BUY NOW</button>
-                        ) : (
-                          <div 
-                            className={`${styles.cartActionWrapper} ${hoveredProductId === product.id ? styles.isExpanded : ''}`}
-                            onMouseEnter={() => setHoveredProductId(product.id)}
-                            onMouseLeave={() => setHoveredProductId(null)}
-                          >
-                            <div className={styles.iconLayer}>
-                              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.cartIcon}>
-                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-                                <line x1="3" y1="6" x2="21" y2="6" />
-                                <path d="M16 10a4 4 0 0 1-8 0" />
-                              </svg>
-                              <span className={styles.iconBadge}>{cartItem.quantity}</span>
-                            </div>
+                        <div className={styles.actions}>
+                          {!isInCart ? (
+                            <button 
+                              className={`${styles.buyNowBtn} ${product.isOutOfStock ? styles.disabledBuyNow : ''}`} 
+                              onClick={() => !product.isOutOfStock && handleBuyNow(product)}
+                              disabled={product.isOutOfStock}
+                            >
+                              BUY NOW
+                            </button>
+                          ) : (
+                            <div 
+                              className={`${styles.cartActionWrapper} ${hoveredProductId === product.id ? styles.isExpanded : ''}`}
+                              onMouseEnter={() => setHoveredProductId(product.id)}
+                              onMouseLeave={() => setHoveredProductId(null)}
+                            >
+                              <div className={styles.iconLayer}>
+                                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.cartIcon}>
+                                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                                  <line x1="3" y1="6" x2="21" y2="6" />
+                                  <path d="M16 10a4 4 0 0 1-8 0" />
+                                </svg>
+                                <span className={styles.iconBadge}>{cartItem.quantity}</span>
+                              </div>
 
-                            <div className={styles.qtyLayer}>
-                              <button 
-                                className={styles.qtyBtn} 
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  handleDecreaseQuantity(product.id, cartItem.quantity);
-                                }}
-                              >
-                                {cartItem.quantity === 1 ? (
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                                ) : (
-                                  <>&#8722;</>
-                                )}
-                              </button>
-                              <span className={styles.qtyValue}>{cartItem.quantity}</span>
-                              <button 
-                                className={styles.qtyBtn} 
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  updateQuantity(product.id, 1);
-                                }}
-                              >
-                                &#43;
-                              </button>
+                              <div className={styles.qtyLayer}>
+                                <button 
+                                  className={styles.qtyBtn} 
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    handleDecreaseQuantity(product.id, cartItem.quantity);
+                                  }}
+                                >
+                                  {cartItem.quantity === 1 ? (
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                                  ) : (
+                                    <>&#8722;</>
+                                  )}
+                                </button>
+                                <span className={styles.qtyValue}>{cartItem.quantity}</span>
+                                <button 
+                                  className={styles.qtyBtn} 
+                                  onClick={(e) => {
+                                    e.stopPropagation();
+                                    updateQuantity(product.id, 1);
+                                  }}
+                                >
+                                  &#43;
+                                </button>
+                              </div>
                             </div>
-                          </div>
-                        )}
-                        <button className={styles.subscribeBtn}>SUBSCRIBE</button>
-                      </div>
+                          )}
+                          <button className={styles.subscribeBtn} onClick={() => navigate('/subscribe')}>SUBSCRIBE</button>
+                        </div>
                     </div>
                   </div>
                 );

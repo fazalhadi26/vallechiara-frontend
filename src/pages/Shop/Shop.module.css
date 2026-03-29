@@ -320,6 +320,12 @@
   background: rgba(0, 86, 104, 0.05);
 }
 
+.disabledBuyNow {
+  opacity: 0.3;
+  pointer-events: none;
+  filter: grayscale(0.7);
+}
+
 .subscribeBtn {
   background: #005668;
   border: 1px solid #005668;
