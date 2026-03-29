@@ -32,7 +32,7 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
 }) => {
   return (
     <Modal isOpen={isOpen} onClose={onClose} isCentered motionPreset="slideInBottom">
-      <ModalOverlay bg="blackAlpha.300" backdropFilter="blur(5px)" />
+      <ModalOverlay bg="rgba(0, 0, 0, 0.7)" />
       <ModalContent borderRadius="20px" p={4}>
         <ModalHeader fontWeight="700" color="#2D3748">{title}</ModalHeader>
         <ModalCloseButton borderRadius="full" />
