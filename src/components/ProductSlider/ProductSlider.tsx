@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
 import { useCart } from '../../context/CartContext';
-import { useNavigate } from 'react-router-dom';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -40,8 +39,8 @@ const products = [
 
 export default function ProductSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const { addToCart } = useCart();
-  const navigate = useNavigate();
+  const [hoveredProductId, setHoveredProductId] = useState<string | null>(null);
+  const { cartItems, addToCart, updateQuantity } = useCart();
 
   const handleBuyNow = (product: any) => {
     addToCart({
@@ -51,7 +50,10 @@ export default function ProductSlider() {
       quantity: 1,
       image: product.image
     });
-    // navigate('/cart'); // Removed redirection
+  };
+
+  const getCartItem = (id: string) => {
+    return cartItems.find(item => item.id === id);
   };
 
   return (
@@ -75,35 +77,84 @@ export default function ProductSlider() {
           onSlideChange={(swiper: SwiperType) => setActiveIndex(swiper.realIndex)}
           className={styles.swiperWrapper}
         >
-          {products.map((product) => (
-            <SwiperSlide key={product.id} className={styles.swiperSlide}>
-              <div className={styles.slideContentWrapper}>
-                
-                {/* Left side: Image presentation */}
-                <div className={styles.imageColumn}>
-                  <img src={product.image} alt={product.name} className={styles.bottleImg} />
-                  <div className={styles.shadowBase} />
-                </div>
+          {products.map((product) => {
+            const cartItem = getCartItem(product.id);
+            const isInCart = !!cartItem;
 
-                {/* Right side: Informational Text Data */}
-                <div className={styles.textColumn}>
-                  <h2 className={styles.productName}>{product.name}</h2>
-                  <p className={styles.productDescription}>{product.description}</p>
+            return (
+              <SwiperSlide key={product.id} className={styles.swiperSlide}>
+                <div className={styles.slideContentWrapper}>
                   
-                  <div className={styles.priceContainer}>
-                    <span className={styles.priceLabel}>Starts from</span>
-                    <span className={styles.priceValue}>{product.priceStr}</span>
+                  {/* Left side: Image presentation */}
+                  <div className={styles.imageColumn}>
+                    <img src={product.image} alt={product.name} className={styles.bottleImg} />
+                    <div className={styles.shadowBase} />
                   </div>
 
-                  <div className={styles.actionsBlock}>
-                    <button className={styles.subscribeBtn}>SUBSCRIBE</button>
-                    <button className={styles.buyNowBtn} onClick={() => handleBuyNow(product)}>BUY NOW</button>
+                  {/* Right side: Informational Text Data */}
+                  <div className={styles.textColumn}>
+                    <h2 className={styles.productName}>{product.name}</h2>
+                    <p className={styles.productDescription}>{product.description}</p>
+                    
+                    <div className={styles.priceContainer}>
+                      <span className={styles.priceLabel}>Starts from</span>
+                      <span className={styles.priceValue}>{product.priceStr}</span>
+                    </div>
+
+                    <div className={styles.actionsBlock}>
+                      <button className={styles.subscribeBtn}>SUBSCRIBE</button>
+
+                      {!isInCart ? (
+                        <button className={styles.buyNowBtn} onClick={() => handleBuyNow(product)}>
+                          BUY NOW
+                        </button>
+                      ) : (
+                        <div 
+                          className={styles.cartActionWrapper}
+                          onMouseEnter={() => setHoveredProductId(product.id)}
+                          onMouseLeave={() => setHoveredProductId(null)}
+                        >
+                          {hoveredProductId === product.id ? (
+                            <div className={styles.qtyControl}>
+                              <button 
+                                className={styles.qtyBtn} 
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  updateQuantity(product.id, -1);
+                                }}
+                              >
+                                &#8722;
+                              </button>
+                              <span className={styles.qtyValue}>{cartItem.quantity}</span>
+                              <button 
+                                className={styles.qtyBtn} 
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  updateQuantity(product.id, 1);
+                                }}
+                              >
+                                &#43;
+                              </button>
+                            </div>
+                          ) : (
+                            <div className={styles.cartIconWrapper}>
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.cartIcon}>
+                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                                <line x1="3" y1="6" x2="21" y2="6" />
+                                <path d="M16 10a4 4 0 0 1-8 0" />
+                              </svg>
+                              <span className={styles.iconBadge}>{cartItem.quantity}</span>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
                   </div>
+
                 </div>
-
-              </div>
-            </SwiperSlide>
-          ))}
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
         
         <button className={`custom-next ${styles.navBtn} ${styles.nextBtn}`}>

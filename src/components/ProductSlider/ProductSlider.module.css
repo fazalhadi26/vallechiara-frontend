@@ -136,6 +136,95 @@
   background-color: #004554;
 }
 
+.cartActionWrapper {
+  width: 150px; /* Consistently match Buy Now button width */
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.cartIconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 150px; /* Matched to Buy Now and Qty Control width */
+  height: 46px;
+  background-color: #005668;
+  color: #fff;
+  border-radius: 20px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.cartIcon {
+  stroke-width: 2.5;
+}
+
+.iconBadge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #00222a;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  height: 20px;
+  min-width: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+.qtyControl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 150px;
+  height: 46px;
+  background-color: #005668;
+  border-radius: 23px;
+  padding: 0 10px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.qtyBtn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.qtyBtn:hover {
+  transform: scale(1.2);
+}
+
+.qtyValue {
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 700;
+  min-width: 20px;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 /* Nav Buttons strictly bound to left and right extremities */
 .navBtn {
   position: absolute;
