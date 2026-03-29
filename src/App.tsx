@@ -8,6 +8,7 @@ import WCT from './pages/WCT/WCT';
 import Support from './pages/Support/Support';
 import Subscribe from './pages/Subscribe/Subscribe';
 import Login from './pages/Auth/Login/Login';
+import Signup from './pages/Auth/Signup/Signup';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route path="login" element={<Login />} />
+          <Route path="register" element={<Signup />} />
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />} />
           <Route path="our-story" element={<OurStory />} />
