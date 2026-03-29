@@ -343,6 +343,9 @@
 }
 
 @media (max-width: 1200px) {
+  .shopContainer {
+    padding-top: 140px;
+  }
   .categoryRow {
     flex-direction: column;
     align-items: center;
@@ -358,6 +361,7 @@
   .categoryTitle {
     flex-direction: row;
     justify-content: center;
+    font-size: 32px;
   }
   .categoryVLogo {
     display: none;
@@ -365,25 +369,48 @@
 }
 
 @media (max-width: 900px) {
+  .shopContainer {
+    padding: 120px 20px 80px 20px;
+  }
+  .shopWrapper {
+    gap: 80px;
+  }
   .productsGrid {
     flex-direction: column;
     width: 100%;
-    max-width: 450px;
+    max-width: 500px;
+    gap: 20px;
   }
   .card {
     width: 100%;
+    padding: 25px 20px;
   }
 }
 
 @media (max-width: 480px) {
+  .categoryTitle {
+    font-size: 26px;
+    flex-wrap: wrap;
+    text-align: center;
+  }
   .productTitle {
     font-size: 16px;
   }
   .productPrice {
     font-size: 20px;
   }
+  .actions {
+    gap: 8px;
+  }
   .buyNowBtn, .subscribeBtn, .cartActionWrapper {
     font-size: 10px;
-    padding: 12px 0;
+    padding: 12px 5px;
+    letter-spacing: 0.5px;
+  }
+  .imageWrapper {
+    height: 200px;
+  }
+  .iconBadge {
+    right: 2px;
   }
 }
