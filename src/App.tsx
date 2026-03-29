@@ -9,10 +9,12 @@ import Support from './pages/Support/Support';
 import Subscribe from './pages/Subscribe/Subscribe';
 import Login from './pages/Auth/Login/Login';
 import Signup from './pages/Auth/Signup/Signup';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route path="login" element={<Login />} />
