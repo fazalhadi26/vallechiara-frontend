@@ -139,22 +139,23 @@
 .cartActionWrapper {
   width: 46px;
   height: 46px;
-  background-color: #005668;
-  color: #fff;
+  background-color: transparent; /* Default transparent */
+  border: 1.5px solid #005668; /* Default dark border */
+  color: #005668; /* Default dark icon */
   border-radius: 6px;
-  /* Start as circle/round */
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-radius 0.3s;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cartActionWrapper.isExpanded {
   width: 150px;
-  border-radius: 6px;
+  background-color: #005668; /* Solid on hover */
+  color: #ffffff; /* White text on hover */
 }
 
 .iconLayer {
