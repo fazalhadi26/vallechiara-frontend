@@ -37,29 +37,29 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [cartItems]);
 
   const addToCart = (product: CartItem) => {
-    setCartItems(prev => {
-      const existing = prev.find(item => item.id === product.id);
-      if (existing) {
-        toast({
-          title: "Already in cart",
-          description: `${product.name} is already in your cart.`,
-          status: "info",
-          duration: 3000,
-          isClosable: true,
-          position: "top-right",
-        });
-        return prev;
-      }
+    const isExisting = cartItems.find(item => item.id === product.id);
 
+    if (isExisting) {
       toast({
-        title: "Product Added",
-        description: `${product.name} has been added to your cart.`,
-        status: "success",
-        duration: 3000,
+        title: "Already in cart",
+        description: `${product.name} is already in your cart.`,
+        status: "info",
+        duration: 2000,
         isClosable: true,
         position: "top-right",
       });
-      return [...prev, { ...product, quantity: 1 }];
+      return;
+    }
+
+    setCartItems(prev => [...prev, { ...product, quantity: 1 }]);
+    
+    toast({
+      title: "Product Added",
+      description: `${product.name} has been added to your cart.`,
+      status: "success",
+      duration: 2000,
+      isClosable: true,
+      position: "top-right",
     });
   };
 
