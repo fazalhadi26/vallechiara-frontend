@@ -19,7 +19,7 @@
 
 .swiperWrapper {
   width: 100%;
-  max-width: 950px; 
+  max-width: 950px;
   overflow: hidden;
 }
 
@@ -61,7 +61,7 @@
   bottom: 0px;
   width: 120px;
   height: 16px;
-  background: radial-gradient(ellipse at center, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 70%);
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0) 70%);
   border-radius: 50%;
   z-index: 1;
 }
@@ -116,7 +116,8 @@
   gap: 15px;
 }
 
-.subscribeBtn, .buyNowBtn {
+.subscribeBtn,
+.buyNowBtn {
   background-color: #005668;
   color: #fff;
   border: none;
@@ -130,7 +131,8 @@
   letter-spacing: 0.5px;
 }
 
-.subscribeBtn:hover, .buyNowBtn:hover {
+.subscribeBtn:hover,
+.buyNowBtn:hover {
   background-color: #004554;
 }
 
@@ -195,27 +197,46 @@
     width: 45px;
     height: 45px;
   }
-  .prevBtn { left: 10px; }
-  .nextBtn { right: 10px; }
-  
+
+  .prevBtn {
+    left: 10px;
+  }
+
+  .nextBtn {
+    right: 10px;
+  }
+
   .slideContentWrapper {
     max-width: 800px;
     margin: 0 auto;
     gap: 40px;
   }
-  .productName { font-size: 32px; }
+
+  .productName {
+    font-size: 32px;
+  }
 }
 
 @media (max-width: 768px) {
+  .sliderSection {
+    padding: 0px 20px 80px 20px;
+  }
+
   .navBtn {
     display: flex;
-    top: 150px; 
+    top: 150px;
     width: 38px;
     height: 38px;
     background-color: rgba(255, 255, 255, 0.9);
   }
-  .prevBtn { left: 10px; }
-  .nextBtn { right: 10px; }
+
+  .prevBtn {
+    left: 10px;
+  }
+
+  .nextBtn {
+    right: 10px;
+  }
 
   .slideContentWrapper {
     flex-direction: column;
@@ -223,31 +244,39 @@
     padding: 0 10px;
     gap: 15px;
   }
+
   .textColumn {
     align-items: center;
     text-align: center;
   }
+
   .productName {
     font-size: 28px;
     margin-bottom: 12px;
   }
+
   .productDescription {
     font-size: 13px;
     margin-bottom: 25px;
     padding: 0 10px;
   }
+
   .actionsBlock {
     flex-direction: column;
     width: 100%;
     gap: 12px;
   }
-  .subscribeBtn, .buyNowBtn {
+
+  .subscribeBtn,
+  .buyNowBtn {
     width: 100%;
     padding: 16px;
   }
+
   .bottleImg {
     height: 280px;
   }
+
   .imageColumn {
     min-height: 300px;
   }
