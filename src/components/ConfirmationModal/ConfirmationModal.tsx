@@ -42,26 +42,32 @@ const ConfirmationModal: React.FC<ConfirmationModalProps> = ({
           </Text>
         </ModalBody>
 
-        <ModalFooter gap={3}>
+        <ModalFooter gap={4} pb={6}>
           <Button 
-            variant="ghost" 
+            flex="1"
+            variant="outline" 
+            borderColor="#E2E8F0"
+            bg="transparent"
             onClick={onClose} 
             borderRadius="full" 
-            px={8}
-            _hover={{ bg: 'gray.100' }}
+            height="48px"
+            fontWeight="600"
+            _hover={{ bg: 'gray.50' }}
           >
             {cancelLabel}
           </Button>
           <Button
-            bg="#0066FF"
+            flex="1"
+            bg="#0f2b33"
             color="white"
             onClick={() => {
               onConfirm();
               onClose();
             }}
             borderRadius="full"
-            px={8}
-            _hover={{ bg: '#0052CC', transform: 'translateY(-1px)' }}
+            height="48px"
+            fontWeight="600"
+            _hover={{ bg: '#091c21', transform: 'translateY(-1px)' }}
             transition="all 0.2s"
           >
             {confirmLabel}
