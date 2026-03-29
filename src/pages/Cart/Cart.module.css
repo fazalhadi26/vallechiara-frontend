@@ -331,16 +331,16 @@
 
 @media (max-width: 600px) {
   .cartPage {
-    padding: 80px 15px 40px;
+    padding: 110px 15px 40px;
   }
-  
+
   .titleSection h1 {
     font-size: 28px;
   }
 
   .cartItem {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
       "image info remove"
       "image qty price";
     grid-template-columns: 80px 1fr auto;
