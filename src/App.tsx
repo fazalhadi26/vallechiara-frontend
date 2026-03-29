@@ -7,7 +7,7 @@ import InsideTheSource from './pages/InsideTheSource/InsideTheSource';
 import WCT from './pages/WCT/WCT';
 import Support from './pages/Support/Support';
 import Subscribe from './pages/Subscribe/Subscribe';
-import Login from './pages/Login/Login';
+import Login from './pages/Auth/Login/Login';
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './Login.module.css';
-import pageStyles from '../Shared/Page.module.css';
+import pageStyles from '../../Shared/Page.module.css';
 
 export default function Login() {
   // Let's keep initial if they want the two buttons first, or we can use it.
