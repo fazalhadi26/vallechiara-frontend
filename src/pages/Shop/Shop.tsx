@@ -6,7 +6,7 @@ import s4 from '../../assets/s-4.png';
 import s5 from '../../assets/s-5.png';
 import s6 from '../../assets/s-6.png';
 import { useCart } from '../../context/CartContext';
-import { useNavigate } from 'react-router-dom';
+
 
 const shopData = [
   {
@@ -79,7 +79,6 @@ const shopData = [
 
 export default function Shop() {
   const { addToCart } = useCart();
-  const navigate = useNavigate();
 
   const handleBuyNow = (product: any) => {
     if (product.isOutOfStock) return;
@@ -90,7 +89,7 @@ export default function Shop() {
       quantity: 1,
       image: product.image
     });
-    navigate('/cart');
+    // navigate('/cart'); // Removed redirection
   };
 
   return (
@@ -98,7 +97,7 @@ export default function Shop() {
       <div className={styles.shopWrapper}>
         {shopData.map((category, index) => (
           <div key={index} className={styles.categoryRow}>
-            
+
             {/* Sticky Left Column Category Heading */}
             <div className={styles.categoryHeader}>
               <h2 className={`${styles.categoryTitle} ${category.logoColor === "green" ? styles.greenText : styles.blueText}`}>
@@ -113,20 +112,20 @@ export default function Shop() {
             <div className={styles.productsGrid}>
               {category.products.map(product => (
                 <div key={product.id} className={styles.card}>
-                  
+
                   <div className={styles.imageWrapper}>
                     <img src={product.image} alt={product.title} className={styles.bottleImg} />
                     <div className={styles.shadowBase} />
                   </div>
 
                   <div className={styles.contentWrapper}>
-                    
+
                     <div className={styles.badgeWrap}>
                       {product.isOutOfStock && (
                         <span className={styles.outOfStockBadge}>OUT OF STOCK</span>
                       )}
                     </div>
-                    
+
                     <h3 className={styles.productTitle}>{product.title}</h3>
                     <div className={styles.productPrice}>{product.priceStr}</div>
                     <p className={styles.productSubtitle}>{product.subtitle}</p>
@@ -140,7 +139,7 @@ export default function Shop() {
                 </div>
               ))}
             </div>
-            
+
           </div>
         ))}
       </div>

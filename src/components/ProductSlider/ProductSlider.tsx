@@ -51,7 +51,7 @@ export default function ProductSlider() {
       quantity: 1,
       image: product.image
     });
-    navigate('/cart');
+    // navigate('/cart'); // Removed redirection
   };
 
   return (
