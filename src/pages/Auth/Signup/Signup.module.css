@@ -168,6 +168,37 @@
   box-shadow: 0 0 0 4px rgba(15, 43, 51, 0.1);
 }
 
+.selectInput {
+  appearance: none;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22none%22%20stroke%3D%22%236b7280%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%2F%3E%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 16px;
+  padding-right: 40px;
+  cursor: pointer;
+}
+
+.phoneInputGroup,
+.measurementGroup {
+  display: flex;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.countryCode {
+  width: 120px;
+  flex-shrink: 0;
+  padding-left: 10px;
+  padding-right: 32px;
+}
+
+.unitSelect {
+  width: 80px;
+  flex-shrink: 0;
+  padding-left: 12px;
+  padding-right: 28px;
+}
+
 .formExtra {
   display: flex;
   justify-content: flex-start;
