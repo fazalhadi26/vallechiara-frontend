@@ -6,7 +6,7 @@ import pageStyles from '../../Shared/Page.module.css';
 export default function Signup() {
   return (
     <div className={`${pageStyles.pageContainer} ${styles.loginPageBg}`}>
-      <h1 className={`${pageStyles.pageTitle} ${styles.loginTitle}`}>CREATE ACCOUNT</h1>
+      <h1 className={`${pageStyles.pageTitle} ${styles.loginTitle}`}>SIGN UP</h1>
       
       <div className={styles.simpleLoginCard}>
         
@@ -29,9 +29,6 @@ export default function Signup() {
               <div className={`${styles.selectWrapper} ${styles.countryCodeWrap}`}>
                 <select className={`${styles.formInput} ${styles.selectInput} ${styles.countryCode}`} required defaultValue="+974">
                   <option value="+974">🇶🇦 +974</option>
-                  <option value="+1">🇺🇸 +1</option>
-                  <option value="+44">🇬🇧 +44</option>
-                  <option value="+39">🇮🇹 +39</option>
                 </select>
                 <FiChevronDown className={styles.selectDropdownIcon} />
               </div>
@@ -107,7 +104,7 @@ export default function Signup() {
           </div>
 
           <button type="submit" className={styles.submitBtn}>
-            CREATE ACCOUNT
+            SIGN UP
           </button>
         </form>
 
