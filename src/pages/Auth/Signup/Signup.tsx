@@ -27,7 +27,9 @@ export default function Signup() {
             <label>Phone Number</label>
             <div className={styles.measurementGroup}>
               <div className={styles.uaePrefix}>
-                <span className={styles.uaeFlag}>🇦🇪</span>
+                <span className={styles.uaeFlag}>
+                  <img src="https://flagcdn.com/w40/ae.png" alt="UAE" />
+                </span>
                 <span className={styles.uaeCode}>+971</span>
               </div>
               <input type="tel" placeholder="0000 0000" className={styles.formInput} required />
