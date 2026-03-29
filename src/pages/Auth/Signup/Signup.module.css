@@ -196,8 +196,17 @@
 
 .selectInput {
   appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
   cursor: pointer;
   padding-right: 40px;
+  background-image: none;
+}
+
+.selectInput option {
+  background-color: #ffffff;
+  color: #111827;
+  padding: 10px;
 }
 
 .selectWrapper {
@@ -270,10 +279,19 @@
   padding-right: 32px;
 }
 
+.unitWrap {
+  width: 95px;
+  flex-shrink: 0;
+}
+
 .unitSelect {
   width: 100%;
-  padding-left: 12px;
-  padding-right: 28px;
+  padding-left: 10px;
+  padding-right: 24px;
+}
+
+.unitWrap .selectDropdownIcon {
+  right: 8px;
 }
 
 .formExtra {
@@ -467,4 +485,12 @@
 .socialBtn img {
   width: 24px;
   height: 24px;
+}
+
+/* Responsive Stacking for Mobile */
+@media (max-width: 600px) {
+  .nameRow {
+    flex-direction: column;
+    gap: 0;
+  }
 }
