@@ -4,11 +4,11 @@
 
 .loginTitle {
   font-family: var(--font-serif, 'Playfair Display', serif) !important;
-  font-size: 26px !important;
+  font-size: 36px !important;
   letter-spacing: 2px !important;
   text-transform: uppercase;
   color: var(--secondary, #0f2b33) !important;
-  margin-bottom: 0rem !important;
+  margin-bottom: 2rem !important;
 }
 
 .simpleLoginCard {
@@ -69,7 +69,7 @@
 .bottomAlternatives {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1rem;
   animation: fadeIn 0.4s ease-out;
 }
 
@@ -89,33 +89,26 @@
 
 /* Forms CSS */
 .formContainer {
-  animation: fadeInDown 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: fadeInDown 0.3s ease-out;
   margin-bottom: 2rem;
-  padding: 10px 0;
+  padding: 0 0.5rem;
 }
 
 @keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-5px); height: 0; overflow: hidden; }
+  to { opacity: 1; transform: translateY(0); height: auto; }
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.activeBtn {
+  background: white;
+  border-color: var(--primary, #5e9eae);
+  color: var(--primary, #5e9eae);
+  box-shadow: 0 4px 12px rgba(94, 158, 174, 0.1);
 }
 
 .formDesc {
@@ -178,9 +171,28 @@
   width: 100%;
 }
 
-.countryCodeWrap {
-  width: 120px;
-  flex-shrink: 0;
+.uaePrefix {
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 50px;
+  white-space: nowrap;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.uaeFlag {
+  font-size: 18px;
+}
+
+.uaeCode {
+  color: #111827;
 }
 
 .selectDropdownIcon {
@@ -201,12 +213,6 @@
   display: flex;
   gap: 0.5rem;
   width: 100%;
-}
-
-.countryCode {
-  width: 100%;
-  padding-left: 10px;
-  padding-right: 32px;
 }
 
 .formExtra {

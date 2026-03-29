@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiChevronDown } from 'react-icons/fi';
 import styles from './Login.module.css';
 import pageStyles from '../../Shared/Page.module.css';
 
@@ -76,11 +75,9 @@ export default function Login() {
             <div className={styles.inputGroup}>
               <label>Phone Number</label>
               <div className={styles.measurementGroup}>
-                <div className={`${styles.selectWrapper} ${styles.countryCodeWrap}`}>
-                  <select className={`${styles.formInput} ${styles.selectInput} ${styles.countryCode}`} required defaultValue="+974">
-                    <option value="+974">🇶🇦 +974</option>
-                  </select>
-                  <FiChevronDown className={styles.selectDropdownIcon} />
+                <div className={styles.uaePrefix}>
+                  <span className={styles.uaeFlag}>🇦🇪</span>
+                  <span className={styles.uaeCode}>+971</span>
                 </div>
                 <input type="tel" placeholder="0000 0000" className={styles.formInput} required />
               </div>

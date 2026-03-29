@@ -181,24 +181,28 @@
   width: 100%;
 }
 
-.countryCodeWrap {
-  width: 120px;
-  flex-shrink: 0;
+.uaePrefix {
+  background-color: #f9fafb;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  height: 50px; /* Matching input height */
+  white-space: nowrap;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
 }
 
-.unitWrap {
-  width: 80px;
-  flex-shrink: 0;
+.uaeFlag {
+  font-size: 18px;
 }
 
-.selectDropdownIcon {
-  position: absolute;
-  right: 14px;
-  pointer-events: none;
-  color: #6b7280;
-  width: 18px;
-  height: 18px;
-  transition: color 0.2s ease;
+.uaeCode {
+  color: #111827;
 }
 
 .selectWrapper:focus-within .selectDropdownIcon {
