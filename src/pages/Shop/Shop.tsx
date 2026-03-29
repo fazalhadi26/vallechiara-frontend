@@ -5,6 +5,8 @@ import s3 from '../../assets/s-3.png';
 import s4 from '../../assets/s-4.png';
 import s5 from '../../assets/s-5.png';
 import s6 from '../../assets/s-6.png';
+import { useCart } from '../../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 const shopData = [
   {
@@ -14,7 +16,8 @@ const shopData = [
       {
         id: "n1",
         title: "Box of 24 x 0.33L (Natural)",
-        price: "AED 65.00",
+        price: 65.00,
+        priceStr: "AED 65.00",
         subtitle: "Make Hydration a Ritual, Subscribe & Save",
         image: s1,
         isOutOfStock: false
@@ -22,7 +25,8 @@ const shopData = [
       {
         id: "n2",
         title: "Box of 24 x 0.5L (Natural)",
-        price: "AED 75.00",
+        price: 75.00,
+        priceStr: "AED 75.00",
         subtitle: "Make Hydration a Ritual, Subscribe & Save",
         image: s2,
         isOutOfStock: false
@@ -30,7 +34,8 @@ const shopData = [
       {
         id: "n3",
         title: "Box of 12 x 1L (Natural)",
-        price: "AED 80.00",
+        price: 80.00,
+        priceStr: "AED 80.00",
         subtitle: "Make Hydration a Ritual, Subscribe & Save",
         image: s3,
         isOutOfStock: true
@@ -44,7 +49,8 @@ const shopData = [
       {
         id: "s1",
         title: "Box of 24 x 0.33L (Sparkling)",
-        price: "AED 75.00",
+        price: 75.00,
+        priceStr: "AED 75.00",
         subtitle: "Elevate every sip, subscribe & save",
         image: s4,
         isOutOfStock: true
@@ -52,7 +58,8 @@ const shopData = [
       {
         id: "s2",
         title: "Box of 24 x 0.5L (Sparkling)",
-        price: "AED 85.00",
+        price: 85.00,
+        priceStr: "AED 85.00",
         subtitle: "Elevate every sip, subscribe & save",
         image: s5,
         isOutOfStock: true
@@ -60,7 +67,8 @@ const shopData = [
       {
         id: "s3",
         title: "Box of 12 x 1L (Sparkling)",
-        price: "AED 90.00",
+        price: 90.00,
+        priceStr: "AED 90.00",
         subtitle: "Elevate every sip, subscribe & save",
         image: s6,
         isOutOfStock: true
@@ -70,6 +78,21 @@ const shopData = [
 ];
 
 export default function Shop() {
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleBuyNow = (product: any) => {
+    if (product.isOutOfStock) return;
+    addToCart({
+      id: product.id,
+      name: product.title,
+      price: product.price,
+      quantity: 1,
+      image: product.image
+    });
+    navigate('/cart');
+  };
+
   return (
     <div className={styles.shopContainer}>
       <div className={styles.shopWrapper}>
@@ -105,11 +128,11 @@ export default function Shop() {
                     </div>
                     
                     <h3 className={styles.productTitle}>{product.title}</h3>
-                    <div className={styles.productPrice}>{product.price}</div>
+                    <div className={styles.productPrice}>{product.priceStr}</div>
                     <p className={styles.productSubtitle}>{product.subtitle}</p>
 
                     <div className={`${styles.actions} ${product.isOutOfStock ? styles.disabledActions : ''}`}>
-                      <button className={styles.buyNowBtn}>BUY NOW</button>
+                      <button className={styles.buyNowBtn} onClick={() => handleBuyNow(product)}>BUY NOW</button>
                       <button className={styles.subscribeBtn}>SUBSCRIBE</button>
                     </div>
 
@@ -124,3 +147,4 @@ export default function Shop() {
     </div>
   );
 }
+

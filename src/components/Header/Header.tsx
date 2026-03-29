@@ -1,27 +1,29 @@
 import { useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import styles from './Header.module.css';
+import { useCart } from '../../context/CartContext';
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [lang, setLang] = useState('ar');
   const location = useLocation();
+  const { totalItems } = useCart();
 
   const toggleMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const getNavClass = (path: string) => {
+    return location.pathname === path ? `${styles.navLink} ${styles.active}` : styles.navLink;
   };
 
   const toggleLanguage = () => {
     setLang(lang === 'ar' ? 'en' : 'ar');
   };
 
-  // Prevent default active class logic entirely via module classes strictly
-  const getNavClass = (path: string) => {
-    return location.pathname === path ? `${styles.navLink} ${styles.active}` : styles.navLink;
-  };
-
   return (
     <header className={styles.header}>
+      {/* ... previous logo ... */}
       <Link to="/" className={styles.logoContainer}>
         <span className={styles.logoTop}>ITALIAN SPRING WATER</span>
         <span className={styles.logoMain}>VALLECHIARA</span>
@@ -52,10 +54,10 @@ export default function Header() {
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><path d="M2 12h20"/></svg>
           </button>
           
-          <button className={styles.cartBtn} aria-label="Shopping Cart">
+          <Link to="/cart" className={styles.cartBtn} aria-label="Shopping Cart">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
-            <span className={styles.cartBadge}>0</span>
-          </button>
+            <span className={styles.cartBadge}>{totalItems}</span>
+          </Link>
           
           <Link to="/shop" onClick={() => setIsMobileMenuOpen(false)} className={styles.buyNowBtn} style={{display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none'}}>Buy Now</Link>
           <Link to="/subscribe" onClick={() => setIsMobileMenuOpen(false)} className={styles.subscribeBtn} style={{display: 'flex', alignItems: 'center', justifyContent: 'center', textDecoration: 'none'}}>SUBSCRIBE</Link>

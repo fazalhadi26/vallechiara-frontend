@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import type { Swiper as SwiperType } from 'swiper';
+import { useCart } from '../../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -11,30 +13,46 @@ import bottleImg from '../../assets/bootle1.png';
 
 const products = [
   {
-    id: 1,
+    id: 'box-033',
     name: 'Box of 24 x 0.33L (Natural)',
     description: "Embrace nature's pure hydration with our 330 ML bottles - the perfect choice for the workplace, events, or home use. Experience revitalization in every zip. wherever you are.",
-    price: 'AED 65.00',
+    price: 65.00,
+    priceStr: 'AED 65.00',
     image: bottleImg,
   },
   {
-    id: 2,
+    id: 'box-05L',
     name: 'Box of 24 x 0.5L (Natural)',
     description: "Perfect for active lifestyles, our 500 ML bottle offers pure hydration on the go. Sustainably crafted for you to enjoy Vallechiara's pristine water anywhere.",
-    price: 'AED 75.00',
+    price: 75.00,
+    priceStr: 'AED 75.00',
     image: bottleImg,
   },
   {
-    id: 3,
+    id: 'box-1L',
     name: 'Box of 12 x 1L (Natural)',
     description: "Bring the purity of Vallechiara to your family table. Our 1 liter bottle ensures everyone stays hydrated beautifully with an elegant presentation.",
-    price: 'AED 80.00',
+    price: 80.00,
+    priceStr: 'AED 80.00',
     image: bottleImg,
   }
 ];
 
 export default function ProductSlider() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { addToCart } = useCart();
+  const navigate = useNavigate();
+
+  const handleBuyNow = (product: any) => {
+    addToCart({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      quantity: 1,
+      image: product.image
+    });
+    navigate('/cart');
+  };
 
   return (
     <section className={styles.sliderSection}>
@@ -74,12 +92,12 @@ export default function ProductSlider() {
                   
                   <div className={styles.priceContainer}>
                     <span className={styles.priceLabel}>Starts from</span>
-                    <span className={styles.priceValue}>{product.price}</span>
+                    <span className={styles.priceValue}>{product.priceStr}</span>
                   </div>
 
                   <div className={styles.actionsBlock}>
                     <button className={styles.subscribeBtn}>SUBSCRIBE</button>
-                    <button className={styles.buyNowBtn}>BUY NOW</button>
+                    <button className={styles.buyNowBtn} onClick={() => handleBuyNow(product)}>BUY NOW</button>
                   </div>
                 </div>
 

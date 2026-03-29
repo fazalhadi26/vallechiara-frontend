@@ -9,6 +9,7 @@ import Support from './pages/Support/Support';
 import Subscribe from './pages/Subscribe/Subscribe';
 import Login from './pages/Auth/Login/Login';
 import Signup from './pages/Auth/Signup/Signup';
+import Cart from './pages/Cart/Cart';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/" element={<MainLayout />}>
           <Route path="login" element={<Login />} />
           <Route path="signup" element={<Signup />} />
+          <Route path="cart" element={<Cart />} />
           <Route index element={<Home />} />
           <Route path="shop" element={<Shop />} />
           <Route path="our-story" element={<OurStory />} />
