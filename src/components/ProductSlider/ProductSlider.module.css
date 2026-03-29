@@ -208,8 +208,15 @@
 
 @media (max-width: 768px) {
   .navBtn {
-    display: none; 
+    display: flex;
+    top: 150px; 
+    width: 38px;
+    height: 38px;
+    background-color: rgba(255, 255, 255, 0.9);
   }
+  .prevBtn { left: 5px; }
+  .nextBtn { right: 5px; }
+
   .slideContentWrapper {
     flex-direction: column;
     text-align: center;
