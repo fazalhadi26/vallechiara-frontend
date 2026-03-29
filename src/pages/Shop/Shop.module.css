@@ -183,22 +183,131 @@
 
 .actions {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  flex-direction: row;
+  gap: 10px;
   margin-top: auto;
+  align-items: center;
 }
 
-.buyNowBtn, .subscribeBtn {
+.buyNowBtn, .subscribeBtn, .cartActionWrapper {
   font-family: var(--font-sans);
-  width: 100%;
+  flex: 1; /* Equal space in row */
   padding: 14px 0;
   border-radius: 6px;
   font-weight: 800;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.2s;
   text-transform: uppercase;
+  text-align: center;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.cartActionWrapper {
+  width: auto;
+  height: 43px; /* Match button height approx */
+  background-color: transparent;
+  border: 1.5px solid #005668;
+  color: #005668;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cartActionWrapper.isExpanded {
+  background-color: #005668;
+  color: #ffffff;
+}
+
+.iconLayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s, transform 0.2s;
+  opacity: 1;
+}
+
+.isExpanded .iconLayer {
+  opacity: 0;
+  transform: scale(0.8);
+  pointer-events: none;
+}
+
+.qtyLayer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+}
+
+.isExpanded .qtyLayer {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: auto;
+}
+
+.iconBadge {
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  background-color: #00222a;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  height: 18px;
+  min-width: 18px;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #ffffff;
+}
+
+.isExpanded .iconBadge {
+  display: none; /* Hide badge when expanded to avoid overlap */
+}
+
+.qtyBtn {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.qtyBtn:hover {
+  transform: scale(1.2);
+}
+
+.qtyValue {
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 700;
+  min-width: 20px;
+  text-align: center;
 }
 
 .buyNowBtn {
@@ -256,5 +365,18 @@
   }
   .card {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .productTitle {
+    font-size: 16px;
+  }
+  .productPrice {
+    font-size: 20px;
+  }
+  .buyNowBtn, .subscribeBtn, .cartActionWrapper {
+    font-size: 10px;
+    padding: 12px 0;
   }
 }
