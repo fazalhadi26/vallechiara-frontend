@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { FiChevronDown } from 'react-icons/fi';
 import styles from './Signup.module.css';
 import pageStyles from '../../Shared/Page.module.css';
 
@@ -25,12 +26,15 @@ export default function Signup() {
           <div className={styles.inputGroup}>
             <label>Phone Number</label>
             <div className={styles.measurementGroup}>
-              <select className={`${styles.formInput} ${styles.selectInput} ${styles.countryCode}`} required defaultValue="+974">
-                <option value="+974">🇶🇦 +974</option>
-                <option value="+1">🇺🇸 +1</option>
-                <option value="+44">🇬🇧 +44</option>
-                <option value="+39">🇮🇹 +39</option>
-              </select>
+              <div className={`${styles.selectWrapper} ${styles.countryCodeWrap}`}>
+                <select className={`${styles.formInput} ${styles.selectInput} ${styles.countryCode}`} required defaultValue="+974">
+                  <option value="+974">🇶🇦 +974</option>
+                  <option value="+1">🇺🇸 +1</option>
+                  <option value="+44">🇬🇧 +44</option>
+                  <option value="+39">🇮🇹 +39</option>
+                </select>
+                <FiChevronDown className={styles.selectDropdownIcon} />
+              </div>
               <input type="tel" placeholder="0000 0000" className={styles.formInput} required />
             </div>
           </div>
@@ -42,12 +46,15 @@ export default function Signup() {
             </div>
             <div className={styles.inputGroup}>
               <label>Gender</label>
-              <select className={`${styles.formInput} ${styles.selectInput}`} required defaultValue="">
-                <option value="" disabled>Select</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-              </select>
+              <div className={styles.selectWrapper}>
+                <select className={`${styles.formInput} ${styles.selectInput}`} required defaultValue="">
+                  <option value="" disabled>Select</option>
+                  <option value="male">Male</option>
+                  <option value="female">Female</option>
+                  <option value="other">Other</option>
+                </select>
+                <FiChevronDown className={styles.selectDropdownIcon} />
+              </div>
             </div>
           </div>
 
@@ -56,10 +63,13 @@ export default function Signup() {
               <label>Weight</label>
               <div className={styles.measurementGroup}>
                 <input type="number" placeholder="70" className={styles.formInput} required />
-                <select className={`${styles.formInput} ${styles.selectInput} ${styles.unitSelect}`} required defaultValue="kg">
-                  <option value="kg">KG</option>
-                  <option value="lb">LB</option>
-                </select>
+                <div className={`${styles.selectWrapper} ${styles.unitWrap}`}>
+                  <select className={`${styles.formInput} ${styles.selectInput} ${styles.unitSelect}`} required defaultValue="kg">
+                    <option value="kg">KG</option>
+                    <option value="lb">LB</option>
+                  </select>
+                  <FiChevronDown className={styles.selectDropdownIcon} />
+                </div>
               </div>
             </div>
             
@@ -67,10 +77,13 @@ export default function Signup() {
               <label>Height</label>
               <div className={styles.measurementGroup}>
                 <input type="number" placeholder="175" className={styles.formInput} required />
-                <select className={`${styles.formInput} ${styles.selectInput} ${styles.unitSelect}`} required defaultValue="cm">
-                  <option value="cm">CM</option>
-                  <option value="ft">FT</option>
-                </select>
+                <div className={`${styles.selectWrapper} ${styles.unitWrap}`}>
+                  <select className={`${styles.formInput} ${styles.selectInput} ${styles.unitSelect}`} required defaultValue="cm">
+                    <option value="cm">CM</option>
+                    <option value="ft">FT</option>
+                  </select>
+                  <FiChevronDown className={styles.selectDropdownIcon} />
+                </div>
               </div>
             </div>
           </div>
