@@ -110,12 +110,22 @@ export default function ProductSlider() {
                         </button>
                       ) : (
                         <div 
-                          className={styles.cartActionWrapper}
+                          className={`${styles.cartActionWrapper} ${hoveredProductId === product.id ? styles.isExpanded : ''}`}
                           onMouseEnter={() => setHoveredProductId(product.id)}
                           onMouseLeave={() => setHoveredProductId(null)}
                         >
-                          {hoveredProductId === product.id ? (
-                            <div className={styles.qtyControl}>
+                          {/* Left Layer: Icon (Always present, but hides on expanded if needed or centers) */}
+                          <div className={styles.iconLayer}>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.cartIcon}>
+                              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                              <line x1="3" y1="6" x2="21" y2="6" />
+                              <path d="M16 10a4 4 0 0 1-8 0" />
+                            </svg>
+                            <span className={styles.iconBadge}>{cartItem.quantity}</span>
+                          </div>
+
+                          {/* Expansion Layer: Logic for minus, count, plus */}
+                          <div className={styles.qtyLayer}>
                               <button 
                                 className={styles.qtyBtn} 
                                 onClick={(e) => {
@@ -135,17 +145,7 @@ export default function ProductSlider() {
                               >
                                 &#43;
                               </button>
-                            </div>
-                          ) : (
-                            <div className={styles.cartIconWrapper}>
-                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.cartIcon}>
-                                <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-                                <line x1="3" y1="6" x2="21" y2="6" />
-                                <path d="M16 10a4 4 0 0 1-8 0" />
-                              </svg>
-                              <span className={styles.iconBadge}>{cartItem.quantity}</span>
-                            </div>
-                          )}
+                          </div>
                         </div>
                       )}
                     </div>
