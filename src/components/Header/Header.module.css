@@ -164,6 +164,10 @@
   transition: all 0.2s;
 }
 
+.phoneBtn span {
+  display: none;
+}
+
 .phoneBtn:hover {
   background-color: rgba(0, 86, 104, 0.05);
 }
@@ -292,6 +296,22 @@
     padding: 16px;
     height: auto;
     /* Special prominence in mobile menu */
+  }
+
+  .phoneBtn {
+    width: 100%;
+    height: auto;
+    padding: 16px;
+    border: 1.5px solid #005668;
+    background-color: transparent;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .phoneBtn span {
+    display: inline-block;
   }
 }
 
