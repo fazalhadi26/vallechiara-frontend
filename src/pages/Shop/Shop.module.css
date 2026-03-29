@@ -322,7 +322,8 @@
 
 .disabledBuyNow {
   opacity: 0.3;
-  pointer-events: none;
+  pointer-events: auto;
+  cursor: not-allowed;
   filter: grayscale(0.7);
 }
 
