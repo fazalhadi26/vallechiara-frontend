@@ -46,7 +46,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
         status: "info",
         duration: 2000,
         isClosable: true,
-        position: "top-right",
+        position: "bottom-left",
       });
       return;
     }
@@ -59,7 +59,7 @@ export const CartProvider: React.FC<{ children: React.ReactNode }> = ({ children
       status: "success",
       duration: 2000,
       isClosable: true,
-      position: "top-right",
+      position: "bottom-left",
     });
   };
 
