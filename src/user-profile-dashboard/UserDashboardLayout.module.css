@@ -1,7 +1,8 @@
 .dashboardContainer {
   display: flex;
   min-height: 100vh;
-  margin-top: 80px; /* Offset for main site header if exists */
+  margin-top: 80px;
+  /* Offset for main site header if exists */
   background-color: #ffffff;
   font-family: 'Inter', sans-serif;
 }
@@ -68,7 +69,8 @@
   gap: 10px;
 }
 
-.navLink, .activeNavLink {
+.navLink,
+.activeNavLink {
   display: flex;
   align-items: center;
   gap: 15px;
@@ -122,12 +124,33 @@
   min-height: 100%;
 }
 
+.mobileHeader {
+  display: none;
+  padding: 15px 20px;
+  background-color: #ffffff;
+  border-bottom: 1px solid #f0f4f5;
+  cursor: pointer;
+}
+
+.menuToggleBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  color: #005F71;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 /* Mobile Responsiveness */
 @media (max-width: 1024px) {
   .dashboardContainer {
     flex-direction: column;
+    margin-top: 85px;
   }
-  
+
   .sidebar {
     width: 100%;
     height: auto;
@@ -135,9 +158,23 @@
     top: 0;
     border-right: none;
     border-bottom: 1px solid #f0f4f5;
+    padding: 20px;
+    z-index: 10;
   }
-  
+
+  .sidebarHidden {
+    display: none;
+  }
+
   .contentArea {
     padding: 30px 20px;
+  }
+
+  .contentHiddenOnMobile {
+    display: none;
+  }
+
+  .mobileHeader {
+    display: flex;
   }
 }

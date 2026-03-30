@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import styles from './UserDashboardLayout.module.css';
 
@@ -7,21 +8,42 @@ const Icons = {
   Subscription: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>,
   Profile: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>,
   Logout: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>,
-  Generic: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3"></circle></svg>
+  Generic: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="3"></circle></svg>,
+  ArrowRight: () => <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
 };
 
 const UserDashboardLayout = () => {
   const navigate = useNavigate();
+  const [isMenuOpen, setIsMenuOpen] = useState(true); // Default open on mobile to show selection? 
+  // Wait, user said: "click for example profile that any manu to hide show deatal"
+  // So clicking an item HIDES the menu and shows details.
 
   const handleLogout = () => {
-    // Implement logout logic here
     navigate('/login');
+  };
+
+  const closeMenu = () => {
+    // Only close if on mobile? Actually better to just toggle state.
+    setIsMenuOpen(false);
+  };
+
+  const openMenu = () => {
+    setIsMenuOpen(true);
   };
 
   return (
     <div className={styles.dashboardContainer}>
+      {/* Mobile Toggle Bar */}
+      {!isMenuOpen && (
+        <div className={styles.mobileHeader} onClick={openMenu}>
+          <button className={styles.menuToggleBtn}>
+            <Icons.ArrowRight /> <span>Back to Menu</span>
+          </button>
+        </div>
+      )}
+
       {/* Sidebar */}
-      <aside className={styles.sidebar}>
+      <aside className={`${styles.sidebar} ${!isMenuOpen ? styles.sidebarHidden : ''}`}>
         <div className={styles.userInfo}>
           <div className={styles.avatarContainer}>
             <div className={styles.avatarGradient}>
@@ -33,31 +55,43 @@ const UserDashboardLayout = () => {
         </div>
 
         <nav className={styles.navMenu}>
-          <NavLink to="/account/booking" className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}>
+          <NavLink 
+            to="/account/booking" 
+            onClick={closeMenu}
+            className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}
+          >
             <Icons.Booking /> <span>My Bookings</span>
           </NavLink>
-          <NavLink to="/account/my-subscription" className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}>
+          <NavLink 
+            to="/account/my-subscription" 
+            onClick={closeMenu}
+            className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}
+          >
             <Icons.Subscription /> <span>My Subscriptions</span>
           </NavLink>
-          <div className={styles.navLink}>
+          <div className={styles.navLink} onClick={closeMenu}>
             <Icons.Generic /> <span>V-Caps</span>
           </div>
-          <div className={styles.navLink}>
+          <div className={styles.navLink} onClick={closeMenu}>
             <Icons.Generic /> <span>V-Caps Tickets</span>
           </div>
-          <div className={styles.navLink}>
+          <div className={styles.navLink} onClick={closeMenu}>
             <Icons.Generic /> <span>My Family</span>
           </div>
-          <div className={styles.navLink}>
+          <div className={styles.navLink} onClick={closeMenu}>
             <Icons.Generic /> <span>Water Consumption</span>
           </div>
-          <div className={styles.navLink}>
+          <div className={styles.navLink} onClick={closeMenu}>
             <Icons.Generic /> <span>Hydration</span>
           </div>
-          <div className={styles.navLink}>
+          <div className={styles.navLink} onClick={closeMenu}>
             <Icons.Generic /> <span>Reminders</span>
           </div>
-          <NavLink to="/account/profile" className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}>
+          <NavLink 
+            to="/account/profile" 
+            onClick={closeMenu}
+            className={({isActive}) => isActive ? styles.activeNavLink : styles.navLink}
+          >
             <Icons.Profile /> <span>My Profile</span>
           </NavLink>
           <button onClick={handleLogout} className={styles.logoutBtn}>
@@ -67,7 +101,7 @@ const UserDashboardLayout = () => {
       </aside>
 
       {/* Main Content */}
-      <main className={styles.contentArea}>
+      <main className={`${styles.contentArea} ${isMenuOpen ? styles.contentHiddenOnMobile : ''}`}>
         <Outlet />
       </main>
     </div>
