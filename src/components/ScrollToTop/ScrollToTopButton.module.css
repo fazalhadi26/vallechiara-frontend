@@ -1,0 +1,64 @@
+.scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f1f6f8;
+  border: 2px solid #005F71;
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scrollToTopBtn:hover {
+  transform: scale(1.1);
+}
+
+.liquidBg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background-color: #86CDD9;
+  z-index: 1;
+  transition: height 0.1s linear; /* Slightly faster response for scroll */
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .scrollToTopBtn {
+    display: none; /* Hide on mobile as requested */
+  }
+}
+
+.arrowIcon {
+  position: relative;
+  z-index: 2;
+  color: #005F71;
+}
+
+@keyframes liquidFill {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: 100%;
+  }
+  100% {
+    height: 0;
+  }
+}

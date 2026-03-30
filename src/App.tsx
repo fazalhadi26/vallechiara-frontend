@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import MainThemeLoading from './components/Loading/main-theme-loding/MainThemeLoading';
 import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import ScrollToTopButton from './components/ScrollToTop/ScrollToTopButton';
 
 // Lazy loading all pages
 const Home = lazy(() => import('./pages/Home/Home'));
@@ -26,6 +27,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
+      <ScrollToTopButton />
       <Suspense fallback={<MainThemeLoading />}>
         <Routes>
           <Route path="/" element={<MainLayout />}>
