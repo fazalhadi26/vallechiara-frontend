@@ -51,7 +51,7 @@ export default function OurStory() {
             <img src={storyRight} alt="Decoration" className={styles.accentRight} />
           </div>
           <div className={styles.contentWrapper}>
-            <h2 className={styles.sectionHeading}>NATURAL HAVEN: LIPIANI, ALTARE : NATURE'S SANCTUARY, OUR SACRED RESPONSIBILITY</h2>
+            <h2 className={styles.sectionHeading}>NATURAL HAVEN: LIPIANI, ALTARE : NATURE'S SANCTUARY</h2>
             <div className={styles.textBlock}>
               <p>
                 Nestled amid more than two million square meters of beech and chestnut trees in Lipiani, Altare, our source exists in perfect balance with its natural surroundings, a sanctuary where the rhythm of nature shapes the essence of every drop.

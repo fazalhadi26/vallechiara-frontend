@@ -22,6 +22,7 @@ body {
   background-color: var(--header-bg);
   color: var(--text-dark);
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
