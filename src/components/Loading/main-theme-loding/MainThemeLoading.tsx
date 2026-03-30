@@ -1,12 +1,14 @@
 import styles from './MainThemeLoading.module.css';
+import LogoLoading from '../../../assets/logo-images/logo-loading.svg';
 
 const MainThemeLoading = () => {
   return (
     <div className={styles.loadingContainer}>
-      <div className={styles.spinner}>
-        <div className={styles.innerSpinner}></div>
+      <div className={styles.loaderCircle}>
+        <div className={styles.fillAnimation}></div>
+        <img src={LogoLoading} alt="Loading..." className={styles.loaderLogo} />
       </div>
-      <p className={styles.loadingText}>Restoring Purity...</p>
+      <p className={styles.loadingText}>Loading...</p>
     </div>
   );
 };
