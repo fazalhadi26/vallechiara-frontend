@@ -1,0 +1,155 @@
+.supportContainer {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 24px 100px 24px;
+  background-color: #ffffff;
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.titleArea {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.mainTitle {
+  font-family: var(--font-serif);
+  font-size: 40px;
+  color: #004d5d;
+  text-transform: uppercase;
+  font-weight: 900;
+  letter-spacing: 4px;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.contentBody {
+  max-width: 800px;
+  margin: 0 auto;
+  color: #2a3b45;
+}
+
+.section {
+  margin-bottom: 72px;
+}
+
+.sectionHeading {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  color: #005F71;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.subHeading {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 28px;
+  color: #334e5c;
+}
+
+.textBlock {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.9;
+  margin-bottom: 28px;
+  color: #4a5a65;
+}
+
+.contactList {
+  list-style: none;
+  padding: 0;
+}
+
+.contactItem {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  margin-bottom: 16px;
+  color: #4a5a65;
+  display: flex;
+  align-items: center;
+}
+
+.contactItem a {
+  color: #005F71;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.faqList {
+  list-style: none;
+  padding: 0;
+}
+
+.faqItem {
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid #f0f4f5;
+}
+
+.faqItem:last-child {
+  border-bottom: none;
+}
+
+.question {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  font-size: 17px;
+  margin-bottom: 12px;
+  color: #005F71;
+  display: block;
+}
+
+.answer {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.8;
+  color: #5a6b77;
+}
+
+.closingNote {
+  margin-top: 100px;
+  padding-top: 60px;
+  border-top: 2px solid #eff5f7;
+  text-align: left;
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .supportContainer {
+    padding-top: 150px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mainTitle {
+    font-size: 42px;
+  }
+
+  .sectionHeading {
+    font-size: 21px;
+  }
+
+  .textBlock,
+  .answer,
+  .contactItem {
+    font-size: 15px;
+  }
+}
