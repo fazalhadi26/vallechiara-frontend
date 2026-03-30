@@ -6,7 +6,9 @@ import { useDisclosure } from '@chakra-ui/react';
 import { useCart } from '../../context/CartContext';
 import ConfirmationModal from '../ConfirmationModal/ConfirmationModal';
 
+// @ts-ignore
 import 'swiper/css';
+// @ts-ignore
 import 'swiper/css/navigation';
 
 import styles from './ProductSlider.module.css';
