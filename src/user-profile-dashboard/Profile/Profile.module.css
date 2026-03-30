@@ -1,0 +1,137 @@
+.profileContent {
+  width: 100%;
+  max-width: 900px;
+}
+
+.pageTitle {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  color: #000;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.userHeader {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 50px;
+  background: none;
+  border-radius: 12px;
+  padding: 10px 0;
+}
+
+.avatarLarge {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #005F71;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: lowercase;
+}
+
+.userMainInfo {
+  flex: 1;
+}
+
+.profileName {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2a3b45;
+  margin: 0;
+}
+
+.profileAge {
+  font-size: 14px;
+  color: #888;
+  margin-top: 5px;
+}
+
+.editBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 25px;
+  border: 1px solid #7cb7c8;
+  border-radius: 10px;
+  color: #005a6d;
+  background: white;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.editBtn:hover {
+  background: #f7fbfe;
+  border-color: #005F71;
+}
+
+.profileGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.profileCard {
+  background: #f7fcff;
+  padding: 24px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.profileCard:hover {
+  border-color: #e0f2f7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 95, 113, 0.05);
+}
+
+.cardIcon {
+  width: 48px;
+  height: 48px;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #005F71;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.cardLabel {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.cardValue {
+  font-size: 16px;
+  font-weight: 700;
+  color: #2a3b45;
+}
+
+@media (max-width: 600px) {
+  .userHeader {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .profileGrid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -16,6 +16,12 @@ const Login = lazy(() => import('./pages/Auth/Login/Login'));
 const Signup = lazy(() => import('./pages/Auth/Signup/Signup'));
 const Cart = lazy(() => import('./pages/Cart/Cart'));
 
+// Dashboard lazy loading
+const UserDashboardLayout = lazy(() => import('./user-profile-dashboard/UserDashboardLayout'));
+const UserProfile = lazy(() => import('./user-profile-dashboard/Profile/Profile'));
+const UserBooking = lazy(() => import('./user-profile-dashboard/Booking/Booking'));
+const UserSubscription = lazy(() => import('./user-profile-dashboard/Subscription/Subscription'));
+
 function App() {
   return (
     <Router>
@@ -33,6 +39,14 @@ function App() {
             <Route path="wct" element={<WCT />} />
             <Route path="support" element={<Support />} />
             <Route path="subscribe" element={<Subscribe />} />
+            
+            {/* Dashboard Routes under /account */}
+            <Route path="account" element={<UserDashboardLayout />}>
+              <Route index element={<UserProfile />} />
+              <Route path="profile" element={<UserProfile />} />
+              <Route path="booking" element={<UserBooking />} />
+              <Route path="my-subscription" element={<UserSubscription />} />
+            </Route>
           </Route>
         </Routes>
       </Suspense>

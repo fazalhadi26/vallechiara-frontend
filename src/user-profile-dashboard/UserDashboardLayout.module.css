@@ -1,0 +1,143 @@
+.dashboardContainer {
+  display: flex;
+  min-height: 100vh;
+  margin-top: 80px; /* Offset for main site header if exists */
+  background-color: #ffffff;
+  font-family: 'Inter', sans-serif;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #ffffff;
+  border-right: 1px solid #f0f4f5;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 80px;
+  height: calc(100vh - 80px);
+  overflow-y: auto;
+}
+
+.userInfo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.avatarContainer {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 15px;
+  padding: 5px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #005F71, #86CDD9);
+}
+
+.avatarGradient {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #005F71;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: lowercase;
+  border: 4px solid #ffffff;
+}
+
+.userName {
+  font-size: 18px;
+  font-weight: 700;
+  color: #2a3b45;
+  margin-bottom: 5px;
+}
+
+.userPoints {
+  font-size: 14px;
+  color: #86CDD9;
+  font-weight: 600;
+}
+
+.navMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.navLink, .activeNavLink {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #4a5a65;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+.activeNavLink {
+  background-color: #eff5f7;
+  color: #005F71;
+  font-weight: 600;
+}
+
+.navLink:hover {
+  background-color: #f7fbfe;
+  color: #005F71;
+}
+
+.logoutBtn {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  font-size: 14px;
+  color: #4a5a65;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+}
+
+.logoutBtn:hover {
+  background-color: #fff1f1;
+  color: #d32f2f;
+}
+
+.contentArea {
+  flex: 1;
+  padding: 40px 60px;
+  background-color: #ffffff;
+  min-height: 100%;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 1024px) {
+  .dashboardContainer {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    border-right: none;
+    border-bottom: 1px solid #f0f4f5;
+  }
+  
+  .contentArea {
+    padding: 30px 20px;
+  }
+}
