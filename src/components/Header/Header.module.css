@@ -48,12 +48,31 @@
   display: flex;
   align-items: center;
   gap: 6px;
-  transition: opacity 0.2s;
+  transition: all 0.3s ease;
+  position: relative;
+  padding: 5px 0;
+}
+
+/* Underline Animation */
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #005668;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after,
+.navLink.active::after {
+  width: 100%;
 }
 
 .navLink:hover,
 .navLink.active {
-  opacity: 0.7;
+  color: #005668;
 }
 
 .dropdownWrap {
