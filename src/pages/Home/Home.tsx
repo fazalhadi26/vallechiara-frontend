@@ -3,7 +3,6 @@ import ProductSlider from '../../components/ProductSlider/ProductSlider';
 import storyBg from '../../assets/w-1.webp';
 import leafLeft from '../../assets/w-2.png';
 import leafRight from '../../assets/w-3.webp';
-import bootle1 from '../../assets/bootle1.png';
 import bottle02 from '../../assets/bottle-02.webp';
 import bottle03 from '../../assets/bottle-03.png';
 import womanClass from '../../assets/home-page-images/woman-with-class.png';
@@ -60,20 +59,22 @@ export default function Home() {
       <section className={styles.lightnessSection}>
         <div className={styles.lightnessLeft}>
           <img
-            src={bootle1}
+            src={bottle03}
             alt="Vallechiara Bottle Main"
             className={`${styles.lightnessBottle} ${styles.bottleMain}`}
           />
           <img
             src={bottle02}
             alt="Vallechiara Bottle Top"
-            className={`${styles.lightnessBottle} ${styles.bottleTop}`}
+            className={`${styles.lightnessBottle} ${styles.bottleBottom}`}
           />
           <img
             src={bottle03}
             alt="Vallechiara Bottle Bottom"
-            className={`${styles.lightnessBottle} ${styles.bottleBottom}`}
+            className={`${styles.lightnessBottle} ${styles.bottleTop}`}
           />
+
+
         </div>
 
         <div className={styles.lightnessCenter}>
