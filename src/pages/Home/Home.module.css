@@ -156,6 +156,14 @@
   /* To prevent decorative leaves bleeding out bottom */
 }
 
+.storySection:hover .floralLeft {
+  animation: leafFloat1 6s ease-in-out infinite;
+}
+
+.storySection:hover .floralRight {
+  animation: leafFloat2 5s ease-in-out infinite alternate;
+}
+
 .storyContainer {
   max-width: 1000px;
   margin: 0 auto;
@@ -213,7 +221,6 @@
   right: -0px;
   bottom: -19px;
   width: 181px;
-  height: auto;
   transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
   pointer-events: none;
 }
@@ -398,6 +405,24 @@
   transform: rotate(-4deg);
   z-index: 2;
   animation: swayReverse 8s ease-in-out infinite alternate;
+}
+
+@keyframes leafFloat1 {
+  0%, 100% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: -20px;
+  }
+}
+
+@keyframes leafFloat2 {
+  0%, 100% {
+    margin-bottom: 0;
+  }
+  50% {
+    margin-bottom: -15px;
+  }
 }
 
 @keyframes floatVertical {
