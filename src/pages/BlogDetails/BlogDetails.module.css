@@ -51,18 +51,20 @@
 
 .sideDecorLeft {
   position: absolute;
-  left: -20px;
-  width: 100px;
+  left: -35px;
+  width: 97px;
   height: auto;
   z-index: 1;
+  top: 100px;
 }
 
 .sideDecorRight {
   position: absolute;
-  right: -20px;
-  width: 100px;
+  right: -22px;
+  width: 175px;
   height: auto;
   z-index: 1;
+  bottom: -41px;
 }
 
 .mainImageWrapper {
