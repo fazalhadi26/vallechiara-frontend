@@ -1,7 +1,7 @@
 .subscribeContainer {
-  padding: 160px 40px 100px 40px;
+  padding: 60px 20px 100px 20px; /* Reduced from 160px and tightened padding */
   background-color: #ffffff;
-  min-height: 100vh;
+  min-height: calc(100vh - 90px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -297,6 +297,9 @@
 }
 
 @media (max-width: 1100px) {
+  .subscribeContainer {
+    padding-top: 30px; /* Reduced further for tight mobile view */
+  }
   .cardsGrid {
     grid-template-columns: repeat(2, 1fr);
   }

@@ -3,7 +3,7 @@
 }
 
 .heroSection {
-  padding: 120px 20px 60px;
+  padding: 40px 20px 60px; /* Reduced since header is now in-flow */
   text-align: center;
   background-color: #ffffff;
 }
@@ -177,7 +177,7 @@
 
 @media (max-width: 768px) {
   .heroSection {
-    padding-top: 140px;
+    padding-top: 20px; /* Mobile correction */
   }
 }
 

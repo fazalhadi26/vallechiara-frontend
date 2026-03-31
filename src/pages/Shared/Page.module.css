@@ -1,6 +1,6 @@
 .pageContainer {
-  padding: 140px 40px 80px 40px;
-  min-height: 100vh;
+  padding: 60px 40px 80px 40px; /* Reduced from 140px since header is in-flow */
+  min-height: calc(100vh - 90px);
   background-color: #f1f6f8;
   display: flex;
   flex-direction: column;
@@ -25,6 +25,6 @@
 /* Mobile Padding Reset (Affects all pages) */
 @media (max-width: 600px) {
   .pageContainer {
-    padding: 140px 10px 25px 8px !important;
+    padding: 20px 10px 25px 8px !important; /* Mobile reset */
   }
 }

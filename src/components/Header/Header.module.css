@@ -6,9 +6,7 @@
   height: 90px;
   background-color: #ffffff;
   width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative; /* Changed from absolute to be in-flow (scrolling) */
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
@@ -205,6 +203,7 @@
 
 @media (max-width: 1200px) {
   .header {
+    position: fixed; /* Restore fixed position for mobile as requested */
     padding: 0 15px;
     height: 80px;
   }

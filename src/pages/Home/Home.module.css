@@ -1,14 +1,12 @@
 .homeContainer {
-  min-height: calc(100vh - 80px);
-  /* 80px header offset */
-  margin-top: 80px;
+  min-height: calc(100vh - 90px); /* Adjusted for 90px header in-flow */
   width: 100%;
 }
 
 .hero {
   position: relative;
   width: 100%;
-  height: calc(100vh - 80px);
+  height: calc(100vh - 90px); /* Adjusted for 90px header height */
   /* Full responsive viewport frame */
   background-color: #55878e;
   overflow: hidden;

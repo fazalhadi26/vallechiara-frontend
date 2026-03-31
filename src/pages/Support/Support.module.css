@@ -2,7 +2,7 @@
   width: 100%;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 120px 24px 100px 24px;
+  padding: 40px 24px 100px 24px; /* Reduced from 120px */
   background-color: #ffffff;
   animation: fadeIn 0.8s ease-out;
 }
@@ -134,7 +134,7 @@
 /* Mobile Responsive */
 @media (max-width: 1024px) {
   .supportContainer {
-    padding-top: 150px;
+    padding-top: 40px; /* Reduced for mobile */
   }
 }
 

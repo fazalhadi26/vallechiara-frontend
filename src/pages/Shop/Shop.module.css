@@ -1,7 +1,7 @@
 .shopContainer {
-  padding: 180px 40px 100px 40px;
+  padding: 60px 40px 100px 40px; /* Reduced from 180px since header is in-flow */
   background-color: #ffffff;
-  min-height: 100vh;
+  min-height: calc(100vh - 90px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -344,7 +344,7 @@
 
 @media (max-width: 1200px) {
   .shopContainer {
-    padding-top: 140px;
+    padding-top: 20px; /* Stronger reduction on mobile menu open overlap */
   }
   .categoryRow {
     flex-direction: column;
