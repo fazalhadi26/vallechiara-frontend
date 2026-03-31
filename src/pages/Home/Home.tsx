@@ -64,7 +64,7 @@ export default function Home() {
                 alt="Leaf Decor"
                 className={styles.floralLeft}
                 style={{
-                  transform: `translate(${mousePos.x * 40}px, ${mousePos.y * 20}px)`
+                  transform: `translate(${mousePos.x * 40}px, ${mousePos.y * 30}px)`
                 }}
               />
               <img
@@ -72,7 +72,7 @@ export default function Home() {
                 alt="Leaf Decor"
                 className={styles.floralRight}
                 style={{
-                  transform: `translate(${mousePos.x * -30}px, ${mousePos.y * -15}px)`
+                  transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -30}px)`
                 }}
               />
             </div>
