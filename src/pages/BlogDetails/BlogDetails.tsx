@@ -6,6 +6,8 @@ import { motion } from 'framer-motion';
 import storyLeft from '../../assets/blog-images/story-left.png';
 import storyRight from '../../assets/blog-images/story-right.webp';
 import blogImg1 from '../../assets/blog-images/blog-img-1.webp';
+import blogImg3 from '../../assets/blog-images/blog-img-3.webp';
+import blogImg4 from '../../assets/blog-images/blog-img-4.webp';
 
 interface BlogContent {
   title: string;
@@ -26,13 +28,13 @@ const blogContents: Record<string, BlogContent> = {
   },
   'savoring-the-low-sodium-advantage': {
     title: 'SAVORING THE LOW SODIUM ADVANTAGE',
-    image: blogImg1,
-    text: "Discover the health benefits of choosing low-sodium natural mineral water. Vallechiara offers a balanced mineral profile that supports your wellness journey without compromising on the smooth, refined taste expected of a premium beverage."
+    image: blogImg3,
+    text: "With only 3.4 mg/L of sodium, Vallechiara is naturally suited for balanced living, ideal for those seeking lighter hydration without compromising on taste. Its delicate mineral profile supports heart health, makes it gentle for young children, and enhances every culinary experience with pure, refreshing clarity."
   },
   'ministry-endorsed-distinction': {
     title: 'MINISTRY — ENDORSED DISTINCTION',
-    image: blogImg1,
-    text: "Vallechiara is proud to maintain the highest standards of quality, recognized and endorsed by leading health and quality ministries. This distinction represents our ongoing dedication to transparency, safety, and excellence in every bottle."
+    image: blogImg4,
+    text: "Vallechiara proudly bears recognition from Italy's esteemed Ministry of Health, earning the distinguished decree 3860 of 15/12/08. This prestigious acknowledgment designates our water as the epitome of mineral water excellence, recommended for infant feeding and food preparation, a testament to purity, health, and the embodiment of nature's finest essence."
   }
 };
 
@@ -49,23 +51,23 @@ export default function BlogDetails() {
 
       <div className={styles.container}>
         {/* Left Column: Visuals */}
-        <motion.div 
+        <motion.div
           className={styles.imageColumn}
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
           <div className={styles.visualContainer}>
-             <img src={storyLeft} alt="" className={styles.sideDecorLeft} />
-             <div className={styles.mainImageWrapper}>
-                <img src={content.image} alt={content.title} className={styles.mainImage} />
-             </div>
-             <img src={storyRight} alt="" className={styles.sideDecorRight} />
+            <img src={storyLeft} alt="" className={styles.sideDecorLeft} />
+            <div className={styles.mainImageWrapper}>
+              <img src={content.image} alt={content.title} className={styles.mainImage} />
+            </div>
+            <img src={storyRight} alt="" className={styles.sideDecorRight} />
           </div>
         </motion.div>
 
         {/* Right Column: Content */}
-        <motion.div 
+        <motion.div
           className={styles.contentColumn}
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
