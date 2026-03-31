@@ -128,8 +128,6 @@ export default function ProductSlider() {
 
                     <div
                       className={`${styles.actionsBlock} ${isInCart ? styles.hasCartItem : ''} ${hoveredProductId === product.id ? styles.isExpanded : ''}`}
-                      onMouseEnter={() => setHoveredProductId(product.id)}
-                      onMouseLeave={() => setHoveredProductId(null)}
                     >
                       <button className={styles.subscribeBtn}>SUBSCRIBE</button>
 
@@ -140,6 +138,8 @@ export default function ProductSlider() {
                       ) : (
                         <div
                           className={styles.cartActionWrapper}
+                          onMouseEnter={() => setHoveredProductId(product.id)}
+                          onMouseLeave={() => setHoveredProductId(null)}
                         >
                           <div className={styles.iconLayer}>
                             <svg width="29" height="22" viewBox="0 0 29 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 1H1.3673C2.72645 1 3.9158 1.91375 4.266 3.22701L7.34426 14.7705C7.49727 15.2295 8.07869 16.1475 9.18033 16.1475C10.282 16.1475 18.8197 16.1475 22.9508 16.1475C23.4098 16.1475 24.4197 15.8721 24.7869 14.7705C25.1541 13.6689 27.082 6.6612 28 3.29508" stroke="white" stroke-width="2"></path><circle cx="11.0162" cy="19.3605" r="1.83607" fill="white"></circle><circle cx="21.1149" cy="19.3605" r="1.83607" fill="white"></circle></svg>
