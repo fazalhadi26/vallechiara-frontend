@@ -42,6 +42,8 @@ const blogData: Blog[] = [
   },
 ];
 
+import { FiArrowUpRight } from 'react-icons/fi';
+
 export default function AllBlogs() {
   const navigate = useNavigate();
 
@@ -64,6 +66,11 @@ export default function AllBlogs() {
             >
               <div className={styles.imageWrapper}>
                 <img src={blog.image} alt={blog.title} className={styles.blogImage} />
+                <div className={styles.imageOverlay}>
+                  <div className={styles.iconCircle}>
+                    <FiArrowUpRight />
+                  </div>
+                </div>
               </div>
               <h2 className={styles.blogTitle}>{blog.title}</h2>
             </motion.div>
