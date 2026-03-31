@@ -3,10 +3,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 0 40px;
-  height: 90px;
+  height: 104px;
   background-color: #ffffff;
   width: 100%;
-  position: relative; /* Changed from absolute to be in-flow (scrolling) */
+  position: relative;
+  /* Changed from absolute to be in-flow (scrolling) */
   z-index: 1000;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
@@ -18,7 +19,7 @@
 }
 
 .logoImage {
-  height: 55px;
+  height: 57px;
   width: auto;
   display: block;
 }
@@ -203,7 +204,8 @@
 
 @media (max-width: 1200px) {
   .header {
-    position: fixed; /* Restore fixed position for mobile as requested */
+    position: fixed;
+    /* Restore fixed position for mobile as requested */
     padding: 0 15px;
     height: 80px;
   }
@@ -337,10 +339,13 @@
   .logoImage {
     height: 38px;
   }
-  .buyNowBtnMobile, .subscribeBtnMobile {
+
+  .buyNowBtnMobile,
+  .subscribeBtnMobile {
     padding: 8px 10px;
     font-size: 9px;
   }
+
   .mobileNavActions {
     gap: 5px;
     margin-left: auto;
