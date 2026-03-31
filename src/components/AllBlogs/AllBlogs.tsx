@@ -60,7 +60,13 @@ export default function AllBlogs() {
                 transition: { duration: 0.8, delay: index * 0.2, ease: [0.22, 1, 0.36, 1] } 
               }}
               viewport={{ once: true, margin: "-50px" }}
-              onClick={() => navigate(`/blog/${blog.slug}`)}
+              onClick={() => {
+                if (blog.slug === 'inside-the-source') {
+                  navigate('/inside-the-source');
+                } else {
+                  navigate(`/blog/${blog.slug}`);
+                }
+              }}
             >
               <div className={styles.imageWrapper}>
                 <img src={blog.image} alt={blog.title} className={styles.blogImage} />
