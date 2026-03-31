@@ -380,7 +380,7 @@
 
 
   width: 430px;
-  top: 1px;
+  top: -30px;
   left: -159px;
   transform: rotate(-7deg);
   z-index: 1;
@@ -400,18 +400,24 @@
 }
 
 @keyframes leafFloat1 {
-  0%, 100% {
+
+  0%,
+  100% {
     margin-top: 0;
   }
+
   50% {
     margin-top: -20px;
   }
 }
 
 @keyframes leafFloat2 {
-  0%, 100% {
+
+  0%,
+  100% {
     margin-bottom: 0;
   }
+
   50% {
     margin-bottom: -15px;
   }

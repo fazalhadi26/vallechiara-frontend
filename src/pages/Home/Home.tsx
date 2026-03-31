@@ -7,6 +7,7 @@ import bottle02 from '../../assets/bottle-02.webp';
 import bottle03 from '../../assets/bottle-03.png';
 import womanClass from '../../assets/home-page-images/woman-with-class.png';
 import { useNavigate } from 'react-router-dom';
+import AllBlogs from '../../components/AllBlogs/AllBlogs';
 
 import { useState } from 'react';
 
@@ -126,6 +127,8 @@ export default function Home() {
           />
         </div>
       </section>
+
+      <AllBlogs />
 
     </div>
   );
