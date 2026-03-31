@@ -31,7 +31,6 @@
 
 .blogCard:hover {
   transform: translateY(-10px);
-  box-shadow: 0 20px 60px rgba(0, 91, 100, 0.1);
 }
 
 .imageWrapper {
@@ -90,8 +89,9 @@
   transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+/* No scale on hover */
 .blogCard:hover .blogImage {
-  transform: scale(1.05);
+  transform: none;
 }
 
 .blogTitle {
