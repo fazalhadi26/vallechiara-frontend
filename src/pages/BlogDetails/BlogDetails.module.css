@@ -34,11 +34,11 @@
 }
 
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  gap: 90px;
   align-items: center;
 }
 
@@ -51,8 +51,8 @@
 
 .sideDecorLeft {
   position: absolute;
-  left: -35px;
-  width: 97px;
+  left: -25px;
+  width: 120px;
   height: auto;
   z-index: 1;
   top: 100px;
@@ -73,7 +73,7 @@
 
 .mainImageWrapper {
   width: 100%;
-  max-width: 500px;
+  max-width: 455px;
   /* aspect-ratio: 1/1.2; */
   border-radius: 200px 200px 0 0;
   /* Arched top like main design language */
@@ -88,14 +88,14 @@
   object-fit: cover;
 }
 
-.contentColumn {
+/* .contentColumn {
   padding-right: 40px;
-}
+} */
 
 .title {
   font-family: var(--font-serif);
-  color: #005B64;
-  font-size: 3.5rem;
+  color: #0f1111;
+  font-size: 2.5rem;
   font-weight: 100;
   text-transform: uppercase;
   margin-bottom: 30px;
@@ -104,11 +104,10 @@
 }
 
 .description {
-  font-family: var(--font-sans);
+
   color: #333333;
-  font-size: 1.125rem;
-  line-height: 1.8;
-  font-weight: 300;
+  font-size: 1.2rem;
+
 }
 
 @media (max-width: 1024px) {
