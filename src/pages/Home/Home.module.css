@@ -7,7 +7,7 @@
 .hero {
   position: relative;
   width: 100%;
-  height: calc(100vh - 90px);
+  height: calc(92vh);
   /* Adjusted for 90px header height */
   /* Full responsive viewport frame */
   background-color: #55878e;
@@ -51,14 +51,14 @@
 .title {
   font-family: var(--font-serif);
   color: #ffffff;
-  font-weight: 700;
-  font-size: 90px;
-  line-height: 1.1;
-  letter-spacing: 2px;
+  font-weight: 400;
+  font-size: 136px;
+  line-height: 1;
+  letter-spacing: 6px;
   display: flex;
   flex-direction: column;
   text-transform: uppercase;
-  text-shadow: 2px 2px 25px rgba(0, 0, 0, 0.4);
+
   animation: fadeIn 1.2s ease-out forwards;
 }
 

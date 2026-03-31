@@ -12,7 +12,9 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 import styles from './ProductSlider.module.css';
-import bottleImg from '../../assets/bootle1.png';
+import bottleImg1 from '../../assets/home-page-images/bottle-img-1.png';
+import bottleImg2 from '../../assets/home-page-images/bottle-img-2.png';
+import bottleImg3 from '../../assets/home-page-images/bottle-img-3.png';
 
 const products = [
   {
@@ -21,7 +23,7 @@ const products = [
     description: "Embrace nature's pure hydration with our 330 ML bottles - the perfect choice for the workplace, events, or home use. Experience revitalization in every zip. wherever you are.",
     price: 65.00,
     priceStr: 'AED 65.00',
-    image: bottleImg,
+    image: bottleImg1,
   },
   {
     id: 'box-05L',
@@ -29,7 +31,7 @@ const products = [
     description: "Perfect for active lifestyles, our 500 ML bottle offers pure hydration on the go. Sustainably crafted for you to enjoy Vallechiara's pristine water anywhere.",
     price: 75.00,
     priceStr: 'AED 75.00',
-    image: bottleImg,
+    image: bottleImg2,
   },
   {
     id: 'box-1L',
@@ -37,7 +39,7 @@ const products = [
     description: "Bring the purity of Vallechiara to your family table. Our 1 liter bottle ensures everyone stays hydrated beautifully with an elegant presentation.",
     price: 80.00,
     priceStr: 'AED 80.00',
-    image: bottleImg,
+    image: bottleImg3,
   }
 ];
 
@@ -82,10 +84,10 @@ export default function ProductSlider() {
   return (
     <section className={styles.sliderSection}>
       <div className={styles.sliderContainer}>
-        
+
         {/* Navigation Arrows placed outside main central layout */}
         <button className={`custom-prev ${styles.navBtn} ${styles.prevBtn}`}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M19 12H5M12 19l-7-7 7-7" /></svg>
         </button>
 
         <Swiper
@@ -107,7 +109,7 @@ export default function ProductSlider() {
             return (
               <SwiperSlide key={product.id} className={styles.swiperSlide}>
                 <div className={styles.slideContentWrapper}>
-                  
+
                   {/* Left side: Image presentation */}
                   <div className={styles.imageColumn}>
                     <img src={product.image} alt={product.name} className={styles.bottleImg} />
@@ -118,7 +120,7 @@ export default function ProductSlider() {
                   <div className={styles.textColumn}>
                     <h2 className={styles.productName}>{product.name}</h2>
                     <p className={styles.productDescription}>{product.description}</p>
-                    
+
                     <div className={styles.priceContainer}>
                       <span className={styles.priceLabel}>Starts from</span>
                       <span className={styles.priceValue}>{product.priceStr}</span>
@@ -132,7 +134,7 @@ export default function ProductSlider() {
                           BUY NOW
                         </button>
                       ) : (
-                        <div 
+                        <div
                           className={`${styles.cartActionWrapper} ${hoveredProductId === product.id ? styles.isExpanded : ''}`}
                           onMouseEnter={() => setHoveredProductId(product.id)}
                           onMouseLeave={() => setHoveredProductId(null)}
@@ -147,29 +149,29 @@ export default function ProductSlider() {
                           </div>
 
                           <div className={styles.qtyLayer}>
-                              <button 
-                                className={styles.qtyBtn} 
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  handleDecreaseQuantity(product.id, cartItem.quantity);
-                                }}
-                              >
-                                {cartItem.quantity === 1 ? (
-                                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                                ) : (
-                                  <>&#8722;</>
-                                )}
-                              </button>
-                              <span className={styles.qtyValue}>{cartItem.quantity}</span>
-                              <button 
-                                className={styles.qtyBtn} 
-                                onClick={(e) => {
-                                  e.stopPropagation();
-                                  updateQuantity(product.id, 1);
-                                }}
-                              >
-                                &#43;
-                              </button>
+                            <button
+                              className={styles.qtyBtn}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                handleDecreaseQuantity(product.id, cartItem.quantity);
+                              }}
+                            >
+                              {cartItem.quantity === 1 ? (
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+                              ) : (
+                                <>&#8722;</>
+                              )}
+                            </button>
+                            <span className={styles.qtyValue}>{cartItem.quantity}</span>
+                            <button
+                              className={styles.qtyBtn}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                updateQuantity(product.id, 1);
+                              }}
+                            >
+                              &#43;
+                            </button>
                           </div>
                         </div>
                       )}
@@ -181,19 +183,19 @@ export default function ProductSlider() {
             );
           })}
         </Swiper>
-        
+
         <button className={`custom-next ${styles.navBtn} ${styles.nextBtn}`}>
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
         </button>
 
       </div>
 
       <div className={styles.progressBarWrapper}>
         <div className={styles.progressBarBg}>
-          <div 
-            className={styles.progressBarFill} 
-            style={{ 
-              width: `${(100 / products.length)}%`, 
+          <div
+            className={styles.progressBarFill}
+            style={{
+              width: `${(100 / products.length)}%`,
               transform: `translateX(${activeIndex * 100}%)`
             }}
           ></div>
