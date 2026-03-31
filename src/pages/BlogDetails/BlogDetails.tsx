@@ -38,9 +38,24 @@ const blogContents: Record<string, BlogContent> = {
   }
 };
 
+import { useState } from 'react';
+
 export default function BlogDetails() {
   const { slug } = useParams();
   const content = blogContents[slug || ''] || blogContents['praised-by-connoisseurs'];
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const { currentTarget, clientX, clientY } = e;
+    const rect = currentTarget.getBoundingClientRect();
+    const x = (clientX - rect.left) / rect.width - 0.5; // range: -0.5 to 0.5
+    const y = (clientY - rect.top) / rect.height - 0.5; // range: -0.5 to 0.5
+    setMousePos({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setMousePos({ x: 0, y: 0 });
+  };
 
   return (
     <div className={styles.pageWrapper}>
@@ -57,12 +72,30 @@ export default function BlogDetails() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <div className={styles.visualContainer}>
-            <img src={storyLeft} alt="" className={styles.sideDecorLeft} />
+          <div 
+            className={styles.visualContainer}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
+            <img 
+              src={storyLeft} 
+              alt="" 
+              className={styles.sideDecorLeft} 
+              style={{
+                transform: `translate(${mousePos.x * 30}px, ${mousePos.y * 20}px)`
+              }}
+            />
             <div className={styles.mainImageWrapper}>
               <img src={content.image} alt={content.title} className={styles.mainImage} />
             </div>
-            <img src={storyRight} alt="" className={styles.sideDecorRight} />
+            <img 
+              src={storyRight} 
+              alt="" 
+              className={styles.sideDecorRight} 
+              style={{
+                transform: `translate(${mousePos.x * -30}px, ${mousePos.y * -20}px)`
+              }}
+            />
           </div>
         </motion.div>
 
