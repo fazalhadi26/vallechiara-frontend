@@ -370,7 +370,7 @@
   left: -9%;
   transform: translate(-30%, -50%) rotate(3deg);
   z-index: 3;
-  animation: swayFloat 6s ease-in-out infinite;
+  animation: floatVertical 6s ease-in-out infinite;
 }
 
 .bottleTop {
@@ -396,13 +396,19 @@
   animation: swayFloat 8s ease-in-out infinite alternate;
 }
 
-@keyframes swayFloat {
+@keyframes floatVertical {
+  0%, 100% {
+    margin-top: 0;
+  }
+  50% {
+    margin-top: -20px;
+  }
+}
 
-  0%,
-  100% {
+@keyframes swayFloat {
+  0%, 100% {
     margin-left: -10px;
   }
-
   50% {
     margin-left: 10px;
   }
