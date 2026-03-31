@@ -140,11 +140,7 @@ export default function ProductSlider() {
                           onMouseLeave={() => setHoveredProductId(null)}
                         >
                           <div className={styles.iconLayer}>
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={styles.cartIcon}>
-                              <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-                              <line x1="3" y1="6" x2="21" y2="6" />
-                              <path d="M16 10a4 4 0 0 1-8 0" />
-                            </svg>
+                            <svg width="29" height="22" viewBox="0 0 29 22" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 1H1.3673C2.72645 1 3.9158 1.91375 4.266 3.22701L7.34426 14.7705C7.49727 15.2295 8.07869 16.1475 9.18033 16.1475C10.282 16.1475 18.8197 16.1475 22.9508 16.1475C23.4098 16.1475 24.4197 15.8721 24.7869 14.7705C25.1541 13.6689 27.082 6.6612 28 3.29508" stroke="white" stroke-width="2"></path><circle cx="11.0162" cy="19.3605" r="1.83607" fill="white"></circle><circle cx="21.1149" cy="19.3605" r="1.83607" fill="white"></circle></svg>
                             <span className={styles.iconBadge}>{cartItem.quantity}</span>
                           </div>
 
