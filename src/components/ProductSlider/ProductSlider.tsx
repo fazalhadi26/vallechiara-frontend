@@ -15,6 +15,7 @@ import styles from './ProductSlider.module.css';
 import bottleImg1 from '../../assets/home-page-images/bottle-img-1.png';
 import bottleImg2 from '../../assets/home-page-images/bottle-img-2.png';
 import bottleImg3 from '../../assets/home-page-images/bottle-img-3.png';
+import { motion } from 'framer-motion';
 
 const products = [
   {
@@ -49,6 +50,30 @@ export default function ProductSlider() {
   const { cartItems, addToCart, updateQuantity, removeFromCart } = useCart();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [selectedItemId, setSelectedItemId] = useState<string | null>(null);
+
+  // Animation variants for sequential reveal
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { 
+        duration: 0.8, 
+        ease: [0.22, 1, 0.36, 1] 
+      }
+    }
+  };
 
   const handleBuyNow = (product: any) => {
     addToCart({
@@ -117,16 +142,28 @@ export default function ProductSlider() {
                   </div>
 
                   {/* Right side: Informational Text Data */}
-                  <div className={styles.textColumn}>
-                    <h2 className={styles.productName}>{product.name}</h2>
-                    <p className={styles.productDescription}>{product.description}</p>
+                  <motion.div 
+                    className={styles.textColumn}
+                    variants={containerVariants}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                  >
+                    <motion.h2 variants={itemVariants} className={styles.productName}>
+                      {product.name}
+                    </motion.h2>
+                    
+                    <motion.p variants={itemVariants} className={styles.productDescription}>
+                      {product.description}
+                    </motion.p>
 
-                    <div className={styles.priceContainer}>
+                    <motion.div variants={itemVariants} className={styles.priceContainer}>
                       <span className={styles.priceLabel}>Starts from</span>
                       <span className={styles.priceValue}>{product.priceStr}</span>
-                    </div>
+                    </motion.div>
 
-                    <div
+                    <motion.div
+                      variants={itemVariants}
                       className={`${styles.actionsBlock} ${isInCart ? styles.hasCartItem : ''} ${hoveredProductId === product.id ? styles.isExpanded : ''}`}
                     >
                       <button className={styles.subscribeBtn}>SUBSCRIBE</button>
@@ -173,8 +210,8 @@ export default function ProductSlider() {
                           </div>
                         </div>
                       )}
-                    </div>
-                  </div>
+                    </motion.div>
+                  </motion.div>
 
                 </div>
               </SwiperSlide>
