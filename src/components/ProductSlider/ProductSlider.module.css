@@ -120,7 +120,8 @@
 
 .subscribeBtn,
 .buyNowBtn {
-  flex: 1; /* Default 50/50 */
+  flex: 1;
+  /* Default 50/50 */
   background-color: #005668;
   color: #fff;
   border: none;
@@ -137,7 +138,8 @@
 }
 
 .actionsBlock.hasCartItem .subscribeBtn {
-  flex: 0 0 75%; /* Shrink when cart item is present (80% ish with gap) */
+  flex: 0 0 83%;
+  /* Shrink when cart item is present (80% ish with gap) */
 }
 
 .subscribeBtn:hover,
@@ -146,7 +148,8 @@
 }
 
 .cartActionWrapper {
-  flex: 0 0 22%; /* Start at ~20% */
+  flex: 0 0 14%;
+  /* Start at ~20% */
   height: 50px;
   background-color: transparent;
   border: 1.5px solid #005668;
@@ -162,14 +165,17 @@
 }
 
 .actionsBlock.isExpanded .subscribeBtn {
-  flex: 0 0 58%; /* Maintain ~60% visibility on hover */
+  flex: 0 0 58%;
+  /* Maintain ~60% visibility on hover */
   opacity: 1;
   pointer-events: auto;
-  font-size: 11px; /* Slightly smaller to fit */
+  font-size: 11px;
+  /* Slightly smaller to fit */
 }
 
 .actionsBlock.isExpanded .cartActionWrapper {
-  flex: 0 0 38%; /* Expand to ~40% on hover */
+  flex: 0 0 38%;
+  /* Expand to ~40% on hover */
   background-color: #005668;
   color: #ffffff;
   box-shadow: 0 4px 15px rgba(0, 86, 104, 0.2);
@@ -200,7 +206,8 @@
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-around; /* Better spacing for 40% width */
+  justify-content: space-around;
+  /* Better spacing for 40% width */
   padding: 0 5px;
   opacity: 0;
   transform: scale(1.1);
@@ -220,19 +227,19 @@
 
 .iconBadge {
   position: absolute;
-  top: -6px;
-  right: -6px;
-  background-color: #00222a;
+  top: 6px;
+  /* right: -6px; */
+  /* background-color: #00222a; */
   color: #fff;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 800;
-  height: 20px;
-  min-width: 20px;
-  border-radius: 10px;
+  /* height: 20px; */
+  /* min-width: 20px; */
+  /* border-radius: 10px; */
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 2px solid #fff;
+  /* border: 2px solid #fff; */
   font-family: var(--font-sans);
 }
 
@@ -260,7 +267,8 @@
 .qtyValue {
   color: #fff;
   font-family: var(--font-sans);
-  font-size: 14px; /* Slightly smaller for 40% width */
+  font-size: 14px;
+  /* Slightly smaller for 40% width */
   font-weight: 700;
   min-width: 15px;
   text-align: center;
