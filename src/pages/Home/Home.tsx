@@ -6,7 +6,7 @@ import leafRight from '../../assets/w-3.webp';
 import bootle1 from '../../assets/bootle1.png';
 import bottle02 from '../../assets/bottle-02.webp';
 import bottle03 from '../../assets/bottle-03.png';
-import womanClass from '../../assets/woman-class.png';
+import womanClass from '../../assets/home-page-images/woman-with-class.png';
 import { useNavigate } from 'react-router-dom';
 
 export default function Home() {
