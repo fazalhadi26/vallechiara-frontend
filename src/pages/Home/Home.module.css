@@ -147,9 +147,9 @@
 
 /* Homepage 3rd Section: Story Arch Layout */
 .storySection {
-  background-color: #0b5d66;
+  background-color: #005f71;
   /* Specific dark teal matching mockup perfectly */
-  padding-top: 140px;
+  padding-top: 100px;
   padding-bottom: 0px;
   width: 100%;
   overflow: hidden;
@@ -157,13 +157,13 @@
 }
 
 .storyContainer {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   display: flex;
   align-items: flex-end;
   /* Force anchor to the very bottom mapping user parameter */
   justify-content: space-between;
-  gap: 80px;
+  gap: 150px;
   padding: 0 40px;
 }
 
@@ -178,7 +178,7 @@
 
 .archImageWrapper {
   width: 400px;
-  height: 550px;
+  height: 465px;
   border-radius: 250px 250px 0 0;
   /* Massive pure smooth half-circle arch */
   position: relative;
@@ -186,7 +186,7 @@
 }
 
 .archImage {
-  width: 100%;
+  width: 95%;
   height: 100%;
   object-fit: cover;
   border-radius: 250px 250px 0 0;
@@ -201,16 +201,16 @@
 }
 
 .floralLeft {
-  left: -90px;
-  top: 40%;
-  width: 140px;
+  left: -62px;
+  top: 32%;
+  width: 125px;
   height: auto;
 }
 
 .floralRight {
-  right: -90px;
-  bottom: -40px;
-  width: 250px;
+  right: -0px;
+  bottom: -19px;
+  width: 181px;
   height: auto;
 }
 
@@ -236,7 +236,7 @@
 .storyTitle {
   font-family: var(--font-serif);
   font-size: 56px;
-  font-weight: 800;
+  font-weight: 200;
   line-height: 1.15;
   margin-bottom: 25px;
   text-transform: uppercase;
@@ -244,9 +244,9 @@
 
 .storyText {
   font-family: var(--font-sans);
-  font-size: 15px;
-  line-height: 1.8;
-  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.9;
+  font-weight: 700;
   margin-bottom: 45px;
   max-width: 480px;
   color: rgba(255, 255, 255, 0.9);
@@ -255,10 +255,9 @@
 .readMoreBtn {
   background-color: transparent;
   color: #ffffff;
-  border: 1.5px solid #ffffff;
-  padding: 12px 30px;
-  border-radius: 8px;
-  /* Slightly squarish capsule per mockup */
+  border: 2px solid #ffffff;
+  padding: 16px 25px;
+  border-radius: 12px;
   font-family: var(--font-sans);
   font-size: 12px;
   font-weight: 800;
