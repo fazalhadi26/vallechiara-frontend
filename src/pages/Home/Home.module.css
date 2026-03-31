@@ -47,7 +47,7 @@
 }
 
 .title {
-  font-family: 'Playfair Display', var(--font-serif), serif;
+  font-family: var(--font-serif);
   color: #ffffff;
   font-weight: 700;
   font-size: 90px;
@@ -111,9 +111,9 @@
 }
 
 .sliderIntroTitle {
-  font-family: 'Playfair Display', var(--font-serif), serif;
-  color: #005668;
-  font-size: 44px;
+  font-family: var(--font-serif);
+  color: rgb(0, 95, 113);
+  font-size: 40px;
   font-weight: 800;
   text-transform: uppercase;
   margin-bottom: 25px;
@@ -232,7 +232,7 @@
 }
 
 .storyTitle {
-  font-family: 'Playfair Display', var(--font-serif), serif;
+  font-family: var(--font-serif);
   font-size: 56px;
   font-weight: 800;
   line-height: 1.15;
@@ -405,7 +405,7 @@
 }
 
 .lightnessTitle {
-  font-family: 'Playfair Display', var(--font-serif), serif;
+  font-family: var(--font-serif);
   color: #005B64;
   font-size: 52px;
   font-weight: 800;

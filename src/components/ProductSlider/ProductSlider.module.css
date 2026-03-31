@@ -75,7 +75,7 @@
 }
 
 .productName {
-  font-family: 'Playfair Display', var(--font-sans), serif;
+  font-family: var(--font-serif);
   font-weight: 800;
   font-size: 38px;
   color: #005668;

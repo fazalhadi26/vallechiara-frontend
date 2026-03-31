@@ -32,7 +32,7 @@
 }
 
 .footerLogoPlaceholder {
-  font-family: 'Playfair Display', var(--font-serif), serif;
+  font-family: var(--font-serif);
   font-size: 68px;
   font-weight: 800;
   color: #005668;
