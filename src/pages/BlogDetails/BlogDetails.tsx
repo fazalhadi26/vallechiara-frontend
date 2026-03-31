@@ -46,7 +46,7 @@ export default function BlogDetails() {
     <div className={styles.pageWrapper}>
       {/* Breadcrumbs */}
       <nav className={styles.breadcrumbs}>
-        <Link to="/">Home</Link> | <span>{content.title}</span>
+        <Link to="/">Home</Link> | <span className={styles.breadcrumbsTitle}>{content.title}</span>
       </nav>
 
       <div className={styles.container}>

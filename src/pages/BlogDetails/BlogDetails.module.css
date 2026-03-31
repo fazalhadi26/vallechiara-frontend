@@ -1,24 +1,32 @@
 .pageWrapper {
   background-color: #ffffff;
   min-height: 100vh;
-  padding: 140px 60px 100px;
+  padding: 14px 32px 71px;
 }
 
 .breadcrumbs {
   font-family: var(--font-sans);
   font-size: 14px;
   color: #005B64;
-  margin-bottom: 40px;
-  max-width: 1400px;
+  margin-bottom: 60px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .breadcrumbs a {
   text-decoration: none;
-  color: inherit;
+  color: #1b2627;
   opacity: 0.7;
   transition: opacity 0.3s ease;
+  font-size: 13px;
+}
+
+.breadcrumbsTitle {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: lowercase !important;
+  position: relative;
+  top: -1px;
 }
 
 .breadcrumbs a:hover {
@@ -26,7 +34,7 @@
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1000px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -60,8 +68,9 @@
 .mainImageWrapper {
   width: 100%;
   max-width: 500px;
-  aspect-ratio: 1/1.2;
-  border-radius: 200px 200px 0 0; /* Arched top like main design language */
+  /* aspect-ratio: 1/1.2; */
+  border-radius: 200px 200px 0 0;
+  /* Arched top like main design language */
   overflow: hidden;
   background: #f8fbfc;
   box-shadow: 0 30px 60px rgba(0, 91, 100, 0.05);
@@ -130,7 +139,8 @@
     line-height: 1.6;
   }
 
-  .sideDecorLeft, .sideDecorRight {
+  .sideDecorLeft,
+  .sideDecorRight {
     width: 60px;
   }
 }
