@@ -1,6 +1,6 @@
 .sliderSection {
   background-color: #ffffff;
-  padding: 100px 0 80px 0;
+  padding: 50px 0 80px 0;
   width: 100%;
   position: relative;
   display: flex;
@@ -139,9 +139,12 @@
 .cartActionWrapper {
   width: 46px;
   height: 46px;
-  background-color: transparent; /* Default transparent */
-  border: 1.5px solid #005668; /* Default dark border */
-  color: #005668; /* Default dark icon */
+  background-color: transparent;
+  /* Default transparent */
+  border: 1.5px solid #005668;
+  /* Default dark border */
+  color: #005668;
+  /* Default dark icon */
   border-radius: 6px;
   display: flex;
   align-items: center;
@@ -154,8 +157,10 @@
 
 .cartActionWrapper.isExpanded {
   width: 150px;
-  background-color: #005668; /* Solid on hover */
-  color: #ffffff; /* White text on hover */
+  background-color: #005668;
+  /* Solid on hover */
+  color: #ffffff;
+  /* White text on hover */
 }
 
 .iconLayer {

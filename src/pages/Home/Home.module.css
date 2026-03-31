@@ -1,12 +1,14 @@
 .homeContainer {
-  min-height: calc(100vh - 90px); /* Adjusted for 90px header in-flow */
+  min-height: calc(100vh - 90px);
+  /* Adjusted for 90px header in-flow */
   width: 100%;
 }
 
 .hero {
   position: relative;
   width: 100%;
-  height: calc(100vh - 90px); /* Adjusted for 90px header height */
+  height: calc(100vh - 90px);
+  /* Adjusted for 90px header height */
   /* Full responsive viewport frame */
   background-color: #55878e;
   overflow: hidden;
@@ -102,7 +104,7 @@
 
 /* Slider Intro Header Typography */
 .sliderIntroSection {
-  padding: 100px 40px 10px 40px;
+  padding: 58px 40px 10px 40px;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
@@ -114,18 +116,18 @@
   font-family: var(--font-serif);
   color: rgb(0, 95, 113);
   font-size: 40px;
-  font-weight: 800;
+  font-weight: 100;
   text-transform: uppercase;
-  margin-bottom: 25px;
+  margin-bottom: 2px;
   letter-spacing: 1px;
 }
 
 .sliderIntroSubtitle {
-  font-family: var(--font-sans);
+
   color: #222;
-  font-size: 18px;
-  line-height: 1.6;
-  max-width: 1000px;
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 1090px;
   font-weight: 500;
 }
 
@@ -281,7 +283,7 @@
     gap: 0px;
     padding: 0;
   }
-  
+
   .storyImageColumn {
     width: 100%;
     order: 2;
@@ -322,7 +324,7 @@
     right: -30px;
     bottom: -15px;
   }
-  
+
   .readMoreBtn {
     width: 80%;
     padding: 15px;
@@ -363,7 +365,8 @@
 }
 
 .bottleMain {
-  width: 520px; /* Massively increased */
+  width: 520px;
+  /* Massively increased */
   top: 50%;
   left: 50%;
   transform: translate(-30%, -50%) rotate(-15deg);
@@ -372,7 +375,8 @@
 }
 
 .bottleTop {
-  width: 380px; /* Massively increased */
+  width: 380px;
+  /* Massively increased */
   top: 20px;
   left: -80px;
   transform: rotate(35deg);
@@ -381,7 +385,8 @@
 }
 
 .bottleBottom {
-  width: 430px; /* Massively increased */
+  width: 430px;
+  /* Massively increased */
   bottom: -10px;
   left: -40px;
   transform: rotate(15deg);
@@ -390,8 +395,15 @@
 }
 
 @keyframes swayFloat {
-  0%, 100% { margin-left: -10px; }
-  50% { margin-left: 10px; }
+
+  0%,
+  100% {
+    margin-left: -10px;
+  }
+
+  50% {
+    margin-left: 10px;
+  }
 }
 
 .lightnessCenter {
@@ -455,14 +467,16 @@
     padding-top: 0px;
     height: auto;
     min-height: auto;
-    background-color: #f8fbff; /* Subtle tint for separation */
+    background-color: #f8fbff;
+    /* Subtle tint for separation */
   }
 
   .lightnessLeft {
     flex: none;
     height: 380px;
     width: 100%;
-    margin-bottom: -60px; /* Stronger overlap for "Best UI" */
+    margin-bottom: -60px;
+    /* Stronger overlap for "Best UI" */
     overflow: visible;
   }
 
@@ -493,7 +507,7 @@
     padding: 80px 20px 40px;
     z-index: 20;
     position: relative;
-    background: linear-gradient(to top, #ffffff, rgba(255,255,255,0));
+    background: linear-gradient(to top, #ffffff, rgba(255, 255, 255, 0));
   }
 
   .lightnessTitle {
@@ -515,11 +529,12 @@
     justify-content: center;
     background-color: #ffffff;
   }
-  
+
   .lightnessLifestyle {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Looks better on mobile than contain if centered */
+    object-fit: cover;
+    /* Looks better on mobile than contain if centered */
     object-position: center;
   }
 }
