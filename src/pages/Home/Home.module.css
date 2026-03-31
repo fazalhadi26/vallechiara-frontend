@@ -205,6 +205,8 @@
   top: 32%;
   width: 125px;
   height: auto;
+  transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  pointer-events: none;
 }
 
 .floralRight {
@@ -212,6 +214,8 @@
   bottom: -19px;
   width: 181px;
   height: auto;
+  transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+  pointer-events: none;
 }
 
 .storyTextColumn {

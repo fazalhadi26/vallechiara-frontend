@@ -8,8 +8,24 @@ import bottle03 from '../../assets/bottle-03.png';
 import womanClass from '../../assets/home-page-images/woman-with-class.png';
 import { useNavigate } from 'react-router-dom';
 
+import { useState } from 'react';
+
 export default function Home() {
   const navigate = useNavigate();
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const { currentTarget, clientX, clientY } = e;
+    const rect = currentTarget.getBoundingClientRect();
+    const x = (clientX - rect.left) / rect.width - 0.5; // range: -0.5 to 0.5
+    const y = (clientY - rect.top) / rect.height - 0.5; // range: -0.5 to 0.5
+    setMousePos({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setMousePos({ x: 0, y: 0 });
+  };
+
   return (
     <div className={styles.homeContainer}>
       <section className={styles.hero}>
@@ -33,14 +49,32 @@ export default function Home() {
       {/* Product Slider accurately mapped to layout specifications */}
       <ProductSlider />
 
-      <section className={styles.storySection}>
+      <section
+        className={styles.storySection}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={handleMouseLeave}
+      >
         <div className={styles.storyContainer}>
 
           <div className={styles.storyImageColumn}>
             <div className={styles.archImageWrapper}>
               <img src={storyBg} alt="Vallechiara Source" className={styles.archImage} />
-              <img src={leafLeft} alt="Leaf Decor" className={styles.floralLeft} />
-              <img src={leafRight} alt="Leaf Decor" className={styles.floralRight} />
+              <img
+                src={leafLeft}
+                alt="Leaf Decor"
+                className={styles.floralLeft}
+                style={{
+                  transform: `translate(${mousePos.x * 40}px, ${mousePos.y * 20}px)`
+                }}
+              />
+              <img
+                src={leafRight}
+                alt="Leaf Decor"
+                className={styles.floralRight}
+                style={{
+                  transform: `translate(${mousePos.x * -30}px, ${mousePos.y * -15}px)`
+                }}
+              />
             </div>
           </div>
 
