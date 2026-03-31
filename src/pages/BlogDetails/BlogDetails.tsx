@@ -58,7 +58,11 @@ export default function BlogDetails() {
   };
 
   return (
-    <div className={styles.pageWrapper}>
+    <div 
+      className={styles.pageWrapper}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
       {/* Breadcrumbs */}
       <nav className={styles.breadcrumbs}>
         <Link to="/">Home</Link> | <span className={styles.breadcrumbsTitle}>{content.title}</span>
@@ -72,17 +76,14 @@ export default function BlogDetails() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <div 
-            className={styles.visualContainer}
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
+          <div className={styles.visualContainer}>
             <img 
               src={storyLeft} 
               alt="" 
               className={styles.sideDecorLeft} 
               style={{
-                transform: `translate(${mousePos.x * 30}px, ${mousePos.y * 20}px)`
+                transform: `translate(${mousePos.x * 30}px, ${mousePos.y * 20}px)`,
+                opacity: 1
               }}
             />
             <div className={styles.mainImageWrapper}>
@@ -93,7 +94,8 @@ export default function BlogDetails() {
               alt="" 
               className={styles.sideDecorRight} 
               style={{
-                transform: `translate(${mousePos.x * -30}px, ${mousePos.y * -20}px)`
+                transform: `translate(${mousePos.x * -30}px, ${mousePos.y * -20}px)`,
+                opacity: 1
               }}
             />
           </div>
