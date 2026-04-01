@@ -351,7 +351,7 @@
 
 @media (max-width: 1200px) {
   .header {
-    position: fixed;
+    /* position: fixed; */
     /* Restore fixed position for mobile as requested */
     padding: 0 15px;
     height: 80px;
