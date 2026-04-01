@@ -99,13 +99,15 @@
 }
 
 .orderedList li {
-  margin-bottom: 6px;
-  font-family: 'Outfit', sans-serif;
+  margin-bottom: -3px;
+
 
 }
 
 .list li {
   margin-bottom: 6px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px !important;
 }
 
 /* SECTIONS */

@@ -55,17 +55,17 @@ const VCaps = () => {
           <div className={styles.subSection}>
             <h3 className={styles.subTitle}>Bonus for Subscriptions:</h3>
             <ul className={styles.list}>
-              <li>1-month plan → +50 V Caps</li>
-              <li>3-month plan → +100 V Caps</li>
-              <li>6-month plan → +200 V Caps</li>
+              <li>1-month plan &rarr; +50 V Caps</li>
+              <li>3-month plan &rarr; +100 V Caps</li>
+              <li>6-month plan &rarr; +200 V Caps</li>
             </ul>
           </div>
 
           <div className={styles.subSection}>
             <h3 className={styles.subTitle}>Purchase Rewards:</h3>
             <ul className={styles.list}>
-              <li>Spend AED 100–999 → 10 V Caps per 100 AED</li>
-              <li>Spend AED 1,000+ → 20 V Caps per 100 AED</li>
+              <li>Spend AED 100-999 &rarr; 10 V Caps per 100 AED</li>
+              <li>Spend AED 1,000 and above &rarr; 20 V Caps per 100 AED</li>
             </ul>
           </div>
 
@@ -79,14 +79,15 @@ const VCaps = () => {
 
           <div className={styles.detailedContent}>
             <p className={styles.paragraph}>
-              Your earned V Caps automatically qualify you for weekly draws.
+              Your earned V Caps automatically qualify you for weekly draws, exclusively for active subscribers.
             </p>
             <ul className={styles.list}>
               <li>70–990 V Caps = 1 ticket</li>
               <li>1,000+ V Caps = 4 tickets</li>
             </ul>
             <p className={styles.paragraph}>
-              Winners are announced weekly and excluded from the next draw.
+              Winners are announced weekly and will be excluded from the next draw to ensure equal chances for all.
+              Draw participation does not reduce your V Caps balance, so your points continue to grow.
             </p>
           </div>
 
@@ -100,14 +101,14 @@ const VCaps = () => {
 
           <div className={styles.detailedContent}>
             <p className={styles.paragraph}>
-              Use your V Caps to redeem rewards or premium experiences.
+              Use your V Caps to redeem rewards directly or save them toward premium experiences:
             </p>
             <ul className={styles.list}>
-              <li><strong>Direct Redemption:</strong> Gifts & boxes</li>
-              <li><strong>Balance-On-Us:</strong> Combine with payment</li>
+              <li><strong>Direct Redemption:</strong> Exchange V Caps for Vallechiara boxes, gifts, and curated items.</li>
+              <li><strong>Balance-On-Us:</strong> Combine your points with partial payment for larger offers, such as furniture, wellness stays, or premium lifestyle experiences.</li>
             </ul>
             <p className={styles.exampleText}>
-              Example: AED 1,500 → pay AED 1,100 + 400 V Caps
+              Example: a AED 1,500 driving course &rarr; pay AED 1,100 + 400 V Caps
             </p>
           </div>
 
@@ -117,7 +118,8 @@ const VCaps = () => {
           </div>
 
           <p className={styles.paragraph}>
-            Because wellness is a lifestyle. Vallechiara rewards your consistency.
+            Because wellness isn't a one-time choice, it's a way of life.
+            With V Caps, Vallechiara thanks you for making pure hydration part of yours, rewarding consistency, care, and the ritual of living well.
           </p>
 
         </div>
