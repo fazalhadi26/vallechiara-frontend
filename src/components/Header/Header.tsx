@@ -68,6 +68,16 @@ export default function Header() {
 
   return (
     <header className={styles.header}>
+      <button 
+        className={`${styles.hamburger} ${isMobileMenuOpen ? styles.hamburgerOpen : ''}`} 
+        onClick={toggleMenu} 
+        aria-label="Toggle Navigation"
+      >
+        <span className={styles.line1}></span>
+        <span className={styles.line2}></span>
+        <span className={styles.line3}></span>
+      </button>
+
       {/* Logo */}
       <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className={styles.logoContainer}>
         <img src={logoImg} alt="Vallechiara Logo" className={styles.logoImage} />
@@ -153,14 +163,6 @@ export default function Header() {
         <Link to="/shop" onClick={() => setIsMobileMenuOpen(false)} className={styles.buyNowBtnMobile}>Buy Now</Link>
         <Link to="/subscribe" onClick={() => setIsMobileMenuOpen(false)} className={styles.subscribeBtnMobile}>Subscribe</Link>
       </div>
-
-      <button className={styles.hamburger} onClick={toggleMenu} aria-label="Toggle Navigation">
-        {isMobileMenuOpen ? (
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></svg>
-        ) : (
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="3" y1="12" x2="21" y2="12" /><line x1="3" y1="6" x2="21" y2="6" /><line x1="3" y1="18" x2="21" y2="18" /></svg>
-        )}
-      </button>
       {/* Shop Overlay — covers the page content below the header */}
       {isShopOpen && (
         <div 

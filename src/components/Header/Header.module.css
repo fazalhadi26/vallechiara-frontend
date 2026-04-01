@@ -295,10 +295,54 @@
 
 .hamburger {
   display: none;
-  background: transparent;
+  background-color: #EAF2F4;
   border: none;
-  color: #005668;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   cursor: pointer;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: 14px;
+  gap: 5px;
+  z-index: 1010;
+  transition: all 0.3s ease;
+}
+
+.hamburger span {
+  display: block;
+  height: 2.5px;
+  background-color: #005668;
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.line1 {
+  width: 22px;
+}
+
+.line2 {
+  width: 16px;
+}
+
+.line3 {
+  width: 10px;
+}
+
+.hamburgerOpen .line1 {
+  transform: translateY(7.5px) rotate(45deg);
+  width: 22px;
+}
+
+.hamburgerOpen .line2 {
+  opacity: 0;
+  transform: translateX(-10px);
+}
+
+.hamburgerOpen .line3 {
+  transform: translateY(-7.5px) rotate(-45deg);
+  width: 22px;
 }
 
 .mobileNavActions {
@@ -314,17 +358,22 @@
   }
 
   .logoContainer {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
     align-items: center;
   }
 
   .logoImage {
-    height: 45px;
+    height: 35px; /* Slightly adjusted to fit better */
   }
 
   .hamburger {
-    display: block;
-    z-index: 1001;
-    margin-left: 10px;
+    display: flex;
+    z-index: 1011;
+    margin-left: 0;
+    /* Circular button style inherited from above */
   }
 
   .mobileNavActions {
@@ -337,25 +386,31 @@
   .buyNowBtnMobile {
     background-color: #005668;
     color: #ffffff;
-    padding: 8px 14px;
-    font-size: 10px;
-    font-weight: 800;
-    border-radius: 4px;
-    text-transform: uppercase;
+    padding: 10px 20px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 50px;
+    text-transform: none;
     text-decoration: none;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .subscribeBtnMobile {
     background-color: #005668;
     color: #ffffff;
-    padding: 8px 14px;
-    font-size: 10px;
-    font-weight: 800;
-    border-radius: 4px;
-    text-transform: uppercase;
+    padding: 10px 20px;
+    font-size: 11px;
+    font-weight: 700;
+    border-radius: 50px;
+    text-transform: none;
     text-decoration: none;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .menuContainer {
