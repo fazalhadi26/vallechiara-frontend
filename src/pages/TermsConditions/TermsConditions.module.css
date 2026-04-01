@@ -176,7 +176,11 @@
 
 @media (max-width: 768px) {
   .container {
-    padding: 0 20px;
+    padding: 80px 20px 0 20px;
+  }
+
+  .termsWrapper {
+    padding-bottom: 0px;
   }
 
   .breadcrumbs {
