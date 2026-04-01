@@ -19,7 +19,10 @@ export default function Header() {
   const { totalItems } = useCart();
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  const toggleMenu = () => setIsMobileMenuOpen(!isMobileMenuOpen);
+  const toggleMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+    setIsShopOpen(false);
+  };
 
   const getNavClass = (path: string) =>
     location.pathname === path ? `${styles.navLink} ${styles.active}` : styles.navLink;
@@ -37,7 +40,17 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Close dropdown on route change
+  // Lock scroll when dropdown or mobile menu is open
+  useEffect(() => {
+    if (isShopOpen || isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isShopOpen, isMobileMenuOpen]);
+
+  // Close everything on route change
   useEffect(() => {
     setIsShopOpen(false);
     setIsMobileMenuOpen(false);
