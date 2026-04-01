@@ -84,12 +84,13 @@
 /* SUB */
 .subSection {
   margin-bottom: 35px;
+  max-width: 1000px;
 }
 
 .subTitle {
   font-family: 'Outfit', sans-serif;
-  font-size: 15px;
-  font-weight: 700;
+  font-size: 18px;
+  font-weight: 600;
   color: #1a1a1a;
   margin-bottom: 6px;
   letter-spacing: 0.2px;

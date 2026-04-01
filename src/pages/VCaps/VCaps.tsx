@@ -82,7 +82,7 @@ const VCaps = () => {
               <li>1,000 Caps and above = 4 tickets</li>
             </ul>
             <p className={styles.paragraph}>
-              Winners are announced weekly and will be excluded from the next draw to ensure equal chances for all.
+              Winners are announced weekly and will be excluded from the next draw to ensure equal chances for all.<br />
               Draw participation does not reduce your V Caps balance, so your points continue to grow.
             </p>
           </div>
@@ -107,7 +107,7 @@ const VCaps = () => {
           <div className={styles.subSection}>
             <h3 className={styles.subTitle}>Why It Matters</h3>
             <p className={styles.paragraph}>
-              Because wellness isn't a one-time choice, it's a way of life.
+              Because wellness isn't a one-time choice, it's a way of life.<br />
               With V Caps, Vallechiara thanks you for making pure hydration part of yours, rewarding consistency, care, and the ritual of living well.
             </p>
           </div>
