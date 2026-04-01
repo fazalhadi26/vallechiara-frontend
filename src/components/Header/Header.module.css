@@ -121,15 +121,20 @@
   left: 0;
   width: 100vw;
   background: #ffffff;
-  padding: 10px 0 18px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+  padding: 30px 0 45px;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.12);
   border-top: 1px solid #eeeeee;
-  z-index: 1500;
+  z-index: 1550;
+  border-radius: 0 0 24px 24px;
   /* Slide animation */
   opacity: 0;
   transform: translateY(-8px);
   pointer-events: none;
   transition: opacity 0.25s ease, transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .dropdownOpen {
@@ -138,21 +143,42 @@
   pointer-events: all;
 }
 
-/* Each dropdown link item */
+/* Each dropdown link item — increased size & centered */
 .dropdownItem {
   display: block;
-  padding: 14px 60px;
+  padding: 12px 60px;
   font-family: 'Outfit', sans-serif;
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 32px;
+  font-weight: 800;
   color: #111111;
   text-decoration: none;
-  transition: color 0.18s ease;
-  line-height: 1.2;
+  transition: all 0.2s ease;
+  line-height: 1.25;
+  text-align: center;
+  width: auto;
 }
 
 .dropdownItem:hover {
   color: #005668;
+  transform: scale(1.05);
+}
+
+/* Background Overlay */
+.overlay {
+  position: fixed;
+  top: 104px; /* Header height */
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 104px);
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 1400; /* Behind dropdown but in front of page content */
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .actions {
@@ -410,6 +436,22 @@
 
   .phoneBtn span {
     display: inline-block;
+  }
+
+  /* Adjust dropdown for mobile header height */
+  .dropdown {
+    top: 80px;
+    padding: 20px 0 30px;
+  }
+
+  .dropdownItem {
+    font-size: 24px;
+    padding: 10px 40px;
+  }
+
+  .overlay {
+    top: 80px;
+    height: calc(100vh - 80px);
   }
 }
 
