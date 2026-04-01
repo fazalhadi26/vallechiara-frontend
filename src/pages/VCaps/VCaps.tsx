@@ -29,7 +29,7 @@ const VCaps = () => {
 
           {/* HOW IT WORKS */}
           <div className={styles.mainHeadingWrapper}>
-            <h2 className={styles.mainHeading}>HOW IT WORKS</h2>
+            <h2 className={styles.mainHeading}><strong>HOW IT WORKS</strong></h2>
             <p className={styles.headingMotto}>
               SIMPLE. SEAMLESS. REWARDING.
             </p>

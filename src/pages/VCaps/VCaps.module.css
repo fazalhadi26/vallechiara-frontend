@@ -55,9 +55,9 @@
 }
 
 .mainHeading {
-  font-family: var(--font-serif);
-  font-size: 42px;
-  color: #0a5c63;
+  font-family: Pacho Demo, sans-serif;
+  font-size: 40px;
+  color: #000000;
 }
 
 .headingMotto {
@@ -124,7 +124,7 @@
   .heroTitle {
     font-size: 52px;
   }
-  
+
   .heroImageWrapper {
     width: 45%;
     bottom: -40px;
@@ -190,12 +190,14 @@
     margin-top: 60px;
   }
 
-  .introText, .paragraph {
+  .introText,
+  .paragraph {
     font-size: 14px;
     line-height: 1.7;
   }
 
-  .orderedList li, .list li {
+  .orderedList li,
+  .list li {
     font-size: 14px;
   }
 }
