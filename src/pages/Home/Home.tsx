@@ -148,8 +148,18 @@ export default function Home() {
         </div>
 
         <div className={styles.lightnessCenter}>
-          <h2 className={styles.lightnessTitle}>LIGHTNESS<br />PERSONIFIED</h2>
-          <p className={styles.lightnessText}>
+          <h2
+            className={styles.lightnessTitle}
+            data-aos="fade-up"
+            data-aos-delay="0"
+          >
+            LIGHTNESS<br />PERSONIFIED
+          </h2>
+          <p
+            className={styles.lightnessText}
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
             Born in the untouched Italian Alps, Vallechiara is water at its purest, light on the palate, balanced in every drop, and crafted by nature to refresh body and soul.
           </p>
         </div>
