@@ -249,7 +249,7 @@
 }
 
 .buyNowBtn:hover {
-  background-color: #004554;
+  background-color: rgba(70, 149, 167, 1);
 }
 
 .subscribeBtn {
@@ -266,7 +266,8 @@
 }
 
 .subscribeBtn:hover {
-  background-color: rgba(0, 86, 104, 0.05);
+  background-color: #005668;
+  color: #ffffff;
 }
 
 .phoneBtn {
@@ -288,7 +289,8 @@
 }
 
 .phoneBtn:hover {
-  background-color: rgba(0, 86, 104, 0.05);
+  background-color: #005668;
+  color: #ffffff;
 }
 
 .hamburger {
