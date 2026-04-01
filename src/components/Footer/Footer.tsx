@@ -51,14 +51,14 @@ export default function Footer() {
             <div className={styles.socialGrid}>
               
               {/* Facebook Icon */}
-              <a href="https://facebook.com" className={styles.socialIcon} aria-label="Facebook">
+              <a href="https://www.facebook.com/people/Vallechiara/61565795190600/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Facebook">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10 0.0400391C4.5 0.0400391 0 4.53004 0 10.0601C0 15.0601 3.66 19.2101 8.44 19.9601V12.9601H5.9V10.0601H8.44V7.85004C8.44 5.34004 9.93 3.96004 12.22 3.96004C13.31 3.96004 14.45 4.15004 14.45 4.15004V6.62004H13.19C11.95 6.62004 11.56 7.39004 11.56 8.18006V10.0601H14.34L13.89 12.9601H11.56V19.9601C13.9164 19.5879 16.0622 18.3856 17.6099 16.5701C19.1576 14.7547 20.0054 12.4457 20 10.0601C20 4.53004 15.5 0.0400391 10 0.0400391Z"></path>
                 </svg>
               </a>
 
               {/* Instagram Icon */}
-              <a href="https://instagram.com" className={styles.socialIcon} aria-label="Instagram">
+              <a href="https://www.instagram.com/vallechiarawater/" target="_blank" rel="noopener noreferrer" className={styles.socialIcon} aria-label="Instagram">
                 <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <defs>
                     <linearGradient id="instagram-gradient-7pybl5cl7" x1="0%" y1="0%" x2="100%" y2="100%">
