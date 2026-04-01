@@ -116,3 +116,107 @@
   font-style: italic;
   color: #777;
 }
+
+/* RESPONSIVE RULES */
+@media (max-width: 1200px) {
+  .heroTitle {
+    font-size: 52px;
+  }
+  
+  .heroImageWrapper {
+    width: 45%;
+    bottom: -40px;
+  }
+}
+
+@media (max-width: 991px) {
+  .heroSection {
+    padding: 120px 0;
+  }
+
+  .heroTitle {
+    font-size: 44px;
+  }
+
+  .heroImageWrapper {
+    width: 40%;
+    bottom: -20px;
+  }
+
+  .mainHeading {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 60px 0 300px 0;
+    text-align: center;
+  }
+
+  .heroContent {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .heroTitle {
+    font-size: 34px;
+  }
+
+  .heroSubtitle {
+    font-size: 15px;
+  }
+
+  .heroImageWrapper {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: 450px;
+    bottom: -10px;
+  }
+
+  .contentSection {
+    padding: 60px 0;
+  }
+
+  .mainHeading {
+    font-size: 30px;
+  }
+
+  .sectionDivider {
+    margin-top: 60px;
+  }
+
+  .introText, .paragraph {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  .orderedList li, .list li {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroSection {
+    padding: 50px 0 250px 0;
+  }
+
+  .heroTitle {
+    font-size: 28px;
+  }
+
+  .heroImageWrapper {
+    width: 95%;
+    bottom: 0;
+  }
+
+  .mainHeading {
+    font-size: 26px;
+  }
+
+  .headingMotto {
+    font-size: 10px;
+  }
+}
