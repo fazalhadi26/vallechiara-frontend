@@ -91,12 +91,13 @@
   gap: 10px;
   padding-top: 10px;
   /* Optical alignment with the top of the V logo */
+  text-align: center;
 }
 
 .footerLink {
   font-family: 'Outfit', sans-serif;
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 600;
   color: #222;
   text-decoration: none;
   transition: color 0.2s;
