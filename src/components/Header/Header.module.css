@@ -118,7 +118,6 @@
 .dropdown {
   position: fixed;
   top: 104px;
-  /* matches desktop header height */
   left: 0;
   width: 100vw;
   background: #ffffff;
@@ -131,7 +130,11 @@
   opacity: 0;
   transform: translateY(-8px);
   pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.25s ease, padding-left 0s;
+  display: block;
+}
+
+.dropdownInner {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -144,14 +147,13 @@
 }
 
 /* Each dropdown link item — left-aligned with trigger button */
+/* Each dropdown link item — left-aligned via JS dynamic padding */
 .dropdownItem {
   display: block;
   padding: 12px 0;
-  margin-left: 450px;
-  /* Offset to match "Shop Water" button position on desktop */
   font-family: 'Outfit', sans-serif;
-  font-size: 30px;
-  font-weight: 800;
+  font-size: 28px;
+  font-weight: 600;
   color: #111111;
   text-decoration: none;
   transition: all 0.2s ease;
@@ -161,7 +163,7 @@
 
 .dropdownItem:hover {
   color: #005668;
-  transform: scale(1.05);
+
 }
 
 /* Background Overlay */
@@ -449,14 +451,14 @@
   .dropdown {
     top: 80px;
     padding: 20px 0 25px;
-    align-items: flex-start;
+    /* On mobile, we override the JS padding to be 20px */
+    padding-left: 20px !important;
   }
 
   .dropdownItem {
     font-size: 24px;
     padding: 10px 0;
-    margin-left: 40px;
-    /* Aligns with nav links in mobile menu */
+    margin-left: 0;
   }
 
   .overlay {

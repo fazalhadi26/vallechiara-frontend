@@ -14,10 +14,12 @@ const SHOP_LINKS = [
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isShopOpen, setIsShopOpen] = useState(false);
+  const [shopBtnLeft, setShopBtnLeft] = useState(0);
   const [lang, setLang] = useState('ar');
   const location = useLocation();
   const { totalItems } = useCart();
   const dropdownRef = useRef<HTMLDivElement>(null);
+  const shopBtnRef = useRef<HTMLButtonElement>(null);
 
   const toggleMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -28,6 +30,24 @@ export default function Header() {
     location.pathname === path ? `${styles.navLink} ${styles.active}` : styles.navLink;
 
   const toggleLanguage = () => setLang(lang === 'ar' ? 'en' : 'ar');
+
+  // Update shop button position for alignment
+  const updateShopPos = () => {
+    if (shopBtnRef.current) {
+      const rect = shopBtnRef.current.getBoundingClientRect();
+      setShopBtnLeft(rect.left);
+    }
+  };
+
+  useEffect(() => {
+    updateShopPos();
+    window.addEventListener('resize', updateShopPos);
+    return () => window.removeEventListener('resize', updateShopPos);
+  }, []);
+
+  useEffect(() => {
+    if (isShopOpen) updateShopPos();
+  }, [isShopOpen]);
 
   // Close dropdown on outside click
   useEffect(() => {
@@ -61,6 +81,7 @@ export default function Header() {
           {/* Shop Water dropdown */}
           <div className={styles.dropdownWrap} ref={dropdownRef}>
             <button
+              ref={shopBtnRef}
               className={`${styles.navLink} ${styles.shopBtn} ${location.pathname === '/shop' ? styles.active : ''} ${isShopOpen ? styles.shopOpen : ''}`}
               onClick={() => setIsShopOpen(!isShopOpen)}
               aria-expanded={isShopOpen}
@@ -78,20 +99,25 @@ export default function Header() {
             </button>
 
             {/* Dropdown panel */}
-            <div className={`${styles.dropdown} ${isShopOpen ? styles.dropdownOpen : ''}`}>
-              {SHOP_LINKS.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.to}
-                  className={styles.dropdownItem}
-                  onClick={() => {
-                    setIsShopOpen(false);
-                    setIsMobileMenuOpen(false);
-                  }}
-                >
-                  {item.label}
-                </Link>
-              ))}
+            <div 
+              className={`${styles.dropdown} ${isShopOpen ? styles.dropdownOpen : ''}`}
+              style={{ paddingLeft: `${shopBtnLeft}px` }}
+            >
+              <div className={styles.dropdownInner}>
+                {SHOP_LINKS.map((item) => (
+                  <Link
+                    key={item.label}
+                    to={item.to}
+                    className={styles.dropdownItem}
+                    onClick={() => {
+                      setIsShopOpen(false);
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 
