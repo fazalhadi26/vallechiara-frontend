@@ -175,7 +175,7 @@
   width: 100%;
   height: calc(100vh - 104px);
   background-color: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(2px);
+
   z-index: 1400;
   /* Behind dropdown but in front of page content */
   animation: fadeIn 0.3s ease;
