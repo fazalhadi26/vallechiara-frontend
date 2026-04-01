@@ -64,7 +64,7 @@ const VCaps = () => {
           {/* Purchase Rewards */}
           <div className={styles.subSection}>
             <h3 className={styles.subTitle}>Purchase Rewards:</h3>
-            <ul className={styles.list}>
+            <ul className={styles.list} style={{ paddingLeft: '0px' }}>
               <li>Spend AED 100-999 &rarr; 10 V Caps per 100 AED</li>
               <li>Spend AED 1,000 and above &rarr; 20 V Caps per 100 AED</li>
             </ul>

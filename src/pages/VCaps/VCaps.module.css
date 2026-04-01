@@ -96,6 +96,12 @@
   letter-spacing: 0.2px;
 }
 
+.bonusList li {
+  font-size: 18px;
+  font-family: 'Outfit', sans-serif;
+  margin-bottom: 14px;
+}
+
 .subMotto {
   font-family: 'Outfit', sans-serif;
   font-size: 13px;
