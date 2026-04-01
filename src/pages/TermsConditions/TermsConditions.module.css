@@ -1,0 +1,164 @@
+.termsWrapper {
+  background-color: #ffffff;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 60px;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: #005668;
+}
+
+.separator {
+  color: #ccc;
+}
+
+.current {
+  color: #005668;
+  font-weight: 600;
+}
+
+.mainTitle {
+  font-family: var(--font-serif);
+  font-size: 64px;
+  text-align: center;
+  color: #005668;
+  margin-bottom: 80px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.contentSection {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  color: #222;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.orderedList {
+  list-style: none;
+  counter-reset: item;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.orderedList li {
+  counter-increment: item;
+  margin-bottom: 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  display: flex;
+}
+
+.orderedList li::before {
+  content: counter(item) ". ";
+  margin-right: 10px;
+  font-weight: 700;
+  min-width: 20px;
+}
+
+.paragraph {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.bulletList {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 30px;
+}
+
+.bulletList li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.bulletList li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+  color: #222;
+}
+
+/* Base Responsive rules */
+@media (max-width: 1024px) {
+  .mainTitle {
+    font-size: 48px;
+    margin-bottom: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 30px 20px;
+  }
+
+  .breadcrumbs {
+    margin-bottom: 40px;
+  }
+
+  .mainTitle {
+    font-size: 36px;
+    margin-bottom: 40px;
+  }
+
+  .sectionTitle {
+    font-size: 16px;
+    margin-top: 30px;
+  }
+
+  .paragraph, .orderedList li, .bulletList li {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainTitle {
+    font-size: 28px;
+  }
+
+  .breadcrumbs {
+    font-size: 12px;
+  }
+}
