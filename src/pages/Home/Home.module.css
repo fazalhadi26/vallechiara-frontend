@@ -123,12 +123,13 @@
 }
 
 .sliderIntroSubtitle {
-
-  color: #222;
+  color: #222222bd;
   font-size: 1rem;
   line-height: 1.5;
   max-width: 1090px;
-  font-weight: 500;
+  /* font-weight: 500; */
+  font-family: 'Outfit', sans-serif;
+  font-style: normal;
 }
 
 @media (max-width: 768px) {
@@ -201,8 +202,8 @@
 }
 
 .floralLeft {
-  left: -62px;
-  top: 32%;
+  left: -37px;
+  top: 24%;
   width: 125px;
   height: auto;
   transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
