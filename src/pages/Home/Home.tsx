@@ -8,24 +8,36 @@ import bottle03 from '../../assets/bottle-03.png';
 import womanClass from '../../assets/home-page-images/woman-with-class.png';
 import { useNavigate } from 'react-router-dom';
 import AllBlogs from '../../components/AllBlogs/AllBlogs';
+import { useState, useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
-import { useState } from 'react';
 
 export default function Home() {
   const navigate = useNavigate();
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
+  useEffect(() => {
+    AOS.init({
+      duration: 800,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 80,
+    });
+  }, []);
+
   const handleMouseMove = (e: React.MouseEvent) => {
     const { currentTarget, clientX, clientY } = e;
     const rect = currentTarget.getBoundingClientRect();
-    const x = (clientX - rect.left) / rect.width - 0.5; // range: -0.5 to 0.5
-    const y = (clientY - rect.top) / rect.height - 0.5; // range: -0.5 to 0.5
+    const x = (clientX - rect.left) / rect.width - 0.5;
+    const y = (clientY - rect.top) / rect.height - 0.5;
     setMousePos({ x, y });
   };
 
   const handleMouseLeave = () => {
     setMousePos({ x: 0, y: 0 });
   };
+
 
   return (
     <div className={styles.homeContainer}>
@@ -80,12 +92,35 @@ export default function Home() {
           </div>
 
           <div className={styles.storyTextColumn}>
-            <span className={styles.storySubhead}>THE STORY BEHIND EVERY DROP</span>
-            <h2 className={styles.storyTitle}>NATURE'S PUREST<br />ESSENCE</h2>
-            <p className={styles.storyText}>
+            <span
+              className={styles.storySubhead}
+              data-aos="fade-up"
+              data-aos-delay="0"
+            >
+              THE STORY BEHIND EVERY DROP
+            </span>
+            <h2
+              className={styles.storyTitle}
+              data-aos="fade-up"
+              data-aos-delay="150"
+            >
+              NATURE'S PUREST<br />ESSENCE
+            </h2>
+            <p
+              className={styles.storyText}
+              data-aos="fade-up"
+              data-aos-delay="300"
+            >
               From pristine springs to your table, Vallechiara's journey is one of rebirth and devotion to purity. A legacy that began in the Italian Alps continues today, blending heritage, innovation, and a shared respect for nature.
             </p>
-            <button onClick={() => navigate("/our-story")} className={styles.readMoreBtn}>READ MORE</button>
+            <button
+              onClick={() => navigate("/our-story")}
+              className={styles.readMoreBtn}
+              data-aos="fade-up"
+              data-aos-delay="450"
+            >
+              READ MORE
+            </button>
           </div>
 
         </div>
