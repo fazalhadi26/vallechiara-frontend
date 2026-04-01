@@ -1,155 +1,230 @@
-.supportContainer {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 40px 24px 100px 24px; /* Reduced from 120px */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap');
+
+/* =============================
+   PAGE WRAPPER
+   ============================= */
+.pageWrapper {
   background-color: #ffffff;
-  animation: fadeIn 0.8s ease-out;
+  min-height: 100vh;
+  padding-bottom: 120px;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* =============================
+   CONTAINER
+   ============================= */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.titleArea {
-  text-align: center;
-  margin-bottom: 100px;
+/* =============================
+   BREADCRUMBS
+   ============================= */
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  color: #666;
+  padding: 20px 0 50px;
 }
 
+.breadcrumbs a {
+  text-decoration: none;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.breadcrumbs a:hover {
+  color: #005668;
+}
+
+.separator {
+  color: #bbb;
+  font-size: 12px;
+}
+
+.current {
+  color: rgb(0, 95, 113);
+  font-weight: 500;
+}
+
+/* =============================
+   MAIN TITLE
+   ============================= */
 .mainTitle {
   font-family: var(--font-serif);
-  font-size: 40px;
-  color: #004d5d;
+  font-size: 46px;
+  text-align: center;
+  color: #1a1a1a;
+  margin-bottom: 70px;
   text-transform: uppercase;
-  font-weight: 900;
-  letter-spacing: 4px;
-  margin: 0;
+  letter-spacing: 3px;
+  font-weight: 700;
   line-height: 1.1;
 }
 
-.contentBody {
-  max-width: 800px;
+/* =============================
+   CONTENT SECTION
+   ============================= */
+.contentSection {
+  max-width: 860px;
   margin: 0 auto;
-  color: #2a3b45;
 }
 
-.section {
-  margin-bottom: 72px;
-}
-
-.sectionHeading {
-  font-family: var(--font-serif);
-  font-size: 24px;
-  color: #005F71;
-  text-transform: uppercase;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  margin-bottom: 20px;
-  position: relative;
-}
-
-.subHeading {
-  font-family: var(--font-sans);
+/* =============================
+   SECTION HEADINGS
+   ============================= */
+.sectionTitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
   font-weight: 700;
-  font-size: 17px;
-  margin-bottom: 28px;
-  color: #334e5c;
+  color: #1a1a1a;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-top: 38px;
+  margin-bottom: 14px;
 }
 
-.textBlock {
-  font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.9;
-  margin-bottom: 28px;
-  color: #4a5a65;
+.sectionTitle:first-child {
+  margin-top: 0;
 }
 
+/* =============================
+   SUB HEADING (bold italic line)
+   ============================= */
+.subHeading {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 14px;
+}
+
+/* =============================
+   PARAGRAPHS
+   ============================= */
+.paragraph {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+/* =============================
+   CONTACT LIST (plain lines)
+   ============================= */
 .contactList {
   list-style: none;
   padding: 0;
+  margin: 0 0 14px 0;
 }
 
-.contactItem {
-  font-family: var(--font-sans);
-  font-size: 16px;
-  margin-bottom: 16px;
-  color: #4a5a65;
-  display: flex;
-  align-items: center;
+.contactList li {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 4px;
 }
 
-.contactItem a {
-  color: #005F71;
-  font-weight: 600;
-  text-decoration: underline;
-  text-underline-offset: 4px;
+.contactList li a {
+  color: #333;
+  text-decoration: none;
 }
 
+/* =============================
+   FAQ LIST (plain question + answer)
+   ============================= */
 .faqList {
   list-style: none;
   padding: 0;
+  margin: 0 0 14px 0;
 }
 
 .faqItem {
-  margin-bottom: 40px;
-  padding-bottom: 40px;
-  border-bottom: 1px solid #f0f4f5;
-}
-
-.faqItem:last-child {
-  border-bottom: none;
+  margin-bottom: 4px;
 }
 
 .question {
-  font-family: var(--font-sans);
-  font-weight: 700;
-  font-size: 17px;
-  margin-bottom: 12px;
-  color: #005F71;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.75;
   display: block;
 }
 
 .answer {
-  font-family: var(--font-sans);
-  font-size: 16px;
-  line-height: 1.8;
-  color: #5a6b77;
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #333;
+  line-height: 1.75;
+  margin-bottom: 6px;
 }
 
-.closingNote {
-  margin-top: 100px;
-  padding-top: 60px;
-  border-top: 2px solid #eff5f7;
-  text-align: left;
+/* =============================
+   COMMITMENT BLOCK
+   ============================= */
+.commitmentBlock {
+  margin-bottom: 4px;
 }
 
-/* Mobile Responsive */
+.commitmentBlock p {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  line-height: 1.75;
+  color: #333;
+  margin-bottom: 14px;
+}
+
+/* =============================
+   RESPONSIVE
+   ============================= */
 @media (max-width: 1024px) {
-  .supportContainer {
-    padding-top: 40px; /* Reduced for mobile */
+  .mainTitle {
+    font-size: 38px;
+    margin-bottom: 55px;
   }
 }
 
 @media (max-width: 768px) {
+  .breadcrumbs {
+    padding: 20px 0 35px;
+  }
+
   .mainTitle {
-    font-size: 42px;
+    font-size: 28px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
   }
 
-  .sectionHeading {
-    font-size: 21px;
+  .sectionTitle {
+    font-size: 14px;
+    margin-top: 28px;
   }
 
-  .textBlock,
+  .paragraph,
+  .question,
   .answer,
-  .contactItem {
-    font-size: 15px;
+  .contactList li,
+  .commitmentBlock p {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainTitle {
+    font-size: 22px;
+    letter-spacing: 1.5px;
+  }
+
+  .breadcrumbs {
+    font-size: 12px;
   }
 }

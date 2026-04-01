@@ -1,38 +1,43 @@
 import styles from './Support.module.css';
+import { Link } from 'react-router-dom';
 
 export default function Support() {
   return (
-    <div className={styles.supportContainer}>
-      <header className={styles.titleArea}>
-        <h1 className={styles.mainTitle}>Customer Support</h1>
-      </header>
+    <div className={styles.pageWrapper}>
+      <div className={styles.container}>
 
-      <main className={styles.contentBody}>
-        {/* Intro */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionHeading}>Customer Care - Vallechiara</h2>
+        {/* Breadcrumbs */}
+        <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
+          <Link to="/">Home</Link>
+          <span className={styles.separator}>|</span>
+          <span className={styles.current}>Customer Support</span>
+        </nav>
+
+        {/* Main Title */}
+        <h1 className={styles.mainTitle}>CUSTOMER SUPPORT</h1>
+
+        <div className={styles.contentSection}>
+
+          {/* Customer Care Intro */}
+          <h2 className={styles.sectionTitle}>CUSTOMER CARE - VALLECHIARA</h2>
           <p className={styles.subHeading}>Your comfort and trust are our priority.</p>
-          <div className={styles.textBlock}>
-            <p>At Vallechiara, every detail, including your support, flows with care.</p>
-            <p>
-              Whether you're placing an order, managing your account, or tracking a delivery, our team is here to make your experience smooth and effortless.
-            </p>
-          </div>
-        </section>
+          <p className={styles.paragraph}>
+            At Vallechiara, every detail, including your support, flows with care.
+          </p>
+          <p className={styles.paragraph}>
+            Whether you're placing an order, managing your account, or tracking a delivery, our team is here to make your experience smooth and effortless.
+          </p>
 
-        {/* Contact info */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionHeading}>We're Here for You</h2>
+          {/* Contact Info */}
+          <h2 className={styles.sectionTitle}>We're Here for You</h2>
           <ul className={styles.contactList}>
-            <li className={styles.contactItem}>Email: <a href="mailto:support@vallechiara.ae">support@vallechiara.ae</a></li>
-            <li className={styles.contactItem}>Phone: 800-430</li>
-            <li className={styles.contactItem}>Live Chat: Available during support hours: Monday to Friday, 9 AM-6 PM</li>
+            <li>Email: <a href="mailto:support@vallechiara.ae">support@vallechiara.ae</a></li>
+            <li>Phone: 800-430</li>
+            <li>Live Chat: Available during support hours: Monday to Friday, 9 AM-6 PM</li>
           </ul>
-        </section>
 
-        {/* FAQ */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionHeading}>Common Questions</h2>
+          {/* Common Questions */}
+          <h2 className={styles.sectionTitle}>COMMON QUESTIONS</h2>
           <ul className={styles.faqList}>
             <li className={styles.faqItem}>
               <span className={styles.question}>1. How do I place an order?</span>
@@ -55,27 +60,26 @@ export default function Support() {
               <p className={styles.answer}>Select Forgot Password on the login page and follow the link sent to your email.</p>
             </li>
           </ul>
-        </section>
 
-        {/* Commitment */}
-        <section className={styles.section}>
-          <h2 className={styles.sectionHeading}>Our Commitment</h2>
-          <div className={styles.textBlock}>
-            <p><strong>Response Time:</strong> All inquiries are answered within 24-48 hours.</p>
-            <p><strong>Privacy:</strong> Your information is protected, always. Review our Privacy Policy for details.</p>
-            <p><strong>Feedback:</strong> We value your voice. Share your thoughts at <a href="mailto:feedback@vallechiara.ae">feedback@vallechiara.ae</a></p>
+          {/* Our Commitment */}
+          <h2 className={styles.sectionTitle}>OUR COMMITMENT</h2>
+          <div className={styles.commitmentBlock}>
+            <p>Response Time: All inquiries are answered within 24-48 hours.</p>
+            <p>Privacy: Your information is protected, always. Review our Privacy Policy for details.</p>
+            <p>Feedback: We value your voice. Share your thoughts at <a href="mailto:feedback@vallechiara.com">feedback@vallechiara.com</a></p>
           </div>
-        </section>
 
-        {/* Closing */}
-        <footer className={styles.closingNote}>
-          <h2 className={styles.sectionHeading}>A Closing Note</h2>
-          <div className={styles.textBlock}>
-            <p>At Vallechiara, we believe care should flow as naturally as water.</p>
-            <p>Thank you for letting us be part of your daily rituals of purity.</p>
-          </div>
-        </footer>
-      </main>
+          {/* A Closing Note */}
+          <h2 className={styles.sectionTitle}>A CLOSING NOTE</h2>
+          <p className={styles.paragraph}>
+            At Vallechiara, we believe care should flow as naturally as water.
+          </p>
+          <p className={styles.paragraph}>
+            Thank you for letting us be part of your daily rituals of purity.
+          </p>
+
+        </div>
+      </div>
     </div>
   );
 }
