@@ -1,49 +1,53 @@
+/* VCaps.module.css */
+
 .pageWrapper {
   background-color: #ffffff;
   min-height: 100vh;
 }
 
 .container {
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
 }
 
-/* Hero Section */
+/* Hero Section - Matches your image */
 .heroSection {
   background-color: #005668;
   color: #ffffff;
-  padding: 80px 0;
+  padding: 100px 0 120px 0;
   position: relative;
   overflow: hidden;
 }
 
 .heroContent {
-  max-width: 600px;
+  max-width: 580px;
   position: relative;
   z-index: 2;
 }
 
 .heroTitle {
-  font-family: var(--font-serif);
-  font-size: 56px;
-  line-height: 1.1;
-  margin-bottom: 20px;
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: clamp(42px, 5vw, 58px);
+  line-height: 1.05;
+  font-weight: 700;
   text-transform: uppercase;
+  margin-bottom: 24px;
 }
 
 .heroSubtitle {
-  font-family: 'Outfit', sans-serif;
-  font-size: 16px;
-  opacity: 0.9;
+  font-family: 'Outfit', system-ui, sans-serif;
+  font-size: 18px;
+  opacity: 0.95;
+  max-width: 420px;
 }
 
 .heroImageWrapper {
   position: absolute;
   right: 5%;
-  bottom: 0;
-  width: 45%;
-  max-width: 600px;
+  bottom: -40px;
+  width: 48%;
+  max-width: 620px;
   z-index: 1;
 }
 
@@ -51,65 +55,53 @@
   width: 100%;
   height: auto;
   display: block;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
 }
 
-/* Content Section Layout */
+/* Content Styles */
 .contentSection {
-  padding: 80px 0;
-}
-
-.mainHeadingWrapper {
-  margin-bottom: 60px;
+  padding: 90px 0;
 }
 
 .mainHeading {
-  font-family: var(--font-serif);
-  font-size: 38px;
+  font-family: var(--font-serif, 'Playfair Display', serif);
+  font-size: clamp(32px, 4vw, 42px);
   color: #005668;
-  margin-bottom: 10px;
   text-transform: uppercase;
+  margin-bottom: 12px;
 }
 
 .headingMotto {
   font-family: 'Outfit', sans-serif;
-  font-size: 14px;
-  font-weight: 800;
-  color: #222;
-  letter-spacing: 1px;
-}
-
-.introText {
-  max-width: 800px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #444;
-  margin-bottom: 60px;
-}
-
-.subSection {
-  margin-bottom: 40px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #333;
+  text-transform: uppercase;
 }
 
 .subTitle {
   font-family: 'Outfit', sans-serif;
-  font-size: 16px;
-  font-weight: 800;
+  font-size: 17px;
+  font-weight: 700;
   color: #222;
-  margin-bottom: 15px;
+  margin: 50px 0 18px 0;
 }
 
-.orderedList, .list {
+.orderedList,
+.list {
   list-style: none;
   padding: 0;
 }
 
-.orderedList li, .list li {
+.orderedList li,
+.list li {
   font-family: 'Outfit', sans-serif;
-  font-size: 15px;
-  line-height: 1.8;
+  font-size: 16px;
+  line-height: 1.85;
   color: #444;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
+  padding-left: 4px;
 }
 
 .orderedList {
@@ -120,49 +112,42 @@
   counter-increment: item;
   content: counter(item) ". ";
   font-weight: 700;
-  margin-right: 5px;
-}
-
-.sectionDivider {
-  margin-top: 80px;
-  margin-bottom: 40px;
-}
-
-.detailedContent {
-  max-width: 800px;
+  color: #005668;
+  margin-right: 8px;
 }
 
 .paragraph {
   font-family: 'Outfit', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #444;
-  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #555;
+  margin-bottom: 24px;
 }
 
 .exampleText {
-  font-family: 'Outfit', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  color: #666;
   font-style: italic;
-  margin-top: 10px;
+  color: #666;
+  background: #f8f9fa;
+  padding: 16px 20px;
+  border-left: 4px solid #005668;
+  margin-top: 20px;
 }
 
-/* Responsive Rules */
-@media (max-width: 1024px) {
-  .heroTitle {
-    font-size: 42px;
-  }
+.sectionDivider {
+  margin: 90px 0 50px 0;
+}
 
+/* Responsive */
+@media (max-width: 1024px) {
   .heroImageWrapper {
-    width: 35%;
+    width: 42%;
+    bottom: -30px;
   }
 }
 
 @media (max-width: 768px) {
   .heroSection {
-    padding: 60px 0 250px 0;
+    padding: 80px 0 280px 0;
     text-align: center;
   }
 
@@ -170,41 +155,26 @@
     max-width: 100%;
   }
 
-  .heroTitle {
-    font-size: 32px;
-  }
-
   .heroImageWrapper {
     position: relative;
-    right: 0;
-    width: 80%;
-    margin: 40px auto 0 auto;
-    bottom: -60px;
+    right: auto;
+    width: 85%;
+    margin: 40px auto 0;
+    bottom: -80px;
   }
 
-  .contentSection {
-    padding-top: 60px;
-  }
-
-  .mainHeading {
-    font-size: 28px;
-  }
-
-  .introText {
-    font-size: 15px;
+  .heroTitle {
+    font-size: 36px;
   }
 }
 
 @media (max-width: 480px) {
   .heroTitle {
-    font-size: 26px;
-  }
-
-  .heroSection {
-    padding-bottom: 180px;
+    font-size: 28px;
   }
 
   .heroImageWrapper {
-    width: 90%;
+    width: 95%;
+    bottom: -60px;
   }
 }
