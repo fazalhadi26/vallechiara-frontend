@@ -41,8 +41,8 @@
 
 .navLink {
   /* font-family: var(--font-serif); */
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
   color: #000000;
   text-decoration: none;
   display: flex;
@@ -51,6 +51,8 @@
   transition: all 0.3s ease;
   position: relative;
   padding: 5px 0;
+  font-family: 'Outfit', sans-serif;
+  font-style: normal;
 }
 
 /* Underline Animation */
@@ -194,7 +196,7 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 17px;
 }
 
 .iconBtn,
@@ -232,8 +234,8 @@
 
 .cartBadge {
   position: absolute;
-  top: -8px;
-  right: -10px;
+  top: -3px;
+  right: -12px;
   background-color: #00222a;
   color: #fff;
   font-size: 10px;
@@ -269,7 +271,7 @@
   background-color: transparent;
   border: 2px solid #005668;
   color: #005668;
-  padding: 16px 27px;
+  padding: 15px 27px;
   font-family: var(--font-sans);
   font-size: 15px;
   font-weight: 506;
