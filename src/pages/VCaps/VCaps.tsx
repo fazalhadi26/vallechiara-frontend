@@ -31,12 +31,12 @@ const VCaps = () => {
           <div className={styles.mainHeadingWrapper}>
             <h2 className={styles.mainHeading}><strong>HOW IT WORKS</strong></h2>
             <p className={styles.headingMotto}>
-              SIMPLE. SEAMLESS. REWARDING.
+              Simple. Seamless. Rewarding.
             </p>
           </div>
 
           <p className={styles.introText}>
-            Earn V Caps every time you subscribe, order, or take part in Vallechiara's activities.
+            Earn V Caps every time you subscribe, order, or take part in Vallechiara's activities.<br />
             Your loyalty translates into points, and your points open the door to exciting weekly draws
             and exclusive lifestyle rewards.
           </p>

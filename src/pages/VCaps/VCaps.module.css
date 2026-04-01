@@ -55,22 +55,26 @@
 }
 
 .mainHeading {
-  font-family: Pacho Demo, sans-serif;
+  font-family: var(--font-serif);
   font-size: 40px;
-  color: #000000;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: var(--secondary);
+  line-height: 1.2;
+  margin-bottom: 5px;
 }
 
 .headingMotto {
-  font-family: 'Outfit', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  color: #0a5c63;
-  margin-top: 5px;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  /* font-weight: 400; */
+  /* color: #0a5c63; */
+  margin-top: 20px;
+  text-transform: uppercase;
 }
 
 .introText {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 40px 0;
   font-family: 'Outfit', sans-serif;
   line-height: 1.8;
@@ -91,10 +95,13 @@
 .list,
 .orderedList {
   padding-left: 20px;
+  font-family: 'Outfit', sans-serif;
 }
 
 .orderedList li {
   margin-bottom: 6px;
+  font-family: 'Outfit', sans-serif;
+
 }
 
 .list li {
@@ -183,7 +190,7 @@
   }
 
   .mainHeading {
-    font-size: 30px;
+    font-size: 26px;
   }
 
   .sectionDivider {
