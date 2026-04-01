@@ -24,7 +24,7 @@
 
 .columnsWrapper {
   display: grid;
-  grid-template-columns: 2.5fr 1fr 1.5fr 3fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
 }
 
