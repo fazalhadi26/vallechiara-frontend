@@ -79,6 +79,6 @@
 /* Adjust padding for main content so it doesn't get cut off */
 @media (max-width: 1024px) {
   :global(.main-content) {
-    padding-bottom: 70px;
+    padding-bottom: 0px;
   }
 }
