@@ -92,14 +92,10 @@ const VCaps = () => {
             <h3 className={styles.subTitle}>Redemption Options</h3>
             <p className={styles.subMotto}>Turn Points into Privileges</p>
             <p className={styles.paragraph}>
-              Use your V Caps to redeem rewards directly or save them toward premium experiences:
-            </p>
-            <ul className={styles.list}>
-              <li><strong>Direct Redemption:</strong> Exchange V Caps for Vallechiara boxes, gifts, and curated items.</li>
-              <li><strong>Balance-On-Us:</strong> Combine your points with partial payment for larger offers, such as furniture, wellness stays, or premium lifestyle experiences.</li>
-            </ul>
-            <p className={styles.exampleText}>
-              Example: a AED 1,500 driving course &rarr; pay AED 1,100 + 400 V Caps
+              Use your V Caps to redeem rewards directly or save them toward premium experiences:<br />
+              Direct Redemption: Exchange V Caps for Vallechiara boxes, gifts, and curated items.<br />
+              Balance-On-Us: Combine your points with partial payment for larger offers, such as furniture, wellness stays, or premium lifestyle experiences.<br />
+              Example: a AED 1,500 driving course &rarr; pay AED 1,100 + 400 V Caps.
             </p>
           </div>
 
