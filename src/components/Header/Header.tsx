@@ -40,16 +40,6 @@ export default function Header() {
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  // Lock scroll when dropdown or mobile menu is open
-  useEffect(() => {
-    if (isShopOpen || isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => { document.body.style.overflow = ''; };
-  }, [isShopOpen, isMobileMenuOpen]);
-
   // Close everything on route change
   useEffect(() => {
     setIsShopOpen(false);
