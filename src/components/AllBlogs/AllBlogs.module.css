@@ -1,5 +1,7 @@
 .blogSection {
-  background-color: #eef3f561;
+  background: linear-gradient(rgb(255, 255, 255) 0%,
+      rgb(246, 249, 250) 50%,
+      rgb(241, 246, 247) 100%);
   padding: 80px 40px;
   width: 100%;
 }

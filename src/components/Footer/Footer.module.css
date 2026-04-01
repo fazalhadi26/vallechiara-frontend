@@ -1,14 +1,16 @@
 .footerWrapper {
   width: 100%;
   min-height: 480px;
-  background-color: #f2f7f8; /* Soft light icy blue-grey */
-  background-image: url('../../assets/footer-main-bg.png');
+  background-color: #f2f7f8;
+  /* Soft light icy blue-grey */
+  background-image: url('../../assets/footer-images/footer-bg.png');
   background-size: cover;
   background-position: center bottom;
   position: relative;
   display: flex;
   justify-content: center;
-  padding-bottom: 250px; /* Expands to give mountain silhouette room to breathe */
+  padding-bottom: 250px;
+  /* Expands to give mountain silhouette room to breathe */
   overflow: hidden;
 }
 
@@ -56,7 +58,8 @@
   font-size: 11px;
   color: #333;
   font-weight: 600;
-  flex-wrap: wrap; /* prevents clipping on tight bounds */
+  flex-wrap: wrap;
+  /* prevents clipping on tight bounds */
 }
 
 .contactLine a {
@@ -80,7 +83,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  padding-top: 10px; /* Optical alignment with the top of the V logo */
+  padding-top: 10px;
+  /* Optical alignment with the top of the V logo */
 }
 
 .footerLink {
@@ -99,7 +103,8 @@
 .colNewsletter {
   display: flex;
   flex-direction: column;
-  padding-top: 5px; /* Alignment */
+  padding-top: 5px;
+  /* Alignment */
 }
 
 .newsletterTitle {
@@ -175,31 +180,39 @@
   .footerWrapper {
     padding-bottom: 200px;
   }
+
   .container {
     padding: 60px 20px;
   }
+
   .columnsWrapper {
     grid-template-columns: 1fr;
     row-gap: 50px;
     text-align: center;
   }
+
   .colInfo {
     align-items: center;
   }
+
   .contactLine {
     justify-content: center;
     gap: 10px;
   }
+
   .contactLine .iconWrapper {
     margin-left: 0 !important;
   }
+
   .colLinks {
     align-items: center;
     gap: 16px;
   }
+
   .colNewsletter {
     align-items: center;
   }
+
   .emailForm {
     width: 100%;
     max-width: 400px;
