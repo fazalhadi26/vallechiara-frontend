@@ -75,9 +75,85 @@
   color: #005668;
 }
 
+/* ============================
+   SHOP WATER DROPDOWN
+   ============================ */
 .dropdownWrap {
+  position: relative;
   display: flex;
   align-items: center;
+}
+
+/* The trigger button looks like a nav link */
+.shopBtn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 0;
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+  font-family: inherit;
+}
+
+.shopBtn:hover,
+.shopBtn.shopOpen {
+  color: #005668;
+}
+
+/* Chevron rotates when open */
+.chevron {
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.chevronUp {
+  transform: rotate(180deg);
+}
+
+/* Dropdown panel */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 36px);
+  left: -24px;
+  background: #ffffff;
+  min-width: 240px;
+  padding: 8px 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.10);
+  border-radius: 0 0 12px 12px;
+  border-top: 2px solid #f0f0f0;
+  z-index: 2000;
+  /* Slide animation */
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.dropdownOpen {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: all;
+}
+
+/* Each dropdown link item */
+.dropdownItem {
+  display: block;
+  padding: 14px 28px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #111111;
+  text-decoration: none;
+  transition: color 0.18s ease;
+  line-height: 1.2;
+}
+
+.dropdownItem:hover {
+  color: #005668;
 }
 
 .actions {
