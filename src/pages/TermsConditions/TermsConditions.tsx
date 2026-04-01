@@ -28,7 +28,7 @@ const TermsConditions = () => {
             <li>Customers have to remit full payment in advance for the subscriptions and purchases.</li>
             <li>Online payment is the only method of payment for the products subscribed or purchased.</li>
             <li>Payment by Cash-on-Delivery method is not available.</li>
-            <li>The Products are to be consumed within the specific expiry dates mentioned on the bottles and Vallechiara will not be responsible for any adverse effects caused by non-compliance with the expiry date.</li>
+            <li>The Products are to be consumed within the specific expiry dates mentioned on the bottles and Vallechiara will not be responsible for any adverse effects <br />caused by non-compliance with the expiry date.</li>
             <li>Vallechiara will not be responsible for any damage and/or resultant quality issues occurred due to mishandling of the product by the customer.</li>
             <li>Partial return of delivered products is not allowed.</li>
             <li>The country of merchant Domicile is the United Arab Emirates.</li>
