@@ -344,7 +344,7 @@
   align-items: center;
   background-color: #ffffff;
   /* Changed to pure white */
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-top: -1px;
   position: relative;
   height: 100%;
@@ -371,9 +371,11 @@
 
 .bottleMain {
 
+
+
   width: 442px;
-  top: -281px;
-  left: -9%;
+  top: -269px;
+  left: -15%;
   transform: translate(-30%, -50%) rotate(3deg);
   z-index: 3;
   animation: floatVertical 6s ease-in-out infinite;
@@ -383,8 +385,8 @@
 
 
   width: 430px;
-  top: -30px;
-  left: -159px;
+  top: -80px;
+  left: -198px;
   transform: rotate(-7deg);
   z-index: 1;
   animation: swayFloat 7s ease-in-out infinite alternate;
