@@ -18,6 +18,7 @@ const Signup = lazy(() => import('./pages/Auth/Signup/Signup'));
 const Cart = lazy(() => import('./pages/Cart/Cart'));
 const BlogDetails = lazy(() => import('./pages/BlogDetails/BlogDetails'));
 const TermsConditions = lazy(() => import('./pages/TermsConditions/TermsConditions'));
+const VCaps = lazy(() => import('./pages/VCaps/VCaps'));
 
 // Dashboard lazy loading
 const UserDashboardLayout = lazy(() => import('./user-profile-dashboard/UserDashboardLayout'));
@@ -45,6 +46,7 @@ function App() {
             <Route path="subscribe" element={<Subscribe />} />
             <Route path="blog/:slug" element={<BlogDetails />} />
             <Route path="terms" element={<TermsConditions />} />
+            <Route path="v-caps" element={<VCaps />} />
             
             {/* Dashboard Routes under /account */}
             <Route path="account" element={<UserDashboardLayout />}>
