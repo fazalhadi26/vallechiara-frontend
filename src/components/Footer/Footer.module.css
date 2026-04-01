@@ -50,7 +50,7 @@
 
 .copyrightText {
   font-family: 'Outfit', sans-serif;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   color: #222;
   margin-bottom: 15px;
@@ -61,7 +61,7 @@
   align-items: center;
   gap: 5px;
   font-family: 'Outfit', sans-serif;
-  font-size: 11px;
+  font-size: 12px;
   color: #333;
   font-weight: 600;
   flex-wrap: wrap;
@@ -88,7 +88,7 @@
 .colLinks {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 10px;
   padding-top: 10px;
   /* Optical alignment with the top of the V logo */
 }
@@ -160,6 +160,10 @@
 .socialGrid {
   display: flex;
   gap: 15px;
+}
+
+.socialIcon {
+  color: #1877f2;
 }
 
 .socialIcon svg {
