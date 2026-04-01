@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap');
+
+/* =============================
+   PAGE WRAPPER
+   ============================= */
+.pageWrapper {
+  width: 100%;
+  background: #fff;
+}
+
+/* =============================
+   HERO SECTION
+   ============================= */
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+
+/* Background image */
+.heroBgImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: 0;
+}
+
+/* Dark gradient overlay — left-side only for text readability */
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.25) 55%,
+    rgba(0, 0, 0, 0.0) 100%
+  );
+  z-index: 1;
+}
+
+/* Text content — bottom-left aligned */
+.heroContent {
+  position: relative;
+  z-index: 2;
+  padding: 0 60px 80px;
+  max-width: 520px;
+  color: #fff;
+}
+
+/* Main hero heading */
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+}
+
+/* Description paragraph */
+.heroSubtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 36px;
+  max-width: 420px;
+}
+
+/* CTA Button — outlined white */
+.heroBtn {
+  display: inline-block;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #ffffff;
+  border: 1.5px solid #ffffff;
+  padding: 13px 28px;
+  text-decoration: none;
+  transition: background 0.25s ease, color 0.25s ease;
+  cursor: pointer;
+}
+
+.heroBtn:hover {
+  background: #ffffff;
+  color: #1a1a1a;
+}
+
+/* =============================
+   RESPONSIVE
+   ============================= */
+@media (max-width: 991px) {
+  .heroContent {
+    padding: 0 40px 60px;
+    max-width: 480px;
+  }
+
+  .heroTitle {
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    min-height: 100svh;
+    align-items: flex-end;
+  }
+
+  .heroOverlay {
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.65) 0%,
+      rgba(0, 0, 0, 0.3) 60%,
+      rgba(0, 0, 0, 0.05) 100%
+    );
+  }
+
+  .heroContent {
+    padding: 0 24px 60px;
+    max-width: 100%;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+    margin-bottom: 18px;
+  }
+
+  .heroSubtitle {
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 28px;
+    max-width: 100%;
+  }
+
+  .heroBtn {
+    font-size: 12px;
+    padding: 11px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 26px;
+  }
+
+  .heroSubtitle {
+    font-size: 13px;
+  }
+
+  .heroContent {
+    padding: 0 20px 50px;
+  }
+}
