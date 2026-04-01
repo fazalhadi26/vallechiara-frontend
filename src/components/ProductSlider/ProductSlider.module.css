@@ -84,12 +84,14 @@
 }
 
 .productDescription {
-  font-family: var(--font-sans);
-  font-size: 14px;
+
+  font-size: 16px;
   line-height: 1.6;
   color: #444;
   margin-bottom: 35px;
-  max-width: 450px;
+  max-width: 360px;
+  font-family: 'Outfit', sans-serif;
+  font-style: normal;
 }
 
 .priceContainer {
