@@ -19,7 +19,7 @@
   max-width: 1400px;
   position: relative;
   z-index: 10;
-  padding: 80px 40px 40px 40px;
+  padding: 80px 35px 34px 15px;
 }
 
 .columnsWrapper {
@@ -33,18 +33,22 @@
   flex-direction: column;
 }
 
-.footerLogoPlaceholder {
-  font-family: var(--font-serif);
-  font-size: 68px;
-  font-weight: 800;
-  color: #005668;
-  line-height: 0.8;
+.footerLogoContainer {
   margin-bottom: 20px;
+}
+
+.footerLogo {
+  width: 37px;
+  /* Premium size that is balanced */
+  height: auto;
+  display: block;
+  filter: brightness(0) saturate(100%) invert(21%) sepia(94%) saturate(840%) hue-rotate(152deg) brightness(89%) contrast(101%);
+  /* Matches #005668 approximately */
 }
 
 .copyrightText {
   font-family: var(--font-sans);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 800;
   color: #222;
   margin-bottom: 15px;

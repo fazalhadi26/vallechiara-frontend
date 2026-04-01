@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styles from './Footer.module.css';
+import footerLogo from '../../assets/footer-images/footer-Icon-new.svg';
 
 export default function Footer() {
   return (
@@ -10,7 +11,9 @@ export default function Footer() {
           
           {/* Column 1: Brand & Contact Info */}
           <div className={styles.colInfo}>
-            <div className={styles.footerLogoPlaceholder}>V</div>
+            <div className={styles.footerLogoContainer}>
+              <img src={footerLogo} alt="Vallechiara Logo" className={styles.footerLogo} />
+            </div>
             <p className={styles.copyrightText}>© {new Date().getFullYear()} vallechiara</p>
             <div className={styles.contactLine}>
               <span className={styles.iconWrapper}>
