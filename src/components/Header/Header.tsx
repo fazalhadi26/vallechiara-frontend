@@ -15,7 +15,17 @@ export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isShopOpen, setIsShopOpen] = useState(false);
   const [shopBtnLeft, setShopBtnLeft] = useState(0);
-  const [lang, setLang] = useState('ar');
+  
+  // Read initial language from Google Translate cookie if it exists
+  const [lang, setLang] = useState(() => {
+    try {
+      const match = document.cookie.match(/googtrans=\/[a-z]{2}\/([a-z]{2})/);
+      return match ? match[1] : 'en';
+    } catch {
+      return 'en';
+    }
+  });
+
   const location = useLocation();
   const { totalItems } = useCart();
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -29,7 +39,28 @@ export default function Header() {
   const getNavClass = (path: string) =>
     location.pathname === path ? `${styles.navLink} ${styles.active}` : styles.navLink;
 
-  const toggleLanguage = () => setLang(lang === 'ar' ? 'en' : 'ar');
+  const toggleLanguage = () => {
+    const newLang = lang === 'en' ? 'ar' : 'en';
+    
+    if (newLang === 'en') {
+      // Reverting to original language is most reliably done by clearing the translate cookie and reloading
+      document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = `googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname}`;
+      window.location.reload();
+    } else {
+      setLang(newLang);
+      // Trigger Google Translate hidden select element for instant switch, or fallback to cookie
+      const select = document.querySelector('.goog-te-combo') as HTMLSelectElement;
+      if (select) {
+        select.value = newLang;
+        select.dispatchEvent(new Event('change'));
+      }
+      // Always set cookie as a fallback/safety
+      document.cookie = `googtrans=/en/${newLang}; path=/`;
+      document.cookie = `googtrans=/en/${newLang}; path=/; domain=${window.location.hostname}`;
+      if (!select) window.location.reload();
+    }
+  };
 
   // Update shop button position for alignment
   const updateShopPos = () => {
@@ -140,8 +171,8 @@ export default function Header() {
             <svg width="16" height="17" viewBox="0 0 16 17" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M1 16C2.55556 13 6.05556 12.4583 8 12.4583C9.94444 12.4583 13.4444 13 15 16M12.4444 5.16667C12.4444 7.46785 10.4546 9.33333 8 9.33333C5.5454 9.33333 3.55556 7.46785 3.55556 5.16667C3.55556 2.86548 5.5454 1 8 1C10.4546 1 12.4444 2.86548 12.4444 5.16667Z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           </Link>
 
-          <button className={styles.langBtn} onClick={toggleLanguage} aria-label="Toggle Language">
-            <span>{lang === 'ar' ? 'عربي' : 'English'}</span>
+          <button className={`${styles.langBtn} notranslate`} onClick={toggleLanguage} aria-label="Toggle Language">
+            <span className="notranslate" translate="no">{lang === 'en' ? 'عربي' : 'English'}</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" viewBox="0 0 19 19" fill="none"><path d="M9.16667 18.3333C7.89861 18.3333 6.70694 18.0927 5.59167 17.6115C4.47639 17.1302 3.50625 16.4771 2.68125 15.6521C1.85625 14.8271 1.20312 13.8569 0.721875 12.7417C0.240625 11.6264 0 10.4347 0 9.16667C0 7.89861 0.240625 6.70694 0.721875 5.59167C1.20312 4.47639 1.85625 3.50625 2.68125 2.68125C3.50625 1.85625 4.47639 1.20312 5.59167 0.721875C6.70694 0.240625 7.89861 0 9.16667 0C10.4347 0 11.6264 0.240625 12.7417 0.721875C13.8569 1.20312 14.8271 1.85625 15.6521 2.68125C16.4771 3.50625 17.1302 4.47639 17.6115 5.59167C18.0927 6.70694 18.3333 7.89861 18.3333 9.16667C18.3333 10.4347 18.0927 11.6264 17.6115 12.7417C17.1302 13.8569 16.4771 14.8271 15.6521 15.6521C14.8271 16.4771 13.8569 17.1302 12.7417 17.6115C11.6264 18.0927 10.4347 18.3333 9.16667 18.3333ZM9.16667 16.5C11.2139 16.5 12.9479 15.7896 14.3688 14.3688C15.7896 12.9479 16.5 11.2139 16.5 9.16667C16.5 9.05972 16.4962 8.94896 16.4885 8.83438C16.4809 8.71979 16.4771 8.62431 16.4771 8.54792C16.4007 8.99097 16.1944 9.35764 15.8583 9.64792C15.5222 9.93819 15.125 10.0833 14.6667 10.0833H12.8333C12.3292 10.0833 11.8976 9.90382 11.5385 9.54479C11.1795 9.18576 11 8.75417 11 8.25V7.33333H7.33333V5.5C7.33333 4.99583 7.51285 4.56424 7.87188 4.20521C8.2309 3.84618 8.6625 3.66667 9.16667 3.66667H10.0833C10.0833 3.31528 10.1788 3.0059 10.3698 2.73854C10.5608 2.47118 10.7937 2.25347 11.0688 2.08542C10.7632 2.00903 10.4538 1.94792 10.1406 1.90208C9.82743 1.85625 9.50278 1.83333 9.16667 1.83333C7.11944 1.83333 5.38542 2.54375 3.96458 3.96458C2.54375 5.38542 1.83333 7.11944 1.83333 9.16667H6.41667C7.425 9.16667 8.28819 9.52569 9.00625 10.2438C9.72431 10.9618 10.0833 11.825 10.0833 12.8333V13.75H7.33333V16.2708C7.63889 16.3472 7.94063 16.4045 8.23854 16.4427C8.53646 16.4809 8.84583 16.5 9.16667 16.5Z" fill="#25282A"></path></svg>
           </button>
 
