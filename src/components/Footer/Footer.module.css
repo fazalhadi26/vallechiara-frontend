@@ -26,11 +26,12 @@
 
 .columnsWrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 26px;
+  grid-template-columns: 1.2fr 1fr 1fr 1.5fr;
+  gap: 30px;
+  align-items: flex-start;
 }
 
-.colInfo {
+.brandSection {
   display: flex;
   flex-direction: column;
 }
@@ -40,32 +41,40 @@
 }
 
 .footerLogo {
-  width: 37px;
-  /* Premium size that is balanced */
+  width: 38px;
   height: auto;
   display: block;
   filter: brightness(0) saturate(100%) invert(21%) sepia(94%) saturate(840%) hue-rotate(152deg) brightness(89%) contrast(101%);
-  /* Matches #005668 approximately */
 }
 
 .copyrightText {
   font-family: 'Outfit', sans-serif;
-  font-size: 13px;
-  font-weight: 800;
+  font-size: 14px;
+  font-weight: 700;
   color: #222;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .contactLine {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  gap: 5px;
+  gap: 20px;
+}
+
+.socialAction {
+  display: flex;
+  align-items: center;
+  gap: 8px;
   font-family: 'Outfit', sans-serif;
   font-size: 12px;
-  color: #333;
+  color: #222;
   font-weight: 600;
-  flex-wrap: wrap;
-  /* prevents clipping on tight bounds */
+}
+
+.socialAction a {
+  color: #222;
+  text-decoration: none;
 }
 
 .contactLine a {
@@ -88,11 +97,7 @@
 .colLinks {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding-top: 10px;
-  /* Optical alignment with the top of the V logo */
-  /* text-align: center; */
-  padding-left: 80px;
+  gap: 12px;
 }
 
 .footerLink {
@@ -108,11 +113,9 @@
   color: #00819c;
 }
 
-.colNewsletter {
+.newsletterSection {
   display: flex;
   flex-direction: column;
-  padding-top: 5px;
-  /* Alignment */
 }
 
 .newsletterTitle {
@@ -152,11 +155,11 @@
   border: none;
   outline: none;
   font-family: 'Outfit', sans-serif;
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 800;
   color: #005668;
   cursor: pointer;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .socialGrid {
@@ -179,54 +182,130 @@
   transform: scale(1.15);
 }
 
-/* Base Responsive rules */
 @media (max-width: 1024px) {
   .columnsWrapper {
     grid-template-columns: 1fr 1fr;
-    row-gap: 60px;
+    gap: 50px;
   }
 }
 
-/* Mobile Responsive Layout enforcing massive stacking structure correctly */
 @media (max-width: 768px) {
   .footerWrapper {
-    padding-bottom: 200px;
+    padding-top: 80px;
+    padding-bottom: 120px;
   }
 
   .container {
-    padding: 60px 20px;
+    padding: 20px;
   }
 
   .columnsWrapper {
-    grid-template-columns: 1fr;
-    row-gap: 50px;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    gap: 60px;
   }
 
-  .colInfo {
-    align-items: center;
+  .newsletterSection {
+    order: 1;
   }
 
-  .contactLine {
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .contactLine .iconWrapper {
-    margin-left: 0 !important;
-  }
-
+  /* Wrap links in a grid for mobile only */
   .colLinks {
-    align-items: center;
-    gap: 16px;
+    order: 2;
   }
 
-  .colNewsletter {
-    align-items: center;
+  /* On mobile, we want links side by side if there's room, 
+     but the JSX has them as separate divs. 
+     I'll make the parent a grid for them or just float them. 
+     Actually, I can use a nested grid for columns wrapper but that affects Newsletter too. 
+     I'll use a simpler approach: make a grid just for the links if I wrap them, 
+     but if not, I'll just let them stack or style them. 
+  */
+
+  .brandSection {
+    order: 3;
+    margin-top: 40px;
+    align-items: flex-start;
+  }
+
+  /* To get links side by side on mobile: */
+  .columnsWrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .colLinks1,
+  .colLinks2 {
+    grid-column: span 1;
+  }
+
+  /* Re-defining the mobile grid to allow side-by-side links */
+  .columnsWrapper {
+    grid-template-areas:
+      "newsletter"
+      "links"
+      "brand";
+  }
+
+  .newsletterSection {
+    grid-area: newsletter;
+  }
+
+  .brandSection {
+    grid-area: brand;
+  }
+
+  /* Shared 'links' area for both link columns */
+  .columnsWrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* 2 columns for links */
+  }
+
+  .newsletterSection {
+    grid-column: 1 / -1;
+  }
+
+  .brandSection {
+    grid-column: 1 / -1;
+  }
+
+  .newsletterTitle {
+    font-size: 26px;
+    font-weight: 600;
+    margin-bottom: 25px;
   }
 
   .emailForm {
-    width: 100%;
-    max-width: 400px;
+    margin-bottom: 25px;
+    border-color: #333;
+  }
+
+  .socialGrid {
+    margin-bottom: 20px;
+  }
+
+  .footerLink {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  .footerLogo {
+    width: 50px;
+  }
+
+  .copyrightText {
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .contactLine {
+    margin-top: 15px;
+  }
+
+  .socialAction {
+    font-size: 14px;
   }
 }
