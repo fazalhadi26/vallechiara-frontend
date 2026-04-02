@@ -2,8 +2,39 @@
   width: 100%;
 }
 
+.breadcrumbs {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: #0089A0;
+  padding: 12px 20px 0;
+  /* max-width: 1200px; */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: #1b2627;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  font-size: 12px;
+}
+
+.breadcrumbsTitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: #00808a;
+  font-family: 'Outfit', sans-serif;
+  font-style: normal;
+}
+
+.breadcrumbs a:hover {
+  opacity: 1;
+}
+
 .heroSection {
-  padding: 40px 20px 60px; /* Reduced since header is now in-flow */
+  padding: 70px 20px 60px;
+  /* Reduced since header is now in-flow */
   text-align: center;
   background-color: #ffffff;
 }
@@ -23,7 +54,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden; /* Prevent horizontal scroll from flairs */
+  overflow: hidden;
+  /* Prevent horizontal scroll from flairs */
 }
 
 .container {
@@ -67,7 +99,7 @@
   border-top-right-radius: 240px;
   overflow: hidden;
   position: relative;
-  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
   z-index: 1;
 }
 
@@ -88,7 +120,7 @@
   left: -60px;
   width: 160px;
   z-index: 5;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
 }
 
 .accentRight {
@@ -97,7 +129,7 @@
   right: -70px;
   width: 200px;
   z-index: 5;
-  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.1));
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
 }
 
 .contentWrapper {
@@ -135,19 +167,19 @@
     gap: 40px;
     padding: 0 20px;
   }
-  
+
   .imageWrapper {
     width: 100%;
     max-width: 100%;
     padding: 0 40px;
   }
-  
+
   .archContainer {
     height: 480px;
     border-top-left-radius: 180px;
     border-top-right-radius: 180px;
   }
-  
+
   .mainTitle {
     font-size: 42px;
   }
@@ -177,7 +209,8 @@
 
 @media (max-width: 768px) {
   .heroSection {
-    padding-top: 20px; /* Mobile correction */
+    padding-top: 20px;
+    /* Mobile correction */
   }
 }
 
@@ -193,7 +226,7 @@
   .sectionHeading {
     font-size: 22px;
   }
-  
+
   .imageWrapper {
     padding: 0 20px;
   }

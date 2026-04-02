@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './OurStory.module.css';
 import story1 from '../../assets/our-story-images/story-1.webp';
 import story2 from '../../assets/our-story-images/story-2.webp';
@@ -9,6 +10,9 @@ import storyRight from '../../assets/our-story-images/story-right.webp';
 export default function OurStory() {
   return (
     <div className={styles.pageWrapper}>
+      <nav className={styles.breadcrumbs}>
+        <Link to="/">Home</Link> | <span className={styles.breadcrumbsTitle}>Our Story</span>
+      </nav>
       <header className={styles.heroSection}>
         <h1 className={styles.mainTitle}>Our Story</h1>
       </header>

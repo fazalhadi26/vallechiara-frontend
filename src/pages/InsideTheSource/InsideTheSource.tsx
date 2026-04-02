@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styles from './InsideTheSource.module.css';
 import source1 from '../../assets/our-sourse-images/soure-img-1.webp';
 import source2 from '../../assets/our-sourse-images/soure-img-2.webp';
@@ -10,6 +11,9 @@ import storyRight from '../../assets/our-sourse-images/story-right.webp';
 export default function InsideTheSource() {
   return (
     <div className={styles.pageWrapper}>
+      <nav className={styles.breadcrumbs}>
+        <Link to="/">Home</Link> | <span className={styles.breadcrumbsTitle}>Inside the Source</span>
+      </nav>
       <header className={styles.heroSection}>
         <h1 className={styles.mainTitle}>Inside the Source</h1>
       </header>

@@ -2,6 +2,34 @@
   width: 100%;
 }
 
+.breadcrumbs {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: #0089A0;
+  padding: 20px 40px 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: #1b2627;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  font-size: 13px;
+}
+
+.breadcrumbsTitle {
+  font-size: 13px;
+  font-weight: 600;
+  color: #00808a;
+}
+
+.breadcrumbs a:hover {
+  opacity: 1;
+}
+
 .heroSection {
   padding: 40px 20px 60px; /* Reduced since header is now in-flow */
   text-align: center;
