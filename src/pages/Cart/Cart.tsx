@@ -94,7 +94,8 @@ export default function Cart() {
               <img src={shoppingIcon} alt="Delivery truck icon" width="45" height="45" />
             </div>
             <p className={styles.promoText}>
-              Enjoy FREE delivery on orders above AED 150.00
+              Enjoy FREE delivery on orders<br />
+              above <strong>AED 150.00</strong>
             </p>
           </div>
 

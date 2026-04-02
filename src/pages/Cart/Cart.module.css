@@ -143,14 +143,14 @@
 }
 
 .deliveryPromo {
-  background: #fdfdfe;
+  background: #f7fbff;
   border-radius: 8px;
-  padding: 16px;
+  padding: 18px 24px;
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 18px;
   margin-bottom: 30px;
-  border: 1px dashed #b5d1d6;
+  border: 1px dashed #d0e0e3;
 }
 
 .promoIcon {
@@ -159,15 +159,16 @@
 
 .promoText {
   font-family: 'Outfit', sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
-  color: #444;
+  color: #0f2b33;
   margin: 0;
+  line-height: 1.4;
 }
 
 .promoText strong {
   font-weight: 700;
-  color: #005668;
+  color: #00819c;
 }
 
 .summarySection {
