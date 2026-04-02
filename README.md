@@ -52,5 +52,5 @@ The optimised output will be in the `dist/` folder.
 ## Preview Production Build
 
 ```bash
-npm run preview
+npm run preview 
 ```
