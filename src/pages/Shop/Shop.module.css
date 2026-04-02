@@ -274,15 +274,19 @@
   user-select: none;
 }
 
-/* Ensure hover state in card doesn't hide the active cart controls */
+/* High-contrast hover state for active cart control */
 .card:hover .activeCartActions {
-  background-color: #ffffff;
   border-color: #ffffff;
+  background-color: transparent;
+}
+
+.card:hover .qtyControl {
+  background-color: #ffffff;
 }
 
 .card:hover .activeBuyText {
-  background-color: #ffffff;
-  color: #005F71;
+  background-color: transparent;
+  color: #ffffff;
 }
 
 .qtyValue {
