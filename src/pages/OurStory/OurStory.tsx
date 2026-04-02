@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './OurStory.module.css';
 import story1 from '../../assets/our-story-images/story-1.webp';
@@ -8,8 +9,26 @@ import storyLeft from '../../assets/our-story-images/story-left.png';
 import storyRight from '../../assets/our-story-images/story-right.webp';
 
 export default function OurStory() {
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    const { currentTarget, clientX, clientY } = e;
+    const rect = currentTarget.getBoundingClientRect();
+    const x = (clientX - rect.left) / rect.width - 0.5;
+    const y = (clientY - rect.top) / rect.height - 0.5;
+    setMousePos({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setMousePos({ x: 0, y: 0 });
+  };
+
   return (
-    <div className={styles.pageWrapper}>
+    <div 
+      className={styles.pageWrapper}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
       <nav className={styles.breadcrumbs}>
         <Link to="/">Home</Link> | <span className={styles.breadcrumbsTitle}>Our Story</span>
       </nav>
@@ -24,8 +43,22 @@ export default function OurStory() {
             <div className={styles.archContainer}>
               <img src={story1} alt="A Heritage of Purity" className={styles.storyImage} />
             </div>
-            <img src={storyLeft} alt="Decoration" className={styles.accentLeft} />
-            <img src={storyRight} alt="Decoration" className={styles.accentRight} />
+            <img 
+              src={storyLeft} 
+              alt="Decoration" 
+              className={styles.accentLeft} 
+              style={{
+                transform: `translate(${mousePos.x * 40}px, ${mousePos.y * 30}px)`
+              }}
+            />
+            <img 
+              src={storyRight} 
+              alt="Decoration" 
+              className={styles.accentRight} 
+              style={{
+                transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -30}px)`
+              }}
+            />
           </div>
           <div className={styles.contentWrapper}>
             <h2 className={styles.sectionHeading}>A HERITAGE OF PURITY: SINCE 950 A.D.</h2>
@@ -51,8 +84,22 @@ export default function OurStory() {
             <div className={styles.archContainer}>
               <img src={story2} alt="Natural Haven" className={styles.storyImage} />
             </div>
-            <img src={storyLeft} alt="Decoration" className={styles.accentLeft} />
-            <img src={storyRight} alt="Decoration" className={styles.accentRight} />
+            <img 
+              src={storyLeft} 
+              alt="Decoration" 
+              className={styles.accentLeft} 
+              style={{
+                transform: `translate(${mousePos.x * 40}px, ${mousePos.y * 30}px)`
+              }}
+            />
+            <img 
+              src={storyRight} 
+              alt="Decoration" 
+              className={styles.accentRight} 
+              style={{
+                transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -30}px)`
+              }}
+            />
           </div>
           <div className={styles.contentWrapper}>
             <h2 className={styles.sectionHeading}>NATURAL HAVEN : LIPIANI, ALTARE : NATURE'S SANCTUARY, OUR SACRED RESPONSIBILITY</h2>
@@ -75,8 +122,22 @@ export default function OurStory() {
             <div className={styles.archContainer}>
               <img src={story3} alt="Purity Embodied" className={styles.storyImage} />
             </div>
-            <img src={storyLeft} alt="Decoration" className={styles.accentLeft} />
-            <img src={storyRight} alt="Decoration" className={styles.accentRight} />
+            <img 
+              src={storyLeft} 
+              alt="Decoration" 
+              className={styles.accentLeft} 
+              style={{
+                transform: `translate(${mousePos.x * 40}px, ${mousePos.y * 30}px)`
+              }}
+            />
+            <img 
+              src={storyRight} 
+              alt="Decoration" 
+              className={styles.accentRight} 
+              style={{
+                transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -30}px)`
+              }}
+            />
           </div>
           <div className={styles.contentWrapper}>
             <h2 className={styles.sectionHeading}>PURITY EMBODIED: UNTOUCHED, UNMATCHED, UNEQUALED</h2>
@@ -96,8 +157,22 @@ export default function OurStory() {
             <div className={styles.archContainer}>
               <img src={story4} alt="Elevating Wellness" className={styles.storyImage} />
             </div>
-            <img src={storyLeft} alt="Decoration" className={styles.accentLeft} />
-            <img src={storyRight} alt="Decoration" className={styles.accentRight} />
+            <img 
+              src={storyLeft} 
+              alt="Decoration" 
+              className={styles.accentLeft} 
+              style={{
+                transform: `translate(${mousePos.x * 40}px, ${mousePos.y * 30}px)`
+              }}
+            />
+            <img 
+              src={storyRight} 
+              alt="Decoration" 
+              className={styles.accentRight} 
+              style={{
+                transform: `translate(${mousePos.x * -40}px, ${mousePos.y * -30}px)`
+              }}
+            />
           </div>
           <div className={styles.contentWrapper}>
             <h2 className={styles.sectionHeading}>ELEVATING WELLNESS: PURE HYDRATION, THE ITALIAN WAY</h2>
