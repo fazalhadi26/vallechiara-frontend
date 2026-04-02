@@ -21,9 +21,9 @@
 }
 
 .itemCount {
-  font-size: 16px;
-  font-family: var(--font-sans);
-  color: #666;
+  font-size: 15px;
+  font-family: 'Outfit', sans-serif;
+  color: #777;
   font-weight: 500;
 }
 
@@ -45,16 +45,16 @@
   align-items: center;
   background: white;
   border-radius: 12px;
-  padding: 24px;
+  padding: 30px;
   border: 1px solid #eef2f3;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02); */
   transition: transform 0.2s ease;
 }
 
 .itemImage {
-  width: 60px;
+  width: 50px;
   height: auto;
-  margin-right: 30px;
+  margin-right: 40px;
 }
 
 .itemInfo {
@@ -62,20 +62,20 @@
 }
 
 .itemName {
-  font-size: 18px;
-  color: #0f2b33;
-  font-weight: 600;
+  font-size: 16px;
+  font-family: 'Outfit', sans-serif;
+  color: #111;
+  font-weight: 700;
   margin: 0;
 }
 
 .quantitySelector {
   display: flex;
   align-items: center;
-  background: #f8fbff;
-  border: 1px solid #e0e8f0;
-  border-radius: 8px;
+  background: #f7fbff;
+  border-radius: 10px;
   padding: 4px;
-  margin-right: 40px;
+  margin-right: 80px;
 }
 
 .qtyBtn {
@@ -88,7 +88,7 @@
   justify-content: center;
   cursor: pointer;
   font-size: 20px;
-  color: #5e9eae;
+  color: #005668;
   border-radius: 6px;
   transition: background 0.2s;
 }
@@ -98,19 +98,22 @@
 }
 
 .qtyValue {
-  width: 40px;
+  width: 35px;
   text-align: center;
-  font-weight: 600;
-  color: #333;
+  font-weight: 700;
+  font-size: 15px;
+  color: #111;
+  font-family: 'Outfit', sans-serif;
 }
 
 .itemPrice {
-  font-size: 18px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
   font-weight: 700;
-  color: #0f2b33;
-  min-width: 120px;
+  color: #111;
+  min-width: 100px;
   text-align: right;
-  margin-right: 30px;
+  margin-right: 20px;
 }
 
 .removeBtn {
@@ -138,88 +141,105 @@
 }
 
 .deliveryPromo {
-  background: #f0f7f8;
-  border-radius: 12px;
+  background: #fdfdfe;
+  border-radius: 8px;
   padding: 16px;
   display: flex;
   align-items: center;
   gap: 15px;
   margin-bottom: 30px;
-  border: 1.5px dashed #5e9eae66;
+  border: 1px dashed #b5d1d6;
 }
 
 .promoIcon {
-  color: #00819c;
+  color: #0ab9b7;
 }
 
 .promoText {
+  font-family: 'Outfit', sans-serif;
   font-size: 13px;
-  font-weight: 600;
-  color: #005668;
+  font-weight: 500;
+  color: #444;
   margin: 0;
 }
 
+.promoText strong {
+  font-weight: 700;
+  color: #005668;
+}
+
 .summarySection {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 20px;
+  border-bottom: 1px solid #eef2f3;
+  padding-bottom: 10px;
   margin-bottom: 20px;
 }
 
 .summaryTitle {
-  font-size: 18px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
   font-weight: 700;
-  color: #0f2b33;
-  margin-bottom: 15px;
+  color: #111;
+  margin-bottom: 20px;
 }
 
 .summaryItem {
   display: flex;
   justify-content: space-between;
   margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f2f5f8;
+}
+.summaryItem:last-child {
+  border-bottom: none;
 }
 
 .summaryName {
-  font-size: 14px;
-  color: #333;
-  font-weight: 500;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  color: #111;
+  font-weight: 700;
+  margin-bottom: 3px;
 }
 
 .summaryQtyPrice {
-  font-size: 12px;
-  color: #666;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  color: #888;
   display: block;
 }
 
 .summaryValue {
-  font-size: 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
   font-weight: 700;
-  color: #0f2b33;
+  color: #111;
 }
 
 .totalsRow {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 12px;
+  margin-bottom: 15px;
 }
 
 .totalsLabel {
-  font-size: 14px;
-  color: #555;
-  font-weight: 600;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  color: #111;
+  font-weight: 700;
 }
 
 .totalsValue {
-  font-size: 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
   font-weight: 700;
-  color: #0f2b33;
+  color: #111;
 }
 
 .netRow {
   display: flex;
   justify-content: space-between;
   margin-top: 15px;
-  padding-top: 15px;
-  border-top: 1px solid #eee;
+  margin-bottom: 30px;
 }
 
 .couponSection {
@@ -227,34 +247,39 @@
 }
 
 .couponTitle {
-  font-size: 13px;
-  font-weight: 700;
-  color: #666;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  color: #444;
   margin-bottom: 10px;
 }
 
 .couponInputRoot {
   display: flex;
-  border: 1.5px dashed #5e9eae44;
-  border-radius: 10px;
+  border: 1px dashed #b5d1d6;
+  border-radius: 8px;
   overflow: hidden;
-  padding: 5px;
+  padding: 4px;
+  background: #fdfdfe;
 }
 
 .couponInput {
   flex: 1;
   border: none;
+  background: transparent;
   outline: none;
   padding: 10px 15px;
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 12px;
+  font-family: 'Outfit', sans-serif;
+  color: #111;
 }
 
 .applyBtn {
   background: transparent;
   border: none;
-  color: #00819c;
-  font-weight: 800;
+  color: #0089a0;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
   font-size: 12px;
   cursor: pointer;
   padding: 0 15px;
@@ -268,28 +293,31 @@
 }
 
 .finalLabel {
-  font-size: 16px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
   font-weight: 800;
-  color: #222;
+  color: #111;
 }
 
 .finalValue {
-  font-size: 20px;
-  font-weight: 900;
-  color: #0f2b33;
+  font-family: 'Outfit', sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #111;
 }
 
 .checkoutBtn {
   width: 100%;
-  padding: 18px;
+  padding: 15px;
   background: #005668;
   color: white;
   border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  font-weight: 800;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
   cursor: pointer;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   transition: background 0.2s, transform 0.1s;
 }
 
