@@ -360,17 +360,32 @@
 @media (max-width: 1100px) {
   .subscribeContainer {
     padding-top: 30px;
-    /* Reduced further for tight mobile view */
   }
 
   .cardsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .mainTitle {
+    font-size: 46px;
+  }
 }
 
 @media (max-width: 768px) {
-  .cardsGrid {
-    grid-template-columns: 1fr;
+  .mainTitle {
+    font-size: 34px;
+    line-height: 1.25;
+    margin-bottom: 12px;
+  }
+
+  .mainSubtitle {
+    font-size: 14px;
+    margin-bottom: 30px;
+    padding: 0 10px;
+  }
+
+  .timelineTitle {
+    font-size: 24px;
   }
 
   .timelineGraphic {
@@ -381,5 +396,47 @@
 
   .step::after {
     display: none;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .calcTitle {
+    font-size: 22px;
+  }
+
+  .planTop {
+    padding: 25px 20px 15px 20px;
+  }
+
+  .planContent {
+    padding: 15px 20px 20px 20px;
+  }
+  
+  .discountBadge {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mainTitle {
+    font-size: 27px;
+  }
+  
+  .calcTitle {
+    font-size: 20px;
+  }
+
+  .planTitle {
+    font-size: 20px;
+  }
+  
+  .priceVal {
+    font-size: 22px;
   }
 }
