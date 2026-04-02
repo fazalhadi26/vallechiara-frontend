@@ -4,10 +4,10 @@
 
 .breadcrumbs {
   font-family: var(--font-sans);
-  font-size: 14px;
+  font-size: 13px;
   color: #0089A0;
-  padding: 20px 40px 0;
-  max-width: 1200px;
+  padding: 12px 20px 0;
+  /* max-width: 1200px; */
   margin-left: auto;
   margin-right: auto;
 }
@@ -17,13 +17,15 @@
   color: #1b2627;
   opacity: 0.7;
   transition: opacity 0.3s ease;
-  font-size: 13px;
+  font-size: 12px;
 }
 
 .breadcrumbsTitle {
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   color: #00808a;
+  font-family: 'Outfit', sans-serif;
+  font-style: normal;
 }
 
 .breadcrumbs a:hover {
@@ -31,7 +33,8 @@
 }
 
 .heroSection {
-  padding: 40px 20px 60px; /* Reduced since header is now in-flow */
+  padding: 70px 20px 60px;
+  /* Reduced since header is now in-flow */
   text-align: center;
   background-color: #ffffff;
 }
@@ -42,7 +45,7 @@
   color: #1a1a1a;
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-weight: 900;
+
   margin: 0;
 }
 
@@ -200,7 +203,8 @@
 
 @media (max-width: 768px) {
   .heroSection {
-    padding-top: 20px; /* Mobile correction */
+    padding-top: 20px;
+    /* Mobile correction */
   }
 }
 
