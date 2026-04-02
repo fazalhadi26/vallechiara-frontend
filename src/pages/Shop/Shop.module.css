@@ -351,90 +351,76 @@
 
 @media (max-width: 1200px) {
   .shopContainer {
-    padding-top: 20px;
-    /* Stronger reduction on mobile menu open overlap */
+    padding: 80px 20px 80px 20px;
   }
 
   .categoryRow {
     flex-direction: column;
     align-items: center;
-    gap: 40px;
+    gap: 50px;
   }
 
   .categoryHeader {
+    flex: 0 0 auto;
     width: 100%;
-  }
-
-  .titleWord {
-    display: inline;
-    margin: 0 5px;
+    max-width: 100%;
   }
 
   .categoryTitle {
-    flex-direction: row;
-    justify-content: center;
-    font-size: 32px;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 30px;
   }
 
   .categoryVLogo {
     display: none;
   }
-}
-
-@media (max-width: 900px) {
-  .shopContainer {
-    padding: 120px 20px 80px 20px;
-  }
-
-  .shopWrapper {
-    gap: 80px;
-  }
 
   .productsGrid {
-    flex-direction: column;
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
-    max-width: 500px;
-    gap: 20px;
   }
+}
 
-  .card {
-    width: 100%;
-    padding: 25px 20px;
+@media (max-width: 768px) {
+  .productsGrid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
   }
 }
 
 @media (max-width: 480px) {
+  .shopContainer {
+    padding: 60px 15px 60px 15px;
+  }
+
   .categoryTitle {
-    font-size: 26px;
-    flex-wrap: wrap;
-    text-align: center;
+    font-size: 32px;
+    line-height: 1.1;
   }
 
   .productTitle {
-    font-size: 16px;
-  }
-
-  .productPrice {
     font-size: 20px;
   }
 
-  .actions {
-    gap: 8px;
+  .productPrice {
+    font-size: 24px;
   }
 
-  .buyNowBtn,
-  .subscribeBtn,
-  .cartActionWrapper {
-    font-size: 10px;
-    padding: 12px 5px;
-    letter-spacing: 0.5px;
+  .activeCartActions {
+    height: 44px;
+  }
+
+  .actionIconBtn {
+    width: 28px;
+    height: 28px;
+  }
+
+  .activeBuyText {
+    font-size: 11px;
   }
 
   .imageWrapper {
     height: 200px;
-  }
-
-  .iconBadge {
-    right: 2px;
   }
 }
