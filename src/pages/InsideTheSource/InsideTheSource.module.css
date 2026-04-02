@@ -152,6 +152,14 @@
 
 /* Mobile Responsive */
 @media (max-width: 1024px) {
+  .heroSection {
+    padding: 60px 20px 40px;
+  }
+
+  .mainTitle {
+    font-size: 48px;
+  }
+
   .sourceSection {
     padding: 60px 0;
   }
@@ -169,59 +177,141 @@
   }
   
   .archContainer {
-    height: 480px;
-    border-top-left-radius: 180px;
-    border-top-right-radius: 180px;
-  }
-  
-  .mainTitle {
-    font-size: 42px;
+    height: 520px;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
   }
 
   .sectionHeading {
-    font-size: 26px;
+    font-size: 30px;
     text-align: center;
+    margin-bottom: 20px;
   }
 
   .textBlock {
     text-align: center;
-    font-size: 15px;
+    font-size: 16px;
+    line-height: 1.6;
   }
 
   .accentLeft {
-    width: 110px;
-    left: -20px;
+    width: 100px;
+    left: -10px;
     top: 5%;
   }
 
   .accentRight {
-    width: 130px;
-    right: -25px;
-    bottom: 5%;
+    width: 140px;
+    right: -15px;
+    bottom: -5%;
+  }
+
+  .sourceSection:nth-child(even) .accentLeft {
+    width: 140px;
+    left: -10px;
+    bottom: -5%;
+  }
+
+  .sourceSection:nth-child(even) .accentRight {
+    width: 100px;
+    right: -15px;
+    top: 5%;
   }
 }
 
 @media (max-width: 768px) {
   .heroSection {
-    padding-top: 20px;
-    /* Mobile correction */
+    padding-top: 40px;
+    padding-bottom: 30px;
+  }
+
+  .mainTitle {
+    font-size: 38px;
+  }
+
+  .archContainer {
+    height: 420px;
+    border-top-left-radius: 160px;
+    border-top-right-radius: 160px;
+  }
+
+  .imageWrapper {
+    padding: 0 10px;
+  }
+
+  /* Adjust leaves for larger mobile/small tablets */
+  .accentLeft {
+    width: 80px;
+    left: -5px;
+    top: 3%;
+  }
+
+  .accentRight {
+    width: 110px;
+    right: -10px;
+    bottom: -3%;
+  }
+
+  .sourceSection:nth-child(even) .accentLeft {
+    width: 110px;
+    left: -5px;
+    bottom: -3%;
+  }
+
+  .sourceSection:nth-child(even) .accentRight {
+    width: 80px;
+    right: -10px;
+    top: 3%;
   }
 }
 
 @media (max-width: 480px) {
-  .archContainer {
-    height: 380px;
+  .heroSection {
+    padding-top: 30px;
   }
 
   .mainTitle {
     font-size: 32px;
+    letter-spacing: 1px;
+  }
+
+  .archContainer {
+    height: 340px;
+    border-top-left-radius: 140px;
+    border-top-right-radius: 140px;
   }
 
   .sectionHeading {
-    font-size: 22px;
+    font-size: 24px;
+    line-height: 1.3;
   }
-  
-  .imageWrapper {
-    padding: 0 20px;
+
+  .textBlock {
+    font-size: 15px;
+  }
+
+  .container {
+    gap: 30px;
+  }
+
+  /* Ensure architectural leaves look balanced on tiny screens */
+  .accentLeft {
+    width: 60px;
+    left: 0;
+  }
+
+  .accentRight {
+    width: 90px;
+    right: 0;
+  }
+
+  .sourceSection:nth-child(even) .accentLeft {
+    width: 90px;
+    left: 0;
+  }
+
+  .sourceSection:nth-child(even) .accentRight {
+    width: 60px;
+    right: 0;
   }
 }
