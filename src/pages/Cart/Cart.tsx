@@ -4,6 +4,7 @@ import { useDisclosure } from '@chakra-ui/react';
 import { useCart } from '../../context/CartContext';
 import ConfirmationModal from '../../components/ConfirmationModal/ConfirmationModal';
 import styles from './Cart.module.css';
+import shoppingIcon from '../../assets/cart-images/shopping-icon.svg';
 
 export default function Cart() {
   const { 
@@ -90,7 +91,7 @@ export default function Cart() {
         <div className={styles.sidebar}>
           <div className={styles.deliveryPromo}>
             <div className={styles.promoIcon}>
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+              <img src={shoppingIcon} alt="Delivery truck icon" width="45" height="45" />
             </div>
             <p className={styles.promoText}>
               Enjoy FREE delivery on orders above AED 150.00
