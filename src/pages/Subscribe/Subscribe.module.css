@@ -171,18 +171,16 @@
 .planCard {
   border: 1px solid #e2e8f0;
   border-radius: 20px;
-  background: #fff;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  background-color: #ffffff;
   box-shadow:
-    0 2px 0 #ffffff,
-    0 3px 0 #d9d9d9,
-    0 6px 0 #ffffff,
-    0 7px 0 #cfcfcf,
-    0 10px 0 #ffffff,
-    0 11px 0 #bfbfbf;
-
-  transition: 0.2s ease;
+    0 3px 0 0px #ffffff,
+    0 4px 0 0px #d5d6d6,
+    0 7px 0 0px #ffffff,
+    0 8px 0 0px #adadad;
 }
 
 .planCard:hover {
