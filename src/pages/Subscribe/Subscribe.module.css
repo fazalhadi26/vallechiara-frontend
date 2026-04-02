@@ -272,6 +272,12 @@
   flex-direction: column;
   background-color: #ffffff;
   flex: 1;
+  transition: background-color 0.2s;
+}
+
+.planCard:hover .planContent {
+  background-color: #f6fcff;
+  /* Explicitly matching the white color from the picture */
 }
 
 .featureGroup {
