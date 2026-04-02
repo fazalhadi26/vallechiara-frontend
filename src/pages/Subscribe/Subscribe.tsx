@@ -1,4 +1,5 @@
 import styles from './Subscribe.module.css';
+import waterBottleImg from '../../assets/subscribe/water-bottle.webp';
 
 const calculateCard = {
   title: "FIGURE OUT YOUR MONTHLY WATER CONSUMPTION",
@@ -66,11 +67,7 @@ export default function Subscribe() {
             <div className={styles.stepCircle}>2</div>
             <div className={styles.stepIcon}>
               {/* 3 simple bottle icons combined */}
-              <svg width="45" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="5" y="7" width="4" height="12" rx="1" ry="1" /><path d="M6 3h2" /><path d="M6 7h2" /><path d="M7 3v4" />
-                <rect x="10" y="5" width="4" height="14" rx="1" ry="1" /><path d="M11 1h2" /><path d="M11 5h2" /><path d="M12 1v4" />
-                <rect x="15" y="7" width="4" height="12" rx="1" ry="1" /><path d="M16 3h2" /><path d="M16 7h2" /><path d="M17 3v4" />
-              </svg>
+              <img src={waterBottleImg} alt="Water Bottle" className={styles.stepBottleImg} />
             </div>
             <p>Pick Your Water</p>
           </div>
@@ -105,14 +102,15 @@ export default function Subscribe() {
                   <div className={styles.planDesc}>{plan.packageDesc}</div>
                 </div>
               </div>
+            </div>
 
+            <div className={styles.planContent}>
               <div className={styles.priceContainer}>
                 <div className={styles.priceLabel}>Starts from</div>
                 <div className={styles.priceVal}>{plan.price}</div>
               </div>
-            </div>
 
-            <div className={styles.planContent}>
+              <div className={styles.divider}></div>
 
               <div className={styles.featureGroup}>
                 <div className={styles.featureLabel}>Discount:</div>
