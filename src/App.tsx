@@ -46,8 +46,8 @@ function App() {
             <Route path="subscribe" element={<Subscribe />} />
             <Route path="blog/:slug" element={<BlogDetails />} />
             <Route path="terms" element={<TermsConditions />} />
-            <Route path="v-caps" element={<VCaps />} />
-            
+            <Route path="vcaps" element={<VCaps />} />
+
             {/* Dashboard Routes under /account */}
             <Route path="account" element={<UserDashboardLayout />}>
               <Route index element={<UserProfile />} />
