@@ -1,4 +1,5 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import styles from './Subscribe.module.css';
 import waterBottleImg from '../../assets/subscribe/water-bottle.webp';
 
@@ -32,7 +33,10 @@ const subscriptionPlans = [
     price: "AED 221.00",
     discountText: "15% Off on all your orders",
     deliveryDuration: "4 Week",
-    deliveryFeatures: ["Custom Delivery Schedules", "Priority Delivery Slots"]
+    deliveryFeatures: ["Custom Delivery Schedules", "Priority Delivery Slots"],
+    rewardingProgram: ["50 V Points", "Weekly Draw Eligibility"],
+    convenience: ["Renewal", "Pause / Cancel Anytime", "Easy Reordering"],
+    customizationOptions: ["Variety of Water Types", "Bottle Sizes"]
   },
   {
     id: 2,
@@ -42,7 +46,10 @@ const subscriptionPlans = [
     price: "AED 585.00",
     discountText: "25% Off on all your orders",
     deliveryDuration: "12 Week",
-    deliveryFeatures: ["Custom Delivery Schedules", "Priority Delivery Slots"]
+    deliveryFeatures: ["Custom Delivery Schedules", "Priority Delivery Slots"],
+    rewardingProgram: ["50 V Points", "Weekly Draw Eligibility"],
+    convenience: ["Renewal", "Pause / Cancel Anytime", "Easy Reordering"],
+    customizationOptions: ["Variety of Water Types", "Bottle Sizes"]
   },
   {
     id: 3,
@@ -52,11 +59,22 @@ const subscriptionPlans = [
     price: "AED 1014.00",
     discountText: "35% Off on all your orders",
     deliveryDuration: "24 Week",
-    deliveryFeatures: ["Custom Delivery Schedules", "Priority Delivery Slots"]
+    deliveryFeatures: ["Custom Delivery Schedules", "Priority Delivery Slots"],
+    rewardingProgram: ["50 V Points", "Weekly Draw Eligibility"],
+    convenience: ["Renewal", "Pause / Cancel Anytime", "Easy Reordering"],
+    customizationOptions: ["Variety of Water Types", "Bottle Sizes"]
   }
 ];
 
 export default function Subscribe() {
+  const [expandedPlans, setExpandedPlans] = useState<number[]>([]);
+
+  const toggleExpand = (id: number) => {
+    setExpandedPlans(prev => 
+      prev.includes(id) ? prev.filter(p => p !== id) : [...prev, id]
+    );
+  };
+
   return (
     <div className={styles.subscribeContainer}>
 
@@ -171,7 +189,53 @@ export default function Subscribe() {
 
                 <div className={styles.divider}></div>
 
-                <div className={styles.readMore}>Read More</div>
+                <AnimatePresence>
+                  {expandedPlans.includes(plan.id) && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      style={{ overflow: "hidden" }}
+                    >
+                      <div className={styles.featureGroup}>
+                        <div className={styles.featureLabel}>Rewarding Program:</div>
+                        <div className={styles.featureList}>
+                          {plan.rewardingProgram.map((feat, i) => (
+                            <span key={i} className={styles.featureText}>{feat}</span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className={styles.divider}></div>
+
+                      <div className={styles.featureGroup}>
+                        <div className={styles.featureLabel}>Convenience:</div>
+                        <div className={styles.featureList}>
+                          {plan.convenience.map((feat, i) => (
+                            <span key={i} className={styles.featureText}>{feat}</span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className={styles.divider}></div>
+
+                      <div className={styles.featureGroup}>
+                        <div className={styles.featureLabel}>Customization Options:</div>
+                        <div className={styles.featureList}>
+                          {plan.customizationOptions.map((feat, i) => (
+                            <span key={i} className={styles.featureText}>{feat}</span>
+                          ))}
+                        </div>
+                      </div>
+
+                      <div className={styles.divider}></div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
+                <div className={styles.readMore} onClick={() => toggleExpand(plan.id)}>
+                  {expandedPlans.includes(plan.id) ? "Read Less" : "Read More"}
+                </div>
 
                 <button className={styles.selectBtn}>SELECT</button>
 
