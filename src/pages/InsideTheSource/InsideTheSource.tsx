@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import styles from './InsideTheSource.module.css';
 import source1 from '../../assets/our-sourse-images/soure-img-1.webp';
 import source2 from '../../assets/our-sourse-images/soure-img-2.webp';
@@ -11,6 +13,15 @@ import storyRight from '../../assets/our-sourse-images/story-right.webp';
 
 export default function InsideTheSource() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 100,
+    });
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const { currentTarget, clientX, clientY } = e;
@@ -33,14 +44,22 @@ export default function InsideTheSource() {
       <nav className={styles.breadcrumbs}>
         <Link to="/">Home</Link> | <span className={styles.breadcrumbsTitle}>Inside the Source</span>
       </nav>
-      <header className={styles.heroSection}>
+      <header 
+        className={styles.heroSection}
+        data-aos="fade-down"
+        data-aos-duration="1200"
+      >
         <h1 className={styles.mainTitle}>Inside the Source</h1>
       </header>
 
       {/* Section 1: How we bottle purity */}
       <section className={`${styles.sourceSection} ${styles.tealSection}`}>
         <div className={styles.container}>
-          <div className={styles.imageWrapper}>
+          <div 
+            className={styles.imageWrapper}
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
             <div className={styles.archContainer}>
               <img src={source1} alt="Bottle Purity" className={styles.sourceImage} />
             </div>
@@ -61,7 +80,11 @@ export default function InsideTheSource() {
               }}
             />
           </div>
-          <div className={styles.contentWrapper}>
+          <div 
+            className={styles.contentWrapper}
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
             <h2 className={styles.sectionHeading}>HOW WE BOTTLE PURITY</h2>
             <div className={styles.textBlock}>
               <p>
@@ -75,7 +98,11 @@ export default function InsideTheSource() {
       {/* Section 2: Mineral Analysis Table */}
       <section className={`${styles.sourceSection} ${styles.whiteSection}`}>
         <div className={styles.container}>
-          <div className={styles.imageWrapper}>
+          <div 
+            className={styles.imageWrapper}
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
             <div className={styles.archContainer}>
               <img src={source2} alt="Purity preserved" className={styles.sourceImage} />
             </div>
@@ -96,7 +123,11 @@ export default function InsideTheSource() {
               }}
             />
           </div>
-          <div className={styles.contentWrapper}>
+          <div 
+            className={styles.contentWrapper}
+            data-aos="fade-right"
+            data-aos-delay="300"
+          >
             <h2 className={styles.sectionHeading}>PURE BY NATURE, PRESERVED BY DESIGN</h2>
             <p className={styles.textBlock}>
               Vallechiara water is bottled directly at the source, untouched by additives or treatments. Our systems ensure that its natural balance, low sodium, pH 6.6, rich in essential minerals, remains exactly as it flows from the spring. We don't alter purity; we preserve it.
@@ -108,7 +139,11 @@ export default function InsideTheSource() {
       {/* Section 3: Source Map */}
       <section className={`${styles.sourceSection} ${styles.tealSection}`}>
         <div className={styles.container}>
-          <div className={styles.imageWrapper}>
+          <div 
+            className={styles.imageWrapper}
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
             <div className={styles.archContainer}>
               <img src={source3} alt="Source Map" className={styles.sourceImage} />
             </div>
@@ -129,7 +164,11 @@ export default function InsideTheSource() {
               }}
             />
           </div>
-          <div className={styles.contentWrapper}>
+          <div 
+            className={styles.contentWrapper}
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
             <h2 className={styles.sectionHeading}>EXPLORE THE SOURCE MAP</h2>
             <div className={styles.textBlock}>
               <p>
@@ -143,7 +182,11 @@ export default function InsideTheSource() {
       {/* Section 4: Precision */}
       <section className={`${styles.sourceSection} ${styles.whiteSection}`}>
         <div className={styles.container}>
-          <div className={styles.imageWrapper}>
+          <div 
+            className={styles.imageWrapper}
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
             <div className={styles.archContainer}>
               <img src={source4} alt="Precision bottling" className={styles.sourceImage} />
             </div>
@@ -164,7 +207,11 @@ export default function InsideTheSource() {
               }}
             />
           </div>
-          <div className={styles.contentWrapper}>
+          <div 
+            className={styles.contentWrapper}
+            data-aos="fade-right"
+            data-aos-delay="300"
+          >
             <h2 className={styles.sectionHeading}>CRAFTED WITH PRECISION</h2>
             <div className={styles.textBlock}>
               <p>
@@ -178,7 +225,11 @@ export default function InsideTheSource() {
       {/* Section 5: Sustainability */}
       <section className={`${styles.sourceSection} ${styles.tealSection}`}>
         <div className={styles.container}>
-          <div className={styles.imageWrapper}>
+          <div 
+            className={styles.imageWrapper}
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
             <div className={styles.archContainer}>
               <img src={source5} alt="Sustainability" className={styles.sourceImage} />
             </div>
@@ -199,7 +250,11 @@ export default function InsideTheSource() {
               }}
             />
           </div>
-          <div className={styles.contentWrapper}>
+          <div 
+            className={styles.contentWrapper}
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
             <h2 className={styles.sectionHeading}>SUSTAINABILITY IN MOTION</h2>
             <div className={styles.textBlock}>
               <p>

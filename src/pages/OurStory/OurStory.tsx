@@ -1,5 +1,7 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import styles from './OurStory.module.css';
 import story1 from '../../assets/our-story-images/story-1.webp';
 import story2 from '../../assets/our-story-images/story-2.webp';
@@ -10,6 +12,15 @@ import storyRight from '../../assets/our-story-images/story-right.webp';
 
 export default function OurStory() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-out-cubic',
+      once: true,
+      offset: 100,
+    });
+  }, []);
 
   const handleMouseMove = (e: React.MouseEvent) => {
     const { currentTarget, clientX, clientY } = e;
@@ -32,14 +43,22 @@ export default function OurStory() {
       <nav className={styles.breadcrumbs}>
         <Link to="/">Home</Link> | <span className={styles.breadcrumbsTitle}>Our Story</span>
       </nav>
-      <header className={styles.heroSection}>
+      <header 
+        className={styles.heroSection}
+        data-aos="fade-down"
+        data-aos-duration="1200"
+      >
         <h1 className={styles.mainTitle}>Our Story</h1>
       </header>
 
       {/* Section 1: Heritage */}
       <section className={`${styles.storySection} ${styles.tealSection}`}>
         <div className={styles.container}>
-          <div className={styles.imageWrapper}>
+          <div 
+            className={styles.imageWrapper}
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
             <div className={styles.archContainer}>
               <img src={story1} alt="A Heritage of Purity" className={styles.storyImage} />
             </div>
@@ -60,7 +79,11 @@ export default function OurStory() {
               }}
             />
           </div>
-          <div className={styles.contentWrapper}>
+          <div 
+            className={styles.contentWrapper}
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
             <h2 className={styles.sectionHeading}>A HERITAGE OF PURITY: SINCE 950 A.D.</h2>
             <div className={styles.textBlock}>
               <p>
@@ -80,7 +103,11 @@ export default function OurStory() {
       {/* Section 2: Natural Haven */}
       <section className={`${styles.storySection} ${styles.whiteSection}`}>
         <div className={styles.container}>
-          <div className={styles.imageWrapper}>
+          <div 
+            className={styles.imageWrapper}
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
             <div className={styles.archContainer}>
               <img src={story2} alt="Natural Haven" className={styles.storyImage} />
             </div>
@@ -101,7 +128,11 @@ export default function OurStory() {
               }}
             />
           </div>
-          <div className={styles.contentWrapper}>
+          <div 
+            className={styles.contentWrapper}
+            data-aos="fade-right"
+            data-aos-delay="300"
+          >
             <h2 className={styles.sectionHeading}>NATURAL HAVEN : LIPIANI, ALTARE : NATURE'S SANCTUARY, OUR SACRED RESPONSIBILITY</h2>
             <div className={styles.textBlock}>
               <p>
@@ -118,7 +149,11 @@ export default function OurStory() {
       {/* Section 3: Purity Embodied */}
       <section className={`${styles.storySection} ${styles.tealSection}`}>
         <div className={styles.container}>
-          <div className={styles.imageWrapper}>
+          <div 
+            className={styles.imageWrapper}
+            data-aos="fade-right"
+            data-aos-delay="100"
+          >
             <div className={styles.archContainer}>
               <img src={story3} alt="Purity Embodied" className={styles.storyImage} />
             </div>
@@ -139,7 +174,11 @@ export default function OurStory() {
               }}
             />
           </div>
-          <div className={styles.contentWrapper}>
+          <div 
+            className={styles.contentWrapper}
+            data-aos="fade-left"
+            data-aos-delay="300"
+          >
             <h2 className={styles.sectionHeading}>PURITY EMBODIED: UNTOUCHED, UNMATCHED, UNEQUALED</h2>
             <div className={styles.textBlock}>
               <p>
@@ -153,7 +192,11 @@ export default function OurStory() {
       {/* Section 4: Elevating Wellness */}
       <section className={`${styles.storySection} ${styles.tealSection}`}>
         <div className={styles.container}>
-          <div className={styles.imageWrapper}>
+          <div 
+            className={styles.imageWrapper}
+            data-aos="fade-left"
+            data-aos-delay="100"
+          >
             <div className={styles.archContainer}>
               <img src={story4} alt="Elevating Wellness" className={styles.storyImage} />
             </div>
@@ -174,7 +217,11 @@ export default function OurStory() {
               }}
             />
           </div>
-          <div className={styles.contentWrapper}>
+          <div 
+            className={styles.contentWrapper}
+            data-aos="fade-right"
+            data-aos-delay="300"
+          >
             <h2 className={styles.sectionHeading}>ELEVATING WELLNESS: PURE HYDRATION, THE ITALIAN WAY</h2>
             <div className={styles.textBlock}>
               <p>
