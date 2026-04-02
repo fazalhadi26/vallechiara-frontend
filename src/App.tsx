@@ -57,9 +57,10 @@ function App() {
               <Route path="my-subscription" element={<UserSubscription />} />
             </Route>
 
-            {/* 404 Catch-All */}
-            <Route path="*" element={<NotFound />} />
           </Route>
+
+          {/* 404 Catch-All — no header/footer */}
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
     </Router>
