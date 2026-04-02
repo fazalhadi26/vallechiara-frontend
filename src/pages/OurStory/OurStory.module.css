@@ -137,16 +137,16 @@
 /* Swapping leaf decor positions for reversed (even) sections to match reference image layout */
 .storySection:nth-child(even) .accentLeft {
   top: auto;
-  bottom: 8%;
-  left: -80px;
-  width: 170px;
+  bottom: -10%;
+  left: -20px;
+  width: 200px;
 }
 
 .storySection:nth-child(even) .accentRight {
   bottom: auto;
   top: 12%;
-  right: -90px;
-  width: 220px;
+  right: -35px;
+  width: 120px;
 }
 
 .contentWrapper {
@@ -165,9 +165,10 @@
 
 .textBlock {
   font-family: 'Outfit', sans-serif;
-  font-size: 15px;
-  line-height: 1.8;
-  opacity: 0.9;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.4;
+
 }
 
 .textBlock p {
