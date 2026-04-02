@@ -1,5 +1,5 @@
 .subscribeContainer {
-  padding: 60px 20px 100px 20px;
+  padding: 37px 20px 100px 20px;
   /* Reduced from 160px and tightened padding */
   background-color: #ffffff;
   min-height: calc(100vh - 90px);
@@ -10,21 +10,21 @@
 
 .mainTitle {
   font-family: var(--font-serif);
-  font-size: 42px;
-  font-weight: 800;
+  font-size: 58px;
+  /* font-weight: 800; */
   color: #111;
   text-transform: uppercase;
-  margin-bottom: 25px;
+  margin-bottom: -3px;
   text-align: center;
 }
 
 .mainSubtitle {
-  font-size: 18px;
-  color: #111;
-  max-width: 800px;
+  font-size: 16px;
+  color: #000000;
+  /* max-width: 800px; */
   text-align: center;
-  margin-bottom: 70px;
-  font-weight: 600;
+  margin-bottom: 35px;
+  font-weight: 700;
   line-height: 1.6;
 }
 
@@ -39,7 +39,7 @@
 
 .timelineTitle {
   font-family: var(--font-serif);
-  font-size: 26px;
+  font-size: 29px;
   color: #111;
   text-transform: uppercase;
   margin-bottom: 40px;
