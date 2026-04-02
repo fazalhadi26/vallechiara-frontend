@@ -1,7 +1,8 @@
 .cartPage {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 40px 60px; /* Reduced from 120px */
+  padding: 40px 40px 60px;
+  /* Reduced from 120px */
   min-height: calc(100vh - 90px);
   font-family: var(--font-sans);
 }
@@ -29,7 +30,7 @@
 
 .cartGrid {
   display: grid;
-  grid-template-columns: 1.8fr 1fr;
+  grid-template-columns: 2.4fr 1fr;
   gap: 50px;
   align-items: start;
 }
@@ -45,14 +46,14 @@
   align-items: center;
   background: white;
   border-radius: 12px;
-  padding: 30px;
+  padding: 40px 30px;
   border: 1px solid #eef2f3;
   /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02); */
   transition: transform 0.2s ease;
 }
 
 .itemImage {
-  width: 50px;
+  width: 70px;
   height: auto;
   margin-right: 40px;
 }
@@ -62,7 +63,7 @@
 }
 
 .itemName {
-  font-size: 16px;
+  font-size: 21px;
   font-family: 'Outfit', sans-serif;
   color: #111;
   font-weight: 700;
@@ -189,6 +190,7 @@
   padding-bottom: 15px;
   border-bottom: 1px solid #f2f5f8;
 }
+
 .summaryItem:last-child {
   border-bottom: none;
 }
@@ -359,7 +361,8 @@
 
 @media (max-width: 600px) {
   .cartPage {
-    padding: 25px 15px 40px; /* Reduced for mobile */
+    padding: 25px 15px 40px;
+    /* Reduced for mobile */
   }
 
   .titleSection h1 {
