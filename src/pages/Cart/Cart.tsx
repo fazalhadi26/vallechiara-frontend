@@ -7,15 +7,15 @@ import styles from './Cart.module.css';
 import shoppingIcon from '../../assets/cart-images/shopping-icon.svg';
 
 export default function Cart() {
-  const { 
-    cartItems, 
-    updateQuantity, 
-    removeFromCart, 
-    totalItems, 
-    subtotal, 
-    shipping, 
-    vat, 
-    totalToPay 
+  const {
+    cartItems,
+    updateQuantity,
+    removeFromCart,
+    totalItems,
+    subtotal,
+    shipping,
+    vat,
+    totalToPay
   } = useCart();
 
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -65,7 +65,7 @@ export default function Cart() {
           {cartItems.map((item) => (
             <div key={item.id} className={styles.cartItem}>
               <img src={item.image} alt={item.name} className={styles.itemImage} />
-              
+
               <div className={styles.itemInfo}>
                 <h3 className={styles.itemName}>{item.name}</h3>
               </div>
@@ -91,7 +91,7 @@ export default function Cart() {
         <div className={styles.sidebar}>
           <div className={styles.deliveryPromo}>
             <div className={styles.promoIcon}>
-              <img src={shoppingIcon} alt="Delivery truck icon" width="45" height="45" />
+              <img src={shoppingIcon} alt="Delivery truck icon" width="55" height="55" />
             </div>
             <p className={styles.promoText}>
               Enjoy FREE delivery on orders<br />
@@ -149,19 +149,19 @@ export default function Cart() {
             <span className={styles.finalValue}>AED {totalToPay.toFixed(2)}</span>
           </div>
 
-        <button className={styles.checkoutBtn}>CHECKOUT</button>
+          <button className={styles.checkoutBtn}>CHECKOUT</button>
+        </div>
       </div>
-    </div>
 
-    <ConfirmationModal
-      isOpen={isOpen}
-      onClose={onClose}
-      onConfirm={confirmRemove}
-      title="Remove Item"
-      message="Do you want to remove this item from cart?"
-      confirmLabel="Yes"
-      cancelLabel="Cancel"
-    />
-  </div>
-);
+      <ConfirmationModal
+        isOpen={isOpen}
+        onClose={onClose}
+        onConfirm={confirmRemove}
+        title="Remove Item"
+        message="Do you want to remove this item from cart?"
+        confirmLabel="Yes"
+        cancelLabel="Cancel"
+      />
+    </div>
+  );
 }

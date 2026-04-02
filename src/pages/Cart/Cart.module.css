@@ -66,21 +66,23 @@
   font-size: 21px;
   font-family: 'Outfit', sans-serif;
   color: #111;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0;
 }
 
 .quantitySelector {
   display: flex;
   align-items: center;
-  background: #f0f5f8; /* Softer, richer blue-grey matching image */
+  background: #f0f5f8;
+  /* Softer, richer blue-grey matching image */
   border-radius: 12px;
   padding: 6px;
   margin-right: 80px;
 }
 
 .qtyBtn {
-  background: #ffffff; /* Solid white background matching image */
+  background: #ffffff;
+  /* Solid white background matching image */
   border: none;
   width: 36px;
   height: 36px;
@@ -91,7 +93,8 @@
   font-size: 24px;
   font-weight: 400;
   color: #005668;
-  border-radius: 8px; /* Slightly more rounded to match */
+  border-radius: 8px;
+  /* Slightly more rounded to match */
   transition: all 0.2s;
 }
 
@@ -100,7 +103,8 @@
 }
 
 .qtyValue {
-  width: 44px; /* Give more breathing room */
+  width: 44px;
+  /* Give more breathing room */
   text-align: center;
   font-weight: 700;
   font-size: 16px;
@@ -139,7 +143,7 @@
   border-radius: 16px;
   padding: 30px;
   border: 1px solid #eef2f3;
-  box-shadow: 0 10px 30px rgba(0, 50, 80, 0.05);
+  /* box-shadow: 0 10px 30px rgba(0, 50, 80, 0.05); */
 }
 
 .deliveryPromo {
@@ -159,7 +163,7 @@
 
 .promoText {
   font-family: 'Outfit', sans-serif;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
   color: #0f2b33;
   margin: 0;
@@ -180,8 +184,8 @@
 .summaryTitle {
   font-family: 'Outfit', sans-serif;
   font-size: 14px;
-  font-weight: 700;
-  color: #111;
+  font-weight: 600;
+  color: #111111c4;
   margin-bottom: 20px;
 }
 
@@ -199,9 +203,9 @@
 
 .summaryName {
   font-family: 'Outfit', sans-serif;
-  font-size: 11px;
-  color: #111;
-  font-weight: 700;
+  font-size: 13px;
+  color: #111111c4;
+  font-weight: 600;
   margin-bottom: 3px;
 }
 
@@ -214,9 +218,9 @@
 
 .summaryValue {
   font-family: 'Outfit', sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  color: #111;
+  font-size: 12px;
+  font-weight: 600;
+  color: #111111d4;
 }
 
 .totalsRow {
@@ -227,9 +231,9 @@
 
 .totalsLabel {
   font-family: 'Outfit', sans-serif;
-  font-size: 12px;
-  color: #111;
-  font-weight: 700;
+  font-size: 13px;
+  color: #111111d4;
+  font-weight: 600;
 }
 
 .totalsValue {
