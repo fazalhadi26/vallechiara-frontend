@@ -1,5 +1,6 @@
 .subscribeContainer {
-  padding: 60px 20px 100px 20px; /* Reduced from 160px and tightened padding */
+  padding: 60px 20px 100px 20px;
+  /* Reduced from 160px and tightened padding */
   background-color: #ffffff;
   min-height: calc(100vh - 90px);
   display: flex;
@@ -32,7 +33,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  max-width: 1100px;
+  /* max-width: 1100px; */
   margin-bottom: 80px;
 }
 
@@ -52,16 +53,7 @@
   align-items: flex-start;
 }
 
-.timelineLine {
-  position: absolute;
-  top: 15px;
-  /* center of the 30px circles */
-  left: 10%;
-  right: 10%;
-  height: 2px;
-  border-top: 2px dotted #0089A0;
-  z-index: 1;
-}
+
 
 .step {
   display: flex;
@@ -69,6 +61,21 @@
   align-items: center;
   position: relative;
   z-index: 2;
+  flex: 1;
+}
+
+.step::after {
+  content: '';
+  position: absolute;
+  top: 15px;
+  left: 50%;
+  width: 100%;
+  border-top: 2px dotted #0089A0;
+  z-index: -1;
+}
+
+.step:last-child::after {
+  display: none;
 }
 
 .stepCircle {
@@ -108,7 +115,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   width: 100%;
 }
 
@@ -321,8 +328,10 @@
 
 @media (max-width: 1100px) {
   .subscribeContainer {
-    padding-top: 30px; /* Reduced further for tight mobile view */
+    padding-top: 30px;
+    /* Reduced further for tight mobile view */
   }
+
   .cardsGrid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -339,7 +348,7 @@
     align-items: center;
   }
 
-  .timelineLine {
+  .step::after {
     display: none;
   }
 }

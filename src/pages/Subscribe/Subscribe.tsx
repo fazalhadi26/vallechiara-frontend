@@ -53,8 +53,6 @@ export default function Subscribe() {
         <h3 className={styles.timelineTitle}>QUICK & EASY</h3>
         <div className={styles.timelineGraphic}>
 
-          <div className={styles.timelineLine}></div>
-
           <div className={styles.step}>
             <div className={styles.stepCircle}>1</div>
             <div className={styles.stepIcon}>
