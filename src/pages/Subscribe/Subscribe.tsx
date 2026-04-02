@@ -2,9 +2,9 @@ import styles from './Subscribe.module.css';
 import waterBottleImg from '../../assets/subscribe/water-bottle.webp';
 
 const calculateCard = {
-  title: "FIGURE OUT YOUR MONTHLY WATER CONSUMPTION",
+  title: "FIGURE OUT\nYOUR MONTHLY WATER\nCONSUMPTION",
   btnText: "CALCULATE",
-  note: "Based on family members and hydration practice",
+  note: "Based on family members and\nhydration practice",
 };
 
 const subscriptionPlans = [
@@ -100,16 +100,13 @@ export default function Subscribe() {
                   <div className={styles.planDesc}>{plan.packageDesc}</div>
                 </div>
               </div>
-            </div>
-
-            <div className={styles.planContent}>
               <div className={styles.priceContainer}>
                 <div className={styles.priceLabel}>Starts from</div>
                 <div className={styles.priceVal}>{plan.price}</div>
               </div>
+            </div>
 
-              <div className={styles.divider}></div>
-
+            <div className={styles.planContent}>
               <div className={styles.featureGroup}>
                 <div className={styles.featureLabel}>Discount:</div>
                 <div className={styles.featureGreen}>{plan.discountText}</div>
