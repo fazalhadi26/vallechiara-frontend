@@ -389,13 +389,32 @@
   }
 
   .timelineGraphic {
-    flex-direction: column;
-    gap: 40px;
-    align-items: center;
+    gap: 10px;
+  }
+
+  .step p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .stepCircle {
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  .stepIcon svg {
+    width: 40px;
+    height: 40px;
+  }
+
+  .stepBottleImg {
+    height: 40px;
   }
 
   .step::after {
-    display: none;
+    top: 15px;
   }
 
   .cardsGrid {
@@ -438,5 +457,28 @@
   
   .priceVal {
     font-size: 22px;
+  }
+
+  .step p {
+    font-size: 11px;
+  }
+
+  .stepCircle {
+    width: 25px;
+    height: 25px;
+    font-size: 12px;
+  }
+
+  .stepIcon svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .stepBottleImg {
+    height: 30px;
+  }
+
+  .step::after {
+    top: 13px;
   }
 }
