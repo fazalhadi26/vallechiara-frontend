@@ -174,12 +174,22 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  background-color: #ffffff;
+  box-shadow:
+    0 3px 0 0px #ffffff,
+    0 4px 0 0px #d5d6d6,
+    0 7px 0 0px #ffffff,
+    0 8px 0 0px #adadad;
 }
 
 .planCard:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+  border-color: #005668;
+  box-shadow:
+    0 3px 0 0px #ffffff,
+    0 4px 0 0px #005668,
+    0 7px 0 0px #ffffff,
+    0 8px 0 0px #005668;
 }
 
 .planTop {
