@@ -121,6 +121,7 @@
   width: 160px;
   z-index: 5;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
 }
 
 .accentRight {
@@ -130,6 +131,22 @@
   width: 200px;
   z-index: 5;
   filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease;
+}
+
+/* Swapping leaf decor positions for reversed (even) sections to match reference image layout */
+.storySection:nth-child(even) .accentLeft {
+  top: auto;
+  bottom: 8%;
+  left: -80px;
+  width: 170px;
+}
+
+.storySection:nth-child(even) .accentRight {
+  bottom: auto;
+  top: 12%;
+  right: -90px;
+  width: 220px;
 }
 
 .contentWrapper {

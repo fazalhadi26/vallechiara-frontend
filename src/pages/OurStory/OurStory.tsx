@@ -34,10 +34,10 @@ export default function OurStory() {
                 Our story begins in the tranquil hills of the Maritime Alps, where our crystal springs first emerged from ancient rock amidst the untouched forests of Savona.
               </p>
               <p>
-                Recognized for its extraordinary properties as early as 950 A.D. by King Berengar II and later by Holy Roman Emperor Otto the Great, the spring became a prized jewel of the Empire.
+                Recognized for its extraordinary properties as early as 950 A.D. by King Berengar II and later by Holy Roman Emperor Otto the Great, the spring became a prized jewel of the Empire. For centuries, this "noble water" was passed through prominent dynasties and royal fiefdoms—from the Holy Roman Empire to the Kingdom of Italy—valued throughout history for its restorative benefits.
               </p>
               <p>
-                Officially established as a source of excellence in 1833, Vallechiara remains one of Italy's lightest waters. With a remarkably low TDS of 34.1 mg/l and minimal sodium, it is celebrated today as a premier detoxifying mineral water.
+                Officially established as a source of excellence in 1833, Vallechiara remains one of Italy's lightest waters. With a remarkably low TDS of 34.1 mg/l and minimal sodium, it is celebrated today as a premier detoxifying mineral water. From being awarded Italian Health Ministry certification for infant nutrition to being ranked among the best Italian mineral waters by Gambero Rosso, Vallechiara continues a millennium-long legacy of bringing health, history, and sophisticated taste to the table.
               </p>
             </div>
           </div>
@@ -55,13 +55,13 @@ export default function OurStory() {
             <img src={storyRight} alt="Decoration" className={styles.accentRight} />
           </div>
           <div className={styles.contentWrapper}>
-            <h2 className={styles.sectionHeading}>NATURAL HAVEN: LIPIANI, ALTARE : NATURE'S SANCTUARY</h2>
+            <h2 className={styles.sectionHeading}>NATURAL HAVEN : LIPIANI, ALTARE : NATURE'S SANCTUARY, OUR SACRED RESPONSIBILITY</h2>
             <div className={styles.textBlock}>
               <p>
                 Nestled amid more than two million square meters of beech and chestnut trees in Lipiani, Altare, our source exists in perfect balance with its natural surroundings, a sanctuary where the rhythm of nature shapes the essence of every drop.
               </p>
               <p>
-                Revived under the vision of a distinguished Emirati Group, Vallechiara continues to honor its heritage with a renewed spirit of innovation and sustainability.
+                Revived under the vision of a distinguished Emirati Group, Vallechiara continues to honor its heritage with a renewed spirit of innovation and sustainability. More than water, it is a symbol of purity, elegance, and wellbeing, crafted to nourish both body and soul.
               </p>
             </div>
           </div>
@@ -90,7 +90,7 @@ export default function OurStory() {
       </section>
 
       {/* Section 4: Elevating Wellness */}
-      <section className={`${styles.storySection} ${styles.whiteSection}`}>
+      <section className={`${styles.storySection} ${styles.tealSection}`}>
         <div className={styles.container}>
           <div className={styles.imageWrapper}>
             <div className={styles.archContainer}>
