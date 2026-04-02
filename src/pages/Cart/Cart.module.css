@@ -73,36 +73,37 @@
 .quantitySelector {
   display: flex;
   align-items: center;
-  background: #f7fbff;
-  border-radius: 10px;
-  padding: 4px;
+  background: #f0f5f8; /* Softer, richer blue-grey matching image */
+  border-radius: 12px;
+  padding: 6px;
   margin-right: 80px;
 }
 
 .qtyBtn {
-  background: none;
+  background: #ffffff; /* Solid white background matching image */
   border: none;
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 400;
   color: #005668;
-  border-radius: 6px;
-  transition: background 0.2s;
+  border-radius: 8px; /* Slightly more rounded to match */
+  transition: all 0.2s;
 }
 
 .qtyBtn:hover {
-  background: #eef5ff;
+  background: #e6f0f3;
 }
 
 .qtyValue {
-  width: 35px;
+  width: 44px; /* Give more breathing room */
   text-align: center;
   font-weight: 700;
-  font-size: 15px;
+  font-size: 16px;
   color: #111;
   font-family: 'Outfit', sans-serif;
 }
