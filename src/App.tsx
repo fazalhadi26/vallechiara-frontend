@@ -19,6 +19,7 @@ const Cart = lazy(() => import('./pages/Cart/Cart'));
 const BlogDetails = lazy(() => import('./pages/BlogDetails/BlogDetails'));
 const TermsConditions = lazy(() => import('./pages/TermsConditions/TermsConditions'));
 const VCaps = lazy(() => import('./pages/VCaps/VCaps'));
+const NotFound = lazy(() => import('./pages/NotFound/NotFound'));
 
 // Dashboard lazy loading
 const UserDashboardLayout = lazy(() => import('./user-profile-dashboard/UserDashboardLayout'));
@@ -55,6 +56,9 @@ function App() {
               <Route path="booking" element={<UserBooking />} />
               <Route path="my-subscription" element={<UserSubscription />} />
             </Route>
+
+            {/* 404 Catch-All */}
+            <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
       </Suspense>
