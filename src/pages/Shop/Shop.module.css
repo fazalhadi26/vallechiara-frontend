@@ -1,5 +1,5 @@
 .shopContainer {
-  padding: 95px 40px 100px 40px;
+  padding: 95px 40px 100px 10px;
   /* Reduced from 180px since header is in-flow */
   background-color: #ffffff;
   min-height: calc(100vh - 90px);
@@ -18,12 +18,13 @@
 
 .categoryRow {
   display: flex;
-  gap: 105px;
+  gap: 20px;
   align-items: center;
 }
 
 .categoryHeader {
-  flex: 0 0 10%;
+  /* Using a fixed width base for the sidebar to match the requested 235px title width */
+  flex: 0 0 235px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -34,15 +35,14 @@
 
 .categoryTitle {
   font-family: var(--font-serif);
-  font-size: 38px;
-  line-height: 1.1;
-  font-weight: 800;
+  font-size: 36px;
+  line-height: 1;
+  color: #005668;
+  /* primary color */
+  width: 235px;
+  text-align: center;
   margin-bottom: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   z-index: 2;
-  letter-spacing: -1px;
 }
 
 .blueText {
@@ -59,8 +59,8 @@
 }
 
 .categoryVLogo {
-  width: 100%;
-  margin-top: 20px;
+  width: 50%;
+  margin-top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,7 +111,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 2px;
   position: relative;
 }
 
@@ -141,7 +141,7 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  text-align: center;
+  /* text-align: center; */
 }
 
 .badgeWrap {
@@ -163,9 +163,9 @@
 .productTitle {
   font-family: var(--font-sans);
   font-weight: 800;
-  font-size: 18px;
+  font-size: 21px;
   color: #111;
-  margin-bottom: 8px;
+  margin-bottom: 5px;
   line-height: 1.3;
 }
 

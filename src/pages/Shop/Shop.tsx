@@ -127,9 +127,7 @@ export default function Shop() {
 
             <div className={styles.categoryHeader}>
               <h2 className={`${styles.categoryTitle} ${category.logoColor === "green" ? styles.greenText : styles.blueText}`}>
-                {category.categoryTitle.split(" ").map((word, i) => (
-                  <span key={i} className={styles.titleWord}>{word}</span>
-                ))}
+                {category.categoryTitle}
               </h2>
               <div className={`${styles.categoryVLogo} ${styles[category.logoColor]}`}>
                 <img src={vLogoAsset} alt="Vallechiara Logo" className={styles.vLogoImg} />
