@@ -273,7 +273,7 @@
 .featureLabel {
   color: #888;
   font-size: 13px;
-  /* margin-bottom: 8px; */
+  margin-bottom: 8px;
   font-weight: 600;
 }
 
@@ -291,12 +291,14 @@
 }
 
 .featureText {
+  font-family: 'Outfit', sans-serif;
   color: #333;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 600;
   display: flex;
   align-items: flex-start;
-  gap: 8px;
+  gap: 6px;
+  margin-top: -2px;
 }
 
 .featureText::before {
