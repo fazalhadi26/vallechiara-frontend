@@ -101,11 +101,14 @@
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  /* transform: translateY(-8px); */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  background-color: #005F71;
+  border-color: #005F71;
 }
 
 .imageWrapper {
+  background-color: #ffffff;
   height: 240px;
   display: flex;
   flex-direction: column;
@@ -113,6 +116,7 @@
   align-items: center;
   margin-bottom: 2px;
   position: relative;
+  border-radius: 12px;
 }
 
 .bottleImg {
@@ -123,9 +127,9 @@
   z-index: 2;
 }
 
-.card:hover .bottleImg {
+/* .card:hover .bottleImg {
   transform: scale(1.05);
-}
+} */
 
 .shadowBase {
   position: absolute;
@@ -204,7 +208,7 @@
   font-size: 12px;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: all 0.3s ease;
   text-transform: uppercase;
   text-align: center;
   white-space: nowrap;
@@ -347,6 +351,25 @@
 .disabledActions {
   opacity: 0.3;
   pointer-events: none;
+}
+
+/* Card Hover Color Inversions */
+.card:hover .productTitle,
+.card:hover .productPrice,
+.card:hover .productSubtitle {
+  color: #ffffff;
+}
+
+.card:hover .buyNowBtn {
+  background-color: #ffffff;
+  color: #0089A0;
+  border-color: #ffffff;
+}
+
+.card:hover .subscribeBtn {
+  background-color: #ffffff;
+  color: #0089A0;
+  border-color: #ffffff;
 }
 
 @media (max-width: 1200px) {
