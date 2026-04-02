@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDisclosure } from '@chakra-ui/react';
 import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import styles from './Shop.module.css';
 import s1 from '../../assets/s-1.png';
 import s2 from '../../assets/s-2.png';
@@ -80,6 +81,21 @@ const shopData = [
   }
 ];
 
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } }
+};
+
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: { 
+    opacity: 1, 
+    transition: { 
+      staggerChildren: 0.15 
+    } 
+  }
+};
+
 export default function Shop() {
   const { cartItems, addToCart, updateQuantity, removeFromCart } = useCart();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -124,14 +140,20 @@ export default function Shop() {
         {shopData.map((category, index) => (
           <div key={index} className={styles.categoryRow}>
 
-            <div className={styles.categoryHeader}>
+            <motion.div 
+              className={styles.categoryHeader}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, margin: "-50px" }}
+              variants={fadeUp}
+            >
               <h2 className={`${styles.categoryTitle} ${category.logoColor === "green" ? styles.greenText : styles.blueText}`}>
                 {category.categoryTitle}
               </h2>
               <div className={`${styles.categoryVLogo} ${styles[category.logoColor]}`}>
                 <img src={vLogoAsset} alt="Vallechiara Logo" className={styles.vLogoImg} />
               </div>
-            </div>
+            </motion.div>
 
             <div className={styles.productsGrid}>
               {category.products.map(product => {
@@ -139,11 +161,18 @@ export default function Shop() {
                 const isInCart = !!cartItem;
 
                 return (
-                  <div key={product.id} className={styles.card}>
-                    <div className={styles.imageWrapper}>
+                  <motion.div 
+                    key={product.id} 
+                    className={styles.card}
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-50px" }}
+                    variants={staggerContainer}
+                  >
+                    <motion.div className={styles.imageWrapper} variants={fadeUp}>
                       <img src={product.image} alt={product.title} className={styles.bottleImg} />
                       <div className={styles.shadowBase} />
-                    </div>
+                    </motion.div>
 
                     <div className={styles.contentWrapper}>
                       <div className={styles.badgeWrap}>
@@ -152,11 +181,11 @@ export default function Shop() {
                         )}
                       </div>
 
-                      <h3 className={styles.productTitle}>{product.title}</h3>
-                      <div className={styles.productPrice}>{product.priceStr}</div>
-                      <p className={styles.productSubtitle}>{product.subtitle}</p>
+                      <motion.h3 className={styles.productTitle} variants={fadeUp}>{product.title}</motion.h3>
+                      <motion.div className={styles.productPrice} variants={fadeUp}>{product.priceStr}</motion.div>
+                      <motion.p className={styles.productSubtitle} variants={fadeUp}>{product.subtitle}</motion.p>
 
-                      <div className={styles.actions}>
+                      <motion.div className={styles.actions} variants={fadeUp}>
                         {!isInCart ? (
                           <button 
                             className={`${styles.buyNowBtn} ${product.isOutOfStock ? styles.disabledBuyNow : ''}`} 
@@ -196,9 +225,9 @@ export default function Shop() {
                           </div>
                         )}
                         <button className={styles.subscribeBtn} onClick={() => navigate('/subscribe')}>SUBSCRIBE</button>
-                      </div>
+                      </motion.div>
                     </div>
-                  </div>
+                  </motion.div>
                 );
               })}
             </div>
